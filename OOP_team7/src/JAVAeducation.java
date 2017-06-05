@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import ajou.ac.kr.lab10.jihye.History;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -61,18 +64,28 @@ public class JAVAeducation extends JFrame {
 		
 		JButton btnLogin = new JButton("login");
 		
+		
 		JButton btnSignUp = new JButton("sign up");
+		btnSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton source = (JButton)e.getSource();
+					SignUp su = new SignUp();
+					su.setVisible(true);
+			
+				
+			}
+		});
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(76, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblPassword)
 							.addGap(68))
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblId)
 							.addGap(76)))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -84,11 +97,11 @@ public class JAVAeducation extends JFrame {
 					.addComponent(lblJava)
 					.addContainerGap(186, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(142)
+					.addGap(96)
 					.addComponent(btnSignUp)
-					.addGap(48)
+					.addGap(77)
 					.addComponent(btnLogin)
-					.addContainerGap(118, Short.MAX_VALUE))
+					.addContainerGap(135, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -103,11 +116,11 @@ public class JAVAeducation extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblPassword))
-					.addGap(66)
+					.addGap(92)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnSignUp)
 						.addComponent(btnLogin))
-					.addContainerGap(124, Short.MAX_VALUE))
+					.addContainerGap(98, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}

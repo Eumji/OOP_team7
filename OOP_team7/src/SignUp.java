@@ -79,10 +79,10 @@ public class SignUp extends JFrame {
 		textField_4.setColumns(10);
 		
 		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(1, 1, 12, 2));
+		spinner.setModel(new SpinnerNumberModel(1, 1, 12, 1));
 		
 		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setModel(new SpinnerNumberModel(1, 1, 31, 2));
+		spinner_1.setModel(new SpinnerNumberModel(1, 1, 31, 1));
 		
 		JLabel lblBirthDay = new JLabel("Birth day : ");
 		
