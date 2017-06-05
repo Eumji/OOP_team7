@@ -59,7 +59,6 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		
 		btnStudy.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 
 		JButton btnTestGame = new JButton("Test Game");
