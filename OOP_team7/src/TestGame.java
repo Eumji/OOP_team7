@@ -11,9 +11,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 
-public class TestGame {
+public class TestGame extends MENU{
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
