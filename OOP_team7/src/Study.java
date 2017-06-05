@@ -82,8 +82,11 @@ public class Study {
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton btn1 = new JButton("class & object & method");
+
 		JButton btn2 = new JButton("Method modifiers");
+
 		JButton btn3 = new JButton("variable");
+	
 		
 		JButton btnNewButton = new JButton("Basic");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -91,11 +94,11 @@ public class Study {
 				
 				JFrame fr1 = new JFrame("Basic menu");
 				
-				fr1.getContentPane().setLayout(new GridLayout(5,5,1,1));
+				fr1.setLayout(new GridLayout());
 				
-				fr1.getContentPane().add(btn1);
-				fr1.getContentPane().add(btn2);
-				fr1.getContentPane().add(btn3);
+				fr1.add(btn1);
+				fr1.add(btn2);
+				fr1.add(btn3);
 				
 				fr1.setSize(500, 500);
 				fr1.setVisible(true);
@@ -107,6 +110,7 @@ public class Study {
 		panel.add(btnNewButton);
 		
 		JButton btn4 = new JButton("getter & setter");
+		btn4.setSize(200, 200);
 		JButton btn5 = new JButton("How to make?");
 
 		JButton btnNewButton_1 = new JButton("Encapsulation");
@@ -114,8 +118,8 @@ public class Study {
 			public void actionPerformed(ActionEvent e) {
 				
 				JFrame fr2 = new JFrame("encapsulation");
-
-				fr2.setLayout(new GridLayout(5,5,1,1));
+				
+				fr2.setLayout(new GridLayout());
 				fr2.add(btn4);
 				fr2.add(btn5);
 				
