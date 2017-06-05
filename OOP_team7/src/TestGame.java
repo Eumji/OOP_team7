@@ -13,7 +13,7 @@ import java.awt.Color;
 
 public class TestGame extends MENU{
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
