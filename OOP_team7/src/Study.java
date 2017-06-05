@@ -94,6 +94,7 @@ public class Study extends MENU{
 				
 				JFrame fr1 = new JFrame("Basic menu");
 				
+				fr1.setBounds(100, 100, 500, 500);
 				fr1.setLayout(new GridLayout());
 				
 				fr1.add(btn1);
@@ -118,6 +119,7 @@ public class Study extends MENU{
 			public void actionPerformed(ActionEvent e) {
 				
 				JFrame fr2 = new JFrame("encapsulation");
+				fr2.setBounds(100,100,500,500);
 				
 				fr2.setLayout(new GridLayout());
 				fr2.add(btn4);
