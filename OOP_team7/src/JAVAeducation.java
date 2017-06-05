@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import ajou.ac.kr.lab10.jihye.History;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -63,14 +62,19 @@ public class JAVAeducation extends JFrame {
 		JLabel lblPassword = new JLabel("Password : ");
 		
 		JButton btnLogin = new JButton("login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MENU m = new MENU();
+				m.frame.setVisible(true);
+			}
+		});
 		
 		
 		JButton btnSignUp = new JButton("sign up");
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JButton source = (JButton)e.getSource();
-					SignUp su = new SignUp();
-					su.setVisible(true);
+				SignUp su = new SignUp();
+				su.setVisible(true);
 			
 				
 			}
@@ -99,9 +103,9 @@ public class JAVAeducation extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(96)
 					.addComponent(btnSignUp)
-					.addGap(77)
+					.addGap(88)
 					.addComponent(btnLogin)
-					.addContainerGap(135, Short.MAX_VALUE))
+					.addContainerGap(124, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
