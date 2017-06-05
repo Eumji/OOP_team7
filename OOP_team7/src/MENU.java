@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class MENU extends JFrame {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
