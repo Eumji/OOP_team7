@@ -64,13 +64,13 @@ public class TestGame extends MENU{
 		btnNewButton.setBounds(10, 72, 225, 177);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnMatchingGame = new JButton("Matching");
+		JButton btnMatchingGame = new JButton("Multiple Choice");
 		btnMatchingGame.setBackground(new Color(153, 204, 204));
 		btnMatchingGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 30));
+		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 24));
 		btnMatchingGame.setBounds(10, 252, 225, 177);
 		frame.getContentPane().add(btnMatchingGame);
 		
