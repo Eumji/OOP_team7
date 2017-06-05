@@ -17,9 +17,9 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Study {
+public class Study extends MENU{
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
