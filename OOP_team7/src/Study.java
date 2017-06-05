@@ -107,10 +107,8 @@ public class Study {
 		panel.add(btnNewButton);
 		
 		JButton btn4 = new JButton("getter & setter");
-		btn4.setSize(250, 250);
 		JButton btn5 = new JButton("How to make?");
-		btn5.setSize(250, 250);
-		
+
 		JButton btnNewButton_1 = new JButton("Encapsulation");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
