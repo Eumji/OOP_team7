@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TestGame {
+public class TestGame extends MENU{
 
 	private JFrame frame;
 

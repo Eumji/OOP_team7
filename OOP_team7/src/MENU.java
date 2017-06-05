@@ -9,8 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
+import java.awt.Window;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class MENU {
+public class MENU extends JFrame{
 
 	private JFrame frame;
 
@@ -49,6 +52,12 @@ public class MENU {
 		lblMenu.setFont(new Font("Bodoni MT Black", Font.PLAIN, 40));
 		
 		JButton btnStudy = new JButton("Study");
+		btnStudy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			new TestGame().setVisible(true);
+			frame.setVisible(false);
+			}
+		});
 		btnStudy.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		
 		JButton btnTestGame = new JButton("Test Game");
@@ -75,7 +84,7 @@ public class MENU {
 					.addGap(71)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnTestGame)
-						.addComponent(btnStudy))
+						.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(125, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
