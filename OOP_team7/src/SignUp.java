@@ -4,10 +4,27 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JButton;
 
 public class SignUp extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JLabel lblNewLabel;
+	private JTextField textField_1;
+	private JLabel lblId;
+	private JTextField textField_2;
+	private JLabel lblPassword;
+	private JTextField textField_3;
+	private JLabel lblNewLabel_1;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -31,11 +48,120 @@ public class SignUp extends JFrame {
 	public SignUp() {
 		setTitle("Sign Up");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 400, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
+		JLabel lblFirstName = new JLabel("first name : ");
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		
+		lblNewLabel = new JLabel("last name : ");
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		
+		lblId = new JLabel("ID : ");
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		
+		lblPassword = new JLabel("password : ");
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		
+		lblNewLabel_1 = new JLabel("Nickname : ");
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setModel(new SpinnerNumberModel(1, 1, 12, 2));
+		
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setModel(new SpinnerNumberModel(1, 1, 31, 2));
+		
+		JLabel lblBirthDay = new JLabel("Birth day : ");
+		
+		JLabel lblMonth = new JLabel("Month : ");
+		
+		JLabel lblDay = new JLabel("Day : ");
+		
+		JButton btnSignUp = new JButton("Sign up!");
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(6)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblFirstName)
+										.addComponent(lblNewLabel)
+										.addComponent(lblId)))
+								.addComponent(lblPassword)
+								.addComponent(lblNewLabel_1))
+							.addGap(67)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(textField_4)
+								.addComponent(textField_3)
+								.addComponent(textField_2)
+								.addComponent(textField_1)
+								.addComponent(textField, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)))
+						.addComponent(lblBirthDay)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblMonth)
+							.addGap(28)
+							.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(30)
+							.addComponent(lblDay)
+							.addGap(18)
+							.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(123)
+							.addComponent(btnSignUp)))
+					.addContainerGap(26, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(18)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblFirstName)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(33)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel)
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(37)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addComponent(lblId)
+						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(30)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addComponent(lblPassword)
+						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(42)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_1)
+						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblBirthDay)
+					.addGap(18)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblMonth)
+						.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblDay)
+						.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+					.addComponent(btnSignUp))
+		);
+		contentPane.setLayout(gl_contentPane);
 	}
-
 }
