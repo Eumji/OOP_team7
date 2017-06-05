@@ -56,10 +56,10 @@ public class MENU {
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(82)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap(70, Short.MAX_VALUE)
 					.addComponent(btnStudy)
-					.addPreferredGap(ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+					.addGap(64)
 					.addComponent(btnTestGame)
 					.addGap(46))
 				.addGroup(groupLayout.createSequentialGroup()
@@ -74,8 +74,8 @@ public class MENU {
 					.addComponent(lblMenu)
 					.addGap(71)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnStudy)
-						.addComponent(btnTestGame))
+						.addComponent(btnTestGame)
+						.addComponent(btnStudy))
 					.addContainerGap(125, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
