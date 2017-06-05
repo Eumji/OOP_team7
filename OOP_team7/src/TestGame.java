@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class TestGame {
 
@@ -42,6 +43,7 @@ public class TestGame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -68,7 +70,8 @@ public class TestGame {
 		btnMatchingGame.setBounds(10, 252, 225, 177);
 		frame.getContentPane().add(btnMatchingGame);
 		
-		JButton btnBlank = new JButton("Blank");
+		JButton btnBlank = new JButton("");
+		btnBlank.setIcon(new ImageIcon("C:\\Users\\\uC6D0\uC815\uC5F0\\Desktop\\Blank.png"));
 		btnBlank.setFont(new Font("Arial", Font.BOLD, 30));
 		btnBlank.setBounds(242, 72, 225, 357);
 		frame.getContentPane().add(btnBlank);
