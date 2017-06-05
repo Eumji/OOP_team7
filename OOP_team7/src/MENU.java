@@ -54,14 +54,21 @@ public class MENU extends JFrame {
 		JButton btnStudy = new JButton("Study");
 		btnStudy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TestGame tg = new TestGame();
-				tg.frame.setVisible(true);
+				Study s = new Study();
+				s.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
 		btnStudy.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 
 		JButton btnTestGame = new JButton("Test Game");
+		btnTestGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TestGame tg = new TestGame();
+				tg.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
 		btnTestGame.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
