@@ -123,7 +123,6 @@ public class Study {
 				fr2.add(btn4);
 				fr2.add(btn5);
 				
-				
 				fr2.setSize(500, 500);
 				fr2.setVisible(true);
 				frame.setVisible(false);
