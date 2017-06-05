@@ -59,8 +59,8 @@ public class TestGame extends MENU{
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				oxGame ox = new oxGame();
-				ox.setVisible(true);
+				ox_Game ox = new ox_Game();
+				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
