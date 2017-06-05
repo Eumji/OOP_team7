@@ -99,7 +99,7 @@ public class JAVA {
 									.addGap(90)
 									.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE))))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(148)
+							.addGap(166)
 							.addComponent(label, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(110, Short.MAX_VALUE))
 		);
