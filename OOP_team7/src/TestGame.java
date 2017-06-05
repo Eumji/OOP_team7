@@ -11,9 +11,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 
-public class TestGame {
+public class TestGame extends MENU{
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -59,18 +59,21 @@ public class TestGame {
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				oxGame ox = new oxGame();
+				ox.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(10, 72, 225, 177);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnMatchingGame = new JButton("Matching");
+		JButton btnMatchingGame = new JButton("Multiple Choice");
 		btnMatchingGame.setBackground(new Color(153, 204, 204));
 		btnMatchingGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 30));
+		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 24));
 		btnMatchingGame.setBounds(10, 252, 225, 177);
 		frame.getContentPane().add(btnMatchingGame);
 		
