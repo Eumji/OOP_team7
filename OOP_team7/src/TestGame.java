@@ -8,6 +8,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class TestGame {
 
@@ -51,7 +52,8 @@ public class TestGame {
 		lblTestGame.setFont(new Font("Arial Black", Font.PLAIN, 40));
 		frame.getContentPane().add(lblTestGame);
 		
-		JButton btnNewButton = new JButton("OX");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\\uC6D0\uC815\uC5F0\\Desktop\\OX.png"));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -60,7 +62,8 @@ public class TestGame {
 		btnNewButton.setBounds(10, 72, 225, 177);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnMatchingGame = new JButton("Matching");
+		JButton btnMatchingGame = new JButton("");
+		btnMatchingGame.setIcon(new ImageIcon("C:\\Users\\\uC6D0\uC815\uC5F0\\Desktop\\Matching.png"));
 		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 30));
 		btnMatchingGame.setBounds(10, 252, 225, 177);
 		frame.getContentPane().add(btnMatchingGame);
