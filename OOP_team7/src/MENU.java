@@ -45,7 +45,7 @@ public class MENU extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JLabel lblMenu = new JLabel("MENU");
@@ -71,17 +71,30 @@ public class MENU extends JFrame {
 		});
 		btnTestGame.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING,
-						groupLayout.createSequentialGroup().addContainerGap(70, Short.MAX_VALUE).addComponent(btnStudy)
-								.addGap(64).addComponent(btnTestGame).addGap(46))
-				.addGroup(groupLayout.createSequentialGroup().addGap(145).addComponent(lblMenu).addContainerGap(152,
-						Short.MAX_VALUE)));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup().addContainerGap().addComponent(lblMenu).addGap(71)
-						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE).addComponent(btnTestGame)
-								.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(125, Short.MAX_VALUE)));
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(89)
+					.addComponent(btnStudy)
+					.addPreferredGap(ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+					.addComponent(btnTestGame)
+					.addGap(49))
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addGap(165)
+					.addComponent(lblMenu)
+					.addContainerGap(182, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(65)
+					.addComponent(lblMenu)
+					.addGap(75)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnTestGame)
+						.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(227, Short.MAX_VALUE))
+		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
 
