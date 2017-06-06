@@ -11,12 +11,15 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTextArea;
 
 public class ox_Game {
 
 	JFrame oxgame;
-	private JTextField textField;
-
+	JButton button, button_1;
+	JTextArea textArea;
+	int counter = 0;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -26,11 +29,14 @@ public class ox_Game {
 				try {
 					ox_Game window = new ox_Game();
 					window.oxgame.setVisible(true);
+					//window.question();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+		
+		
 	}
 
 	/**
@@ -63,13 +69,15 @@ public class ox_Game {
 		button_1.setFont(new Font("Arial Black", Font.PLAIN, 99));
 		button_1.setBackground(Color.BLACK);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBackground(Color.GRAY);
+		JTextArea textArea = new JTextArea();
+		textArea.setEnabled(false);
+		textArea.setEditable(false);
+		textArea.setFont(new Font("Arial", Font.BOLD, 30));
+		textArea.setForeground(Color.WHITE);
+		textArea.setBackground(Color.DARK_GRAY);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 478, Short.MAX_VALUE)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(41)
 					.addComponent(button, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
@@ -78,22 +86,33 @@ public class ox_Game {
 					.addGap(46))
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(textField, GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+					.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
 					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 444, Short.MAX_VALUE)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(32)
-					.addComponent(textField, GroupLayout.PREFERRED_SIZE, 154, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+					.addContainerGap()
+					.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+					.addGap(18)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
 						.addComponent(button, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE))
 					.addGap(42))
 		);
 		panel.setLayout(gl_panel);
+		
+		/*ox_question question = new ox_question();
+		textArea.setText(question.ox_quiz.get(counter));*/
+		
 	}
-
+	
+	/*public void question(){
+		ox_question question = new ox_question();
+		//문제 내기
+		textArea.setText(question.ox_quiz.get(counter));
+		
+			
+		
+	}*/
 }

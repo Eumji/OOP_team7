@@ -58,10 +58,12 @@ public class TestGame extends MENU{
 		btnNewButton.setBackground(new Color(153, 204, 204));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {//ox ´©¸£¸é
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
+				
+				
 			}
 		});
 		btnNewButton.setBounds(10, 72, 225, 177);
@@ -82,5 +84,18 @@ public class TestGame extends MENU{
 		btnBlank.setFont(new Font("Arial", Font.BOLD, 30));
 		btnBlank.setBounds(242, 72, 225, 357);
 		frame.getContentPane().add(btnBlank);
+		
+		JButton btnHome = new JButton("menu");
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MENU home = new MENU();
+				home.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
+		btnHome.setBackground(new Color(100, 149, 237));
+		btnHome.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		btnHome.setBounds(17, 15, 78, 29);
+		frame.getContentPane().add(btnHome);
 	}
 }
