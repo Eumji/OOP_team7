@@ -5,8 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import ajou.ac.kr.jihye.lab12.Student;
-
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -17,26 +15,28 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class SignUp extends JFrame {
+public class SignUp extends JFrame implements Serializable{
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JLabel lblNewLabel;
-	private JTextField textField_1;
+	private JTextField textName;
+	private JTextField textID;
 	private JLabel lblId;
-	private JTextField textField_2;
 	private JLabel lblPassword;
-	private JTextField textField_3;
+	private JTextField textPW;
 	private JLabel lblNewLabel_1;
-	private JTextField textField_4;
-
+	private JTextField textNN;
+	private JSpinner spinnerD, spinnerM;
+	private boolean IDchk=false;
 	/**
 	 * Launch the application.
 	 */
@@ -64,36 +64,29 @@ public class SignUp extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblFirstName = new JLabel("first name : ");
+		textName = new JTextField();
+		textName.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		
-		lblNewLabel = new JLabel("last name : ");
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		textID = new JTextField();
+		textID.setColumns(10);
 		
 		lblId = new JLabel("ID : ");
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		
 		lblPassword = new JLabel("password : ");
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
+		textPW = new JTextField();
+		textPW.setColumns(10);
 		
 		lblNewLabel_1 = new JLabel("Nickname : ");
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
+		textNN = new JTextField();
+		textNN.setColumns(10);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(1, 1, 12, 1));
+		spinnerM = new JSpinner();
+		spinnerM.setModel(new SpinnerNumberModel(1, 1, 12, 1));
 		
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setModel(new SpinnerNumberModel(1, 1, 31, 1));
+		spinnerD = new JSpinner();
+		spinnerD.setModel(new SpinnerNumberModel(1, 1, 31, 1));
 		
 		JLabel lblBirthDay = new JLabel("Birth day : ");
 		
@@ -104,7 +97,20 @@ public class SignUp extends JFrame {
 		JButton btnSignUp = new JButton("Sign up!");
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				SignUp su = new SignUp();
+				if(IDchk==false){
+		            JOptionPane.showMessageDialog(null, "Error: Please do ID overlap check");
+				}
+				else if(textName.getText().equals("")||textID.getText().equals("")||textPW.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Error: Please input");
+				}
+				else{
+					ArrayList<People> alp = new ArrayList<>();
+					alp = su.loadFromCSV();
+					alp.add(new People(textName.getText(), textID.getText(), textPW.getText(),textNN.getText(), (int)spinnerM.getValue(), (int)spinnerD.getValue()));
+					su.saveToCSV(alp);
+					JOptionPane.showMessageDialog(null, textNN.getText()+ ", congratulation! Enjoy:)");
+				}
 			}
 		});
 		
@@ -118,6 +124,25 @@ public class SignUp extends JFrame {
 			}
 			
 		});
+		
+		JLabel lblName = new JLabel("Name : ");
+		
+		JButton btnId = new JButton("ID Overlap check");
+		btnId.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SignUp s = new SignUp();
+				ArrayList<People> p=s.loadFromCSV();
+				boolean isIDex=false;
+				for(People person : p){
+					if(person.getID().equals(textID.getText())==true){
+						isIDex=true;
+						break;
+					}
+				}
+				if(isIDex==true) JOptionPane.showMessageDialog(null, "Someone use this ID;(\n input another ID please");
+				else {JOptionPane.showMessageDialog(null, "You can use it! great ID:)"); IDchk = true;}				
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -125,71 +150,77 @@ public class SignUp extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(6)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(lblFirstName)
-										.addComponent(lblNewLabel)
-										.addComponent(lblId)))
 								.addComponent(lblPassword)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addContainerGap()
+									.addComponent(lblName))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addContainerGap()
+									.addComponent(lblId))
 								.addComponent(lblNewLabel_1))
-							.addGap(67)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(textField_4)
-								.addComponent(textField_3)
-								.addComponent(textField_2)
-								.addComponent(textField_1)
-								.addComponent(textField, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)))
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+									.addGap(45)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(textID, 190, 190, 190)
+										.addComponent(textName, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(textNN, Alignment.TRAILING)
+										.addComponent(textPW, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))))
 						.addComponent(lblBirthDay)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblMonth)
 							.addGap(28)
-							.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(spinnerM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(30)
 							.addComponent(lblDay)
 							.addGap(18)
-							.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(26, Short.MAX_VALUE))
+							.addComponent(spinnerD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(34, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(51)
 					.addComponent(btnSignUp)
 					.addPreferredGap(ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
 					.addComponent(btnCancel)
 					.addGap(64))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(84)
+					.addComponent(btnId)
+					.addContainerGap(115, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblFirstName)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblName)
+						.addComponent(textName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(33)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(37)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblId)
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(30)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addComponent(textID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(27)
+					.addComponent(btnId)
+					.addGap(38)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblPassword)
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textPW, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(42)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_1)
-						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(textNN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(21)
 					.addComponent(lblBirthDay)
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblMonth)
-						.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(spinnerM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblDay)
-						.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+						.addComponent(spinnerD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnSignUp)
 						.addComponent(btnCancel)))
@@ -197,18 +228,40 @@ public class SignUp extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 	}
 	
-	public void saveToCSV(ArrayList<Student> students){
+	public void saveToCSV(ArrayList<People> people){
 		 try{
-	        File f=new File("students.csv");
+	        File f=new File("people.txt");
 	        FileWriter fw = new FileWriter(f);
 	        BufferedWriter bw = new BufferedWriter(fw);
-	        for(Student s : students){
-	            bw.write(s.getfirstName() + ";" + s.getlastName() +";" + s.getgender() + ";" + s.getage() +";" + s.getsemester()+"\n");
+	        for(People p : people){
+	            bw.write(p.getName() + ";" + p.getID() + ";" +p.getpassword() +";" + p.getnickname()+";"+p.getmonth()+";"+p.getday()+"\n");
 	        }
 	       
 	        bw.close();
 	     }catch(IOException e){
 	            e.printStackTrace();
 	     }
+	}
+	
+	
+	public ArrayList<People> loadFromCSV(){	
+		ArrayList<People> lp = new ArrayList<>();
+        try{
+            File f=new File("people.txt");
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            
+            String s;
+            while((s = br.readLine()) != null) {
+                String[] line = s.split(";");
+                lp.add(new People(line[0],line[1],line[2],line[3],Integer.parseInt(line[4]),Integer.parseInt(line[5])));
+            }
+            
+            br.close();
+            }catch(IOException e){
+                e.printStackTrace();
+        }
+        return lp;
+	
 	}
 }

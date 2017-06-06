@@ -2,16 +2,14 @@
 public class People {
 
 	
-	private String firstName;
-	private String lastName;
+	private String Name;
 	private String ID;
 	private String password;
 	private String nickname;
 	private int month;
 	private int day;
-	public People(String ID, String firstName, String lastName, String password, String nickname, int month, int day){
-        this.firstName=firstName;
-        this.lastName=lastName;
+	public People(String Name, String ID, String password, String nickname, int month, int day){
+        this.Name=Name;
         this.ID = ID;
         this.password = password;
         this.nickname = nickname;
@@ -19,11 +17,8 @@ public class People {
         this.day = day;
 	}
 	
-	public void setfirstName(String firstName){this.firstName=firstName;}
-	public String getfirstName(){return firstName;}
-	
-	public void setlastName(String lastName){this.lastName=lastName;}
-	public String getlastName(){return lastName;}
+	public void setName(String firstName){this.Name=firstName;}
+	public String getName(){return Name;}
 	
 	public void setID(String ID){this.ID=ID;}
 	public String getID(){return ID;}
