@@ -4,10 +4,17 @@ import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class JAVA {
@@ -15,10 +22,19 @@ public class JAVA {
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	private String Nickname;
 
 	/**
 	 * Launch the application.
 	 */
+	
+	public String getNickname(){
+		return Nickname;
+	}
+	public void setNickname(String Nickname){
+		this.Nickname = Nickname;
+	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -72,9 +88,36 @@ public class JAVA {
 		JButton button_1 = new JButton("login");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MENU m = new MENU();
-				m.frame.setVisible(true);
-				frame.setVisible(false);
+				SignUp su = new SignUp();
+				ArrayList<People> people = new ArrayList<>();
+				people = su.loadFromCSV();
+				
+				boolean loginPW = false;
+				boolean loginID=false;
+				for(People p : people){
+					if(p.getID().equals(textField.getText())==true){
+						loginID = true;
+						if(p.getpassword().equals(textField_1.getText())==true)
+							loginPW=true;
+						Nickname = p.getnickname();
+						break;
+					}
+				}
+				
+				
+				if(loginID==false){
+					JOptionPane.showMessageDialog(null, "ID is not available");
+				}
+				else if(loginPW==false){
+					JOptionPane.showMessageDialog(null, "password wrong;(");	
+				}
+
+				else{
+					JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
+					MENU m = new MENU();
+					m.frame.setVisible(true);
+					frame.setVisible(false);
+					}
 			}
 		});
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
