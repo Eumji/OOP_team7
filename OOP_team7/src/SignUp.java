@@ -4,14 +4,25 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import ajou.ac.kr.jihye.lab12.Student;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
 
 public class SignUp extends JFrame {
 
@@ -91,6 +102,22 @@ public class SignUp extends JFrame {
 		JLabel lblDay = new JLabel("Day : ");
 		
 		JButton btnSignUp = new JButton("Sign up!");
+		btnSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int result = JOptionPane.showConfirmDialog(null, "Are you sure?", "Exit", JOptionPane.YES_NO_OPTION);
+				if (result == JOptionPane.YES_OPTION) {
+					setVisible(false);
+				}
+			}
+			
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -122,11 +149,14 @@ public class SignUp extends JFrame {
 							.addGap(30)
 							.addComponent(lblDay)
 							.addGap(18)
-							.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(123)
-							.addComponent(btnSignUp)))
+							.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(26, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(51)
+					.addComponent(btnSignUp)
+					.addPreferredGap(ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+					.addComponent(btnCancel)
+					.addGap(64))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -160,8 +190,25 @@ public class SignUp extends JFrame {
 						.addComponent(lblDay)
 						.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-					.addComponent(btnSignUp))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnSignUp)
+						.addComponent(btnCancel)))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+	
+	public void saveToCSV(ArrayList<Student> students){
+		 try{
+	        File f=new File("students.csv");
+	        FileWriter fw = new FileWriter(f);
+	        BufferedWriter bw = new BufferedWriter(fw);
+	        for(Student s : students){
+	            bw.write(s.getfirstName() + ";" + s.getlastName() +";" + s.getgender() + ";" + s.getage() +";" + s.getsemester()+"\n");
+	        }
+	       
+	        bw.close();
+	     }catch(IOException e){
+	            e.printStackTrace();
+	     }
 	}
 }
