@@ -20,8 +20,6 @@ public class ox_solution{
 
 	JFrame frame;
 	JTextArea textArea;
-	ox_question oxq = new ox_question();
-	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
 	
 
 	/**
@@ -57,6 +55,7 @@ public class ox_solution{
 		frame.getContentPane().setLayout(null);
 		
 		textArea = new JTextArea();
+		textArea.setForeground(Color.BLACK);
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.setForeground(Color.WHITE);
@@ -64,17 +63,13 @@ public class ox_solution{
 		btnNewButton.setBounds(829, 876, 132, 53);
 		frame.getContentPane().add(btnNewButton);
 		textArea.setLineWrap(true);
-		textArea.setEnabled(false);
 		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 30));
+		textArea.setFont(new Font("Arial", Font.PLAIN, 40));
 		textArea.setBounds(0, 0, 978, 944);
 		
 		frame.getContentPane().add(textArea);
 		
-		if(ox_isCorrect == true)
-			textArea.setBackground(Color.GREEN);
-		else
-			textArea.setBackground(Color.RED);
+		
 		
 	}
 

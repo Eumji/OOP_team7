@@ -79,8 +79,7 @@ public class ox_Game {
 				else
 					oxs.textArea.setBackground(Color.RED);
 
-				
-				//oxs.solution = new String(solution.get(oxcounter));
+				oxs.textArea.setText(solution.get(oxcounter));
 
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
@@ -109,8 +108,8 @@ public class ox_Game {
 					oxs.textArea.setBackground(Color.GREEN);
 				else
 					oxs.textArea.setBackground(Color.RED);
-				
-				//oxs.solution = new String(solution.get(oxcounter));
+
+				oxs.textArea.setText(solution.get(oxcounter));
 
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
