@@ -24,6 +24,9 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class SignUp extends JFrame implements Serializable{
 
@@ -32,11 +35,15 @@ public class SignUp extends JFrame implements Serializable{
 	private JTextField textID;
 	private JLabel lblId;
 	private JLabel lblPassword;
-	private JTextField textPW;
 	private JLabel lblNewLabel_1;
 	private JTextField textNN;
 	private JSpinner spinnerD, spinnerM;
 	private boolean IDchk=false;
+	private boolean PWC=false;
+	private JPasswordField textPW;
+	private JPasswordField textPW1;
+	private JLabel lblPWC;
+	private String PW, PW1;
 	/**
 	 * Launch the application.
 	 */
@@ -58,7 +65,6 @@ public class SignUp extends JFrame implements Serializable{
 	 */
 	public SignUp() {
 		setTitle("Sign Up");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -73,9 +79,6 @@ public class SignUp extends JFrame implements Serializable{
 		lblId = new JLabel("ID : ");
 		
 		lblPassword = new JLabel("password : ");
-		
-		textPW = new JTextField();
-		textPW.setColumns(10);
 		
 		lblNewLabel_1 = new JLabel("Nickname : ");
 		
@@ -104,12 +107,17 @@ public class SignUp extends JFrame implements Serializable{
 				else if(textName.getText().equals("")||textID.getText().equals("")||textPW.getText().equals("")){
 					JOptionPane.showMessageDialog(null, "Error: Please input");
 				}
+				else if(textPW.getPassword().equals(textPW1.getPassword())){
+					JOptionPane.showMessageDialog(null, "Error: password is wrong");
+				}
+					
 				else{
 					ArrayList<People> alp = new ArrayList<>();
 					alp = su.loadFromCSV();
 					alp.add(new People(textName.getText(), textID.getText(), textPW.getText(),textNN.getText(), (int)spinnerM.getValue(), (int)spinnerD.getValue()));
 					su.saveToCSV(alp);
 					JOptionPane.showMessageDialog(null, textNN.getText()+ ", congratulation! Enjoy:)");
+					setVisible(false);
 				}
 			}
 		});
@@ -143,43 +151,37 @@ public class SignUp extends JFrame implements Serializable{
 				else {JOptionPane.showMessageDialog(null, "You can use it! great ID:)"); IDchk = true;}				
 			}
 		});
+		
+		textPW = new JPasswordField();
+		textPW.addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent k) {
+				String s1, s2; s1=textPW.getText(); s2=textPW1.getText();
+				char c=k.getKeyChar();
+				s1+=c;
+				if(s1.equals(s2)==false)lblPWC.setText("wrong password");
+				else lblPWC.setText("password correct!");
+			}
+		});
+		
+		JLabel lblPasswordChek = new JLabel("password chek :");
+		
+		textPW1 = new JPasswordField();
+		textPW1.addKeyListener(new KeyAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void keyPressed(KeyEvent k) {
+				String s1, s2; s1=textPW.getText(); s2=textPW1.getText();
+				char c=k.getKeyChar();
+				s2+=c;
+				if(s1.equals(s2)==false)lblPWC.setText("wrong password");
+				else lblPWC.setText("password correct!");
+			}
+		});
+		
+		lblPWC = new JLabel("");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblPassword)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addContainerGap()
-									.addComponent(lblName))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addContainerGap()
-									.addComponent(lblId))
-								.addComponent(lblNewLabel_1))
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-									.addGap(45)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(textID, 190, 190, 190)
-										.addComponent(textName, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(textNN, Alignment.TRAILING)
-										.addComponent(textPW, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))))
-						.addComponent(lblBirthDay)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblMonth)
-							.addGap(28)
-							.addComponent(spinnerM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(30)
-							.addComponent(lblDay)
-							.addGap(18)
-							.addComponent(spinnerD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(34, Short.MAX_VALUE))
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(51)
 					.addComponent(btnSignUp)
@@ -187,9 +189,54 @@ public class SignUp extends JFrame implements Serializable{
 					.addComponent(btnCancel)
 					.addGap(64))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(84)
+					.addGap(80)
 					.addComponent(btnId)
-					.addContainerGap(115, Short.MAX_VALUE))
+					.addContainerGap(119, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblMonth)
+							.addGap(39)
+							.addComponent(spinnerM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(39)
+							.addComponent(lblDay)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(spinnerD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+							.addComponent(lblPWC)
+							.addComponent(lblBirthDay)))
+					.addContainerGap(32, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblName))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblId))
+						.addComponent(lblPassword)
+						.addComponent(lblNewLabel_1))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(45)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(textID, 190, 190, 190)
+										.addComponent(textName, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(54)
+									.addComponent(textNN, GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
+							.addGap(2))
+						.addComponent(textPW, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE))
+					.addGap(32))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addComponent(lblPasswordChek)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textPW1, GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+					.addGap(32))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -202,25 +249,31 @@ public class SignUp extends JFrame implements Serializable{
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblId)
 						.addComponent(textID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(27)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnId)
-					.addGap(38)
+					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblPassword)
 						.addComponent(textPW, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(42)
+					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(textNN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(21)
+						.addComponent(lblPasswordChek)
+						.addComponent(textPW1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(lblPWC)
+					.addGap(22)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(textNN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_1))
+					.addGap(18)
 					.addComponent(lblBirthDay)
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblMonth)
-						.addComponent(spinnerM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblDay)
-						.addComponent(spinnerD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+						.addComponent(spinnerD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblMonth)
+						.addComponent(spinnerM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnSignUp)
 						.addComponent(btnCancel)))
