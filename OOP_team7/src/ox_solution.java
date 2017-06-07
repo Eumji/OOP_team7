@@ -3,12 +3,26 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.Font;
+import java.util.ArrayList;
 import java.awt.Color;
+import javax.swing.JButton;
 
 public class ox_solution{
 
 	boolean ox_isCorrect;
+	public boolean isOx_isCorrect() {
+		return ox_isCorrect;
+	}
+
+	public void setOx_isCorrect(boolean ox_isCorrect) {
+		this.ox_isCorrect = ox_isCorrect;
+	}
+
 	JFrame frame;
+	JTextArea textArea;
+	ox_question oxq = new ox_question();
+	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
+	
 
 	/**
 	 * Launch the application.
@@ -42,17 +56,26 @@ public class ox_solution{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JTextArea textArea = new JTextArea();
-		if(ox_isCorrect == true)
-			textArea.setBackground(Color.GREEN);
-		else
-			textArea.setBackground(Color.RED);
+		textArea = new JTextArea();
+		JButton btnNewButton = new JButton("Next");
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setBounds(829, 876, 132, 53);
+		frame.getContentPane().add(btnNewButton);
 		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.PLAIN, 30));
 		textArea.setBounds(0, 0, 978, 944);
+		
 		frame.getContentPane().add(textArea);
+		
+		if(ox_isCorrect == true)
+			textArea.setBackground(Color.GREEN);
+		else
+			textArea.setBackground(Color.RED);
+		
 	}
 
 }

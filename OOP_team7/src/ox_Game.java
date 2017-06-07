@@ -22,7 +22,6 @@ import java.awt.event.ActionEvent;
 public class ox_Game {
 	
 	int oxcounter = 0;
-	ox_solution ans = new ox_solution();
 
 	JFrame oxgame;
 	JButton button, button_1;
@@ -31,7 +30,6 @@ public class ox_Game {
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
-	
 	
 	/**
 	 * Launch the application.
@@ -75,12 +73,15 @@ public class ox_Game {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//"O" ´­·¶À» ¶§
-				if(answer.get(oxcounter).equals("O"))
-					ans.ox_isCorrect = true;
-				else
-					ans.ox_isCorrect = false;
-
 				ox_solution oxs = new ox_solution();
+				if(answer.get(oxcounter).equals("O"))
+					oxs.textArea.setBackground(Color.GREEN);
+				else
+					oxs.textArea.setBackground(Color.RED);
+
+				
+				//oxs.solution = new String(solution.get(oxcounter));
+
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 				
@@ -103,12 +104,14 @@ public class ox_Game {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//"X" ´­·¶À» ¶§
-				if(answer.get(oxcounter).equals("X"))
-					ans.ox_isCorrect = true;
-				else
-					ans.ox_isCorrect = false;
-
 				ox_solution oxs = new ox_solution();
+				if(answer.get(oxcounter).equals("X"))
+					oxs.textArea.setBackground(Color.GREEN);
+				else
+					oxs.textArea.setBackground(Color.RED);
+				
+				//oxs.solution = new String(solution.get(oxcounter));
+
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 			}
@@ -205,7 +208,6 @@ public class ox_Game {
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
 		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_9);
-		
 		
 	}
 }
