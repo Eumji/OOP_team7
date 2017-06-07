@@ -6,9 +6,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Color;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -27,6 +30,8 @@ import java.io.ObjectInputStream;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Variable extends JFrame {
 
@@ -107,7 +112,7 @@ public class Variable extends JFrame {
 		JMenuItem mntmHowToMake = new JMenuItem("How to make?");
 		mnEncapsultion.add(mntmHowToMake);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(245, 255, 250));
+		contentPane.setBackground(new Color(255, 250, 250));
 		contentPane.setForeground(new Color(144, 238, 144));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -116,23 +121,76 @@ public class Variable extends JFrame {
 		panel.setBackground(new Color(245, 255, 250));
 		panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
+		
+		ImageIcon img = new ImageIcon("vd.jpg");
+		ImageIcon img2 = new ImageIcon("range.jpg");
+		ImageIcon img3 = new ImageIcon("rv.jpg");
+		
+		JLabel lblNewLabel = new JLabel("Variable Declaration");
+		lblNewLabel.setForeground(new Color(106, 90, 205));
+		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
+		
+		JLabel lblNewLabel_1 = new JLabel(img);
+		
+		
+		JLabel lblNewLabel_2 = new JLabel("Variable 's Range and Memory");
+		lblNewLabel_2.setForeground(new Color(106, 90, 205));
+		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
+		
+		JLabel lblNewLabel_3 = new JLabel(img2);
+		
+		
+		JLabel lblNewLabel_4 = new JLabel(img3);
+		
+		
+		JLabel lblReferenceTypeVariable = new JLabel("Reference Type Variable");
+		lblReferenceTypeVariable.setForeground(new Color(106, 90, 205));
+		lblReferenceTypeVariable.setFont(new Font("Corbel", Font.PLAIN, 25));
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel)
+						.addComponent(lblNewLabel_1))
+					.addGap(123)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel_4)
+						.addComponent(lblReferenceTypeVariable))
+					.addContainerGap(379, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(lblNewLabel_2)
+					.addContainerGap())
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(lblNewLabel_3)
+					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 440, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(412, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 383, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblReferenceTypeVariable)
+						.addComponent(lblNewLabel))
+					.addGap(1)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_1)
+						.addComponent(lblNewLabel_4))
+					.addGap(2)
+					.addComponent(lblNewLabel_2)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_3)
+					.addContainerGap(306, Short.MAX_VALUE))
 		);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(240, 255, 240));
+		textArea.setBackground(new Color(245, 255, 250));
 		textArea.setEditable(false);
 		textArea.setForeground(Color.BLACK);
-		textArea.setFont(new Font("Calibri", Font.PLAIN, 21));
+		textArea.setFont(new Font("Segoe Print", Font.PLAIN, 22));
 		panel.add(textArea);
 		contentPane.setLayout(gl_contentPane);
 
@@ -160,9 +218,10 @@ public class Variable extends JFrame {
 			e1.printStackTrace();
 		}
 		
+		textArea.setCaretPosition(0);
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(0, 0, 10, 10);
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
