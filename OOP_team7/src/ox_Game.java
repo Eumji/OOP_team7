@@ -16,14 +16,21 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class ox_Game {
+	
+	int oxcounter = 0;
 
 	JFrame oxgame;
 	JButton button, button_1;
 	JTextArea textArea;
-	int counter = 0;
+	ox_question oxq = new ox_question();
+	private ArrayList<String> question = new ArrayList<String>(oxq.question());
+	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
+	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
+	
 	
 	/**
 	 * Launch the application.
@@ -34,7 +41,6 @@ public class ox_Game {
 				try {
 					ox_Game window = new ox_Game();
 					window.oxgame.setVisible(true);
-					//window.question();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -75,6 +81,8 @@ public class ox_Game {
 		textArea.setFont(new Font("Arial", Font.BOLD, 50));
 		textArea.setForeground(Color.WHITE);
 		textArea.setBackground(Color.DARK_GRAY);
+		
+		textArea.setText(question.get(oxcounter));
 		
 		JButton button_2 = new JButton("X");
 		button_2.setForeground(Color.RED);
@@ -170,8 +178,6 @@ public class ox_Game {
 		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_9);
 		
-		/*ox_question question = new ox_question();
-		textArea.setText(question.ox_quiz.get(counter));*/
 		
 	}
 }
