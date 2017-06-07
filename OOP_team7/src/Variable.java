@@ -97,9 +97,15 @@ public class Variable extends JFrame {
 
 		JMenuItem mntmModifier = new JMenuItem("Modifier");
 		mnBasic.add(mntmModifier);
-
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Variable");
-		mnBasic.add(mntmNewMenuItem_3);
+		
+		JMenu mnEncapsultion = new JMenu("Encapsultion");
+		menuBar.add(mnEncapsultion);
+		
+		JMenuItem mntmGetterSetter = new JMenuItem("Getter & Setter");
+		mnEncapsultion.add(mntmGetterSetter);
+		
+		JMenuItem mntmHowToMake = new JMenuItem("How to make?");
+		mnEncapsultion.add(mntmHowToMake);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(245, 255, 250));
 		contentPane.setForeground(new Color(144, 238, 144));
@@ -123,9 +129,13 @@ public class Variable extends JFrame {
 		);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setBackground(new Color(240, 255, 240));
+		textArea.setEditable(false);
+		textArea.setForeground(Color.BLACK);
+		textArea.setFont(new Font("Calibri", Font.PLAIN, 21));
 		panel.add(textArea);
 		contentPane.setLayout(gl_contentPane);
-		
+
 		File VariF = new File("Variable.txt");
 
 		FileReader Varifr;
@@ -152,6 +162,7 @@ public class Variable extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(0, 0, 10, 10);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
