@@ -22,6 +22,7 @@ import java.awt.event.ActionEvent;
 public class ox_Game {
 	
 	int oxcounter = 0;
+	ox_solution ans = new ox_solution();
 
 	JFrame oxgame;
 	JButton button, button_1;
@@ -71,6 +72,20 @@ public class ox_Game {
 		oxgame.getContentPane().add(panel, BorderLayout.CENTER);
 		
 		JButton button = new JButton("O");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//"O" ´­·¶À» ¶§
+				if(answer.get(oxcounter).equals("O"))
+					ans.ox_isCorrect = true;
+				else
+					ans.ox_isCorrect = false;
+
+				ox_solution oxs = new ox_solution();
+				oxs.frame.setVisible(true);
+				oxgame.setVisible(false);
+				
+			}
+		});
 		button.setForeground(Color.GREEN);
 		button.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button.setBackground(Color.BLACK);
@@ -85,6 +100,19 @@ public class ox_Game {
 		textArea.setText(question.get(oxcounter));
 		
 		JButton button_2 = new JButton("X");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//"X" ´­·¶À» ¶§
+				if(answer.get(oxcounter).equals("X"))
+					ans.ox_isCorrect = true;
+				else
+					ans.ox_isCorrect = false;
+
+				ox_solution oxs = new ox_solution();
+				oxs.frame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		button_2.setForeground(Color.RED);
 		button_2.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button_2.setBackground(Color.BLACK);
