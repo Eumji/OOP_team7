@@ -3,37 +3,70 @@ import java.util.ArrayList;
 
 public class ox_question {
 	
-	public static ArrayList<String> ox_quiz, ox_answer;
-	
-	public static void main(String arg[]){
-		
+	public ArrayList<String> question(){
+		ArrayList<String> ox_quiz;
 		BufferedReader br = null;
-		BufferedReader br2 = null;
 		ox_quiz = new ArrayList<String>();
-		ox_answer = new ArrayList<String>();
 		try{
 			br = new BufferedReader(new FileReader("ox_question.txt"));
-			br2 = new BufferedReader(new FileReader("ox_answer.txt"));
 			String line;
 			
 			while((line = br.readLine())!=null){
 				ox_quiz.add(line);
 			}
-			while((line = br2.readLine())!=null){
-				ox_answer.add(line);
-			}
 			
 			
 		br.close();
-		br2.close();
 		}catch(FileNotFoundException fnfe){
 			System.out.println("File is not found.");
 		}catch(IOException ioe){
 			System.out.println("File input//output error.");
 		}
-		
-		System.out.println(ox_quiz);
-		System.out.println(ox_answer);
-	}//main
+		return ox_quiz;
+	}
+	
+	public ArrayList<String> answer(){
+		ArrayList<String> ox_quiz;
+		BufferedReader br = null;
+		ox_quiz = new ArrayList<String>();
+		try{
+			br = new BufferedReader(new FileReader("ox_answer.txt"));
+			String line;
+			
+			while((line = br.readLine())!=null){
+				ox_quiz.add(line);
+			}
+			
+			
+		br.close();
+		}catch(FileNotFoundException fnfe){
+			System.out.println("File is not found.");
+		}catch(IOException ioe){
+			System.out.println("File input//output error.");
+		}
+		return ox_quiz;
+	}
+	
+	public ArrayList<String> solution(){
+		ArrayList<String> ox_quiz;
+		BufferedReader br = null;
+		ox_quiz = new ArrayList<String>();
+		try{
+			br = new BufferedReader(new FileReader("ox_solution.txt"));
+			String line;
+			
+			while((line = br.readLine())!=null){
+				ox_quiz.add(line);
+			}
+			
+			
+		br.close();
+		}catch(FileNotFoundException fnfe){
+			System.out.println("File is not found.");
+		}catch(IOException ioe){
+			System.out.println("File input//output error.");
+		}
+		return ox_quiz;
+	}
 
 }
