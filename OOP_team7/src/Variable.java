@@ -108,6 +108,13 @@ public class Variable extends JFrame {
 		mnBasic.add(mntmNewMenuItem_2);
 
 		JMenuItem mntmModifier = new JMenuItem("Modifier");
+		mntmModifier.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Modifier mf = new Modifier();
+				mf.setVisible(true);
+				setVisible(false);
+			}
+		});
 		mnBasic.add(mntmModifier);
 		
 		JMenu mnEncapsultion = new JMenu("Encapsultion");
