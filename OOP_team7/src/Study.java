@@ -49,35 +49,55 @@ public class Study extends MENU{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 500, 500);
+		frame.getContentPane().setBackground(new Color(135, 206, 235));
+		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblStudy = new JLabel("STUDY");
-		lblStudy.setFont(new Font("±¼¸²", Font.PLAIN, 50));
+		lblStudy.setForeground(Color.DARK_GRAY);
+		lblStudy.setFont(new Font("Arial", Font.PLAIN, 55));
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		
+		JButton btnMenu = new JButton("MENU");
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				MENU menu = new MENU();
+				menu.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
+		btnMenu.setBackground(new Color(240, 248, 255));
+		btnMenu.setFont(new Font("Arial", Font.PLAIN, 40));
+		btnMenu.setForeground(new Color(30, 144, 255));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(20)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 917, Short.MAX_VALUE)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(132)
-							.addComponent(lblStudy))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(20)
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 438, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
+							.addGap(213)
+							.addComponent(lblStudy)))
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblStudy)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnMenu)
+							.addGap(36))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblStudy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)))
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 744, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(48, Short.MAX_VALUE))
 		);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -89,50 +109,33 @@ public class Study extends MENU{
 	
 		
 		JButton btnNewButton = new JButton("Basic");
+		btnNewButton.setBackground(new Color(240, 248, 255));
+		btnNewButton.setForeground(new Color(30, 144, 255));
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 50));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				JFrame fr1 = new JFrame("Basic menu");
-				
-				fr1.setBounds(100, 100, 500, 500);
-				fr1.setLayout(new GridLayout());
-				
-				fr1.add(btn1);
-				fr1.add(btn2);
-				fr1.add(btn3);
-				
-				fr1.setSize(500, 500);
-				fr1.setVisible(true);
-				
+				BasicMenu bm = new BasicMenu();
+				bm.setVisible(true);
 				frame.setVisible(false);
-				
 			}
 		});
 		panel.add(btnNewButton);
 		
-		JButton btn4 = new JButton("getter & setter");
-		btn4.setSize(200, 200);
-		JButton btn5 = new JButton("How to make?");
 
 		JButton btnNewButton_1 = new JButton("Encapsulation");
+		btnNewButton_1.setBackground(new Color(240, 248, 255));
+		btnNewButton_1.setForeground(new Color(30, 144, 255));
+		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 50));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				JFrame fr2 = new JFrame("encapsulation");
-				fr2.setBounds(100,100,500,500);
-				
-				fr2.setLayout(new GridLayout());
-				fr2.add(btn4);
-				fr2.add(btn5);
-				
-				
-				fr2.setSize(500, 500);
-				fr2.setVisible(true);
+				EncapsulationMenu em = new EncapsulationMenu();
+				em.setVisible(true);
 				frame.setVisible(false);
+
 			}
 		});
 		panel.add(btnNewButton_1);
 		frame.getContentPane().setLayout(groupLayout);
 	}
-
 }

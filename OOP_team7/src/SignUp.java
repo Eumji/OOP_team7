@@ -163,7 +163,7 @@ public class SignUp extends JFrame implements Serializable{
 			}
 		});
 		
-		JLabel lblPasswordChek = new JLabel("password chek :");
+		JLabel lblPasswordChek = new JLabel("password check :");
 		
 		textPW1 = new JPasswordField();
 		textPW1.addKeyListener(new KeyAdapter() {
@@ -173,7 +173,9 @@ public class SignUp extends JFrame implements Serializable{
 				String s1, s2; s1=textPW.getText(); s2=textPW1.getText();
 				char c=k.getKeyChar();
 				s2+=c;
-				if(s1.equals(s2)==false)lblPWC.setText("wrong password");
+				if(s1.equals(s2)==false){
+					lblPWC.setText("wrong password");
+				}
 				else lblPWC.setText("password correct!");
 			}
 		});
