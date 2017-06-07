@@ -53,7 +53,6 @@ public class BasicMenu extends JFrame {
 				MENU m = new MENU();
 				m.frame.setVisible(true);
 				setVisible(false);
-				
 			}
 		});
 		btnNewButton.setBackground(new Color(240, 248, 255));

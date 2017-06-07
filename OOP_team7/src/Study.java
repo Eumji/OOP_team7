@@ -67,7 +67,6 @@ public class Study extends MENU{
 				MENU menu = new MENU();
 				menu.frame.setVisible(true);
 				frame.setVisible(false);
-				
 			}
 		});
 		btnMenu.setBackground(new Color(240, 248, 255));
