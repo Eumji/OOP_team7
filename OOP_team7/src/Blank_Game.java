@@ -13,6 +13,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -28,6 +33,8 @@ public class Blank_Game {
 
 	JFrame frame;
 	private JTextField textField;
+	boolean isright = false;
+	int problemnum=1;
 
 	/**
 	 * Launch the application.
@@ -92,7 +99,11 @@ public class Blank_Game {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				Blank_question bq = new Blank_question();
+				String s = bq.answer(problemnum);
+				if(textField.getText().equals(s)){
+					
+				}
 			}
 		});
 		btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));
@@ -180,4 +191,5 @@ public class Blank_Game {
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
 		mnQuestion.add(mntmNo_9);
 	}
+	
 }
