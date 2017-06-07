@@ -139,6 +139,7 @@ public class Variable extends JFrame {
 				line = br.readLine();
 				textArea.append(line);
 				textArea.append("\n");
+				
 			} while (line != null);
 
 		} catch (FileNotFoundException e1) {
