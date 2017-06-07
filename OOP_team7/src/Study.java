@@ -129,7 +129,9 @@ public class Study extends MENU{
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 50));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				EncapsulationMenu em = new EncapsulationMenu();
+				em.setVisible(true);
+				frame.setVisible(false);
 
 			}
 		});
