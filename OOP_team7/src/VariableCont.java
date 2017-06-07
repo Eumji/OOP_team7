@@ -63,7 +63,7 @@ public class VariableCont extends JFrame {
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU D = new MENU();
-				D.setVisible(true);
+				D.frame.setVisible(true);
 				setVisible(false);
 				
 			}
