@@ -80,6 +80,13 @@ public class TestGame extends MENU{
 		frame.getContentPane().add(btnMatchingGame);
 		
 		JButton btnBlank = new JButton("Blank");
+		btnBlank.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Blank_Game bg = new Blank_Game();
+				bg.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
 		btnBlank.setBackground(new Color(153, 204, 204));
 		btnBlank.setFont(new Font("Arial", Font.BOLD, 30));
 		btnBlank.setBounds(242, 72, 225, 357);
