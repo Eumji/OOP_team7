@@ -59,7 +59,7 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnStudy.setFont(new Font("±¼¸²", Font.PLAIN, 25));
+		btnStudy.setFont(new Font("Arial", Font.PLAIN, 25));
 
 		JButton btnTestGame = new JButton("Test Game");
 		btnTestGame.addActionListener(new ActionListener() {
@@ -69,7 +69,7 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnTestGame.setFont(new Font("±¼¸²", Font.PLAIN, 25));
+		btnTestGame.setFont(new Font("Arial", Font.PLAIN, 25));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
