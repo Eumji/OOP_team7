@@ -73,8 +73,9 @@ public class TestGame extends MENU{
 		btnMC.setBackground(new Color(153, 204, 204));
 		btnMC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice mc = new MultipleChoice();
-				mc.frame.setVisible(true);
+				MultipleChoice_Question mcq = new MultipleChoice_Question();
+				MultipleChoice_Game mcg = new MultipleChoice_Game();
+				mcg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
