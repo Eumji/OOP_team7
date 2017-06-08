@@ -91,22 +91,15 @@ public class Study extends MENU{
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblStudy, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 							.addComponent(btnMenu)
-							.addGap(36))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblStudy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)))
+							.addGap(6)))
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 744, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(48, Short.MAX_VALUE))
+					.addContainerGap(50, Short.MAX_VALUE))
 		);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JButton btn1 = new JButton("class & object & method");
-
-		JButton btn2 = new JButton("Method modifiers");
-
-		JButton btn3 = new JButton("variable");
-	
 		
 		JButton btnNewButton = new JButton("Basic");
 		btnNewButton.setBackground(new Color(240, 248, 255));

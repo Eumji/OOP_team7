@@ -1,0 +1,31 @@
+variable : A variable is a space in memory that can store values.
+
+<Rules for variable naming>
+1. It is case-sensitive and has no limit on length.
+2. Do not use reserved words.
+3. The name must not start with a number.
+4. Only special characters "-" and "$" are allowed.
+
+<variable type>
+1. primitive type
+- boolean : It has true or false value. 
+It used in conditional expressions and logical calculations.
+The default value is false.
+
+- char : It stored one character per variable. 
+Variables store Unicode characters.
+
+- byte, short, int, long : lt stored integer variable. 
+byte and short is used to save storage space.
+long is used when dealing with numbers beyond the range of int.
+
+- float, double : It stored real number. 
+Float is used to increase the speed of operation or to save memory.
+
+*The seven basic types except boolean can be computed 
+ and transformed with each other.
+
+2.reference type
+- It stored address of Object.
+- Since the name of the class is used as the type of the variable, 
+- the name of the class becomes the type of the reference variable.

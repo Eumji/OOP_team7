@@ -1,0 +1,39 @@
+modifiers :Modifier are used together in declaration of classes, variable, 
+or method to give additional semantics.
+
+1. Access Modifier
+<Default(No Keyword)>
+- Default access modifier means we do not explicitly declare 
+an access modifier for a class, field, method, etc.
+- A variable or method declared without any access control modifier 
+is available to any other class in the same package.
+
+<Private>
+- Methods, variables, and constructors that are declared private 
+can only be accessed within the declared class itself.
+- Private access modifier is the most restrictive access level.
+- Variables that are declared private can be accessed outside the class, 
+if public getter methods are present in the class.
+
+<Public>
+- A class, method, constructor, interface, etc. declared public 
+can be accessed from any other class.
+- Therefore, fields, methods, blocks declared inside a public class 
+can be accessed from any class belonging to the Java Universe.
+
+<Protected>
+- Variables, methods, and constructors, which are declared protected 
+in a superclass can be accessed only by the subclasses in other package 
+or any class within the package of the protected members' class.
+
+2. Static
+- Methods declared public in a superclass also must be public in all subclasses.
+
+3. Final
+- When final is used, it is a method that can not be changed.
+(A method that cannot be overridden by a subclass.)
+
+4. Abstract 
+- A method that has no body.
+- You write only the declaration of the method and not the implemention section.
+
