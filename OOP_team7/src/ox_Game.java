@@ -53,6 +53,7 @@ public class ox_Game extends TestGame {
 	 * Create the application.
 	 */
 	public ox_Game() {
+		oxq.plus_counter(oxq.read_counter());
 		initialize();
 		System.out.println("counter after ox_Game Ã¢ ¶ì¿ì±â: "+oxq.read_counter());
 	}
@@ -92,7 +93,7 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setBackground(Color.RED);
 
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
-				oxq.plus_counter(oxq.read_counter());
+				//oxq.plus_counter(oxq.read_counter());
 				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
@@ -101,16 +102,6 @@ public class ox_Game extends TestGame {
 		button.setForeground(Color.GREEN);
 		button.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button.setBackground(Color.BLACK);
-		
-		/*JTextArea textArea = new JTextArea();
-		textArea.setEnabled(false);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.BOLD, 50));
-		textArea.setForeground(Color.WHITE);
-		textArea.setBackground(Color.DARK_GRAY);
-		
-		String q = new String(question.get(oxq.read_counter()));
-		textArea.setText(q);*/
 		
 		JButton button_2 = new JButton("X");
 		button_2.addActionListener(new ActionListener() {
@@ -123,7 +114,7 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setBackground(Color.RED);
 				
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
-				oxq.plus_counter(oxq.read_counter());
+				//oxq.plus_counter(oxq.read_counter());
 				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
@@ -132,16 +123,6 @@ public class ox_Game extends TestGame {
 		button_2.setForeground(Color.RED);
 		button_2.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button_2.setBackground(Color.BLACK);
-		
-		/*JTextArea textArea = new JTextArea();
-		textArea.setEnabled(false);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.BOLD, 50));
-		textArea.setForeground(Color.WHITE);
-		textArea.setBackground(Color.DARK_GRAY);
-		
-		String q = new String(question.get(oxq.read_counter()));
-		textArea.setText(q);*/
 		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
@@ -185,6 +166,7 @@ public class ox_Game extends TestGame {
 				MENU home = new MENU();
 				home.frame.setVisible(true);
 				oxgame.setVisible(false);
+				oxq.ox_restart(); System.out.println("Restart!");
 			}
 		});
 		mnMenu.add(mntmGoToMenu);

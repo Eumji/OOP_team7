@@ -99,7 +99,7 @@ public class ox_question {
 	
 	public void ox_restart(){
 		BufferedWriter bw = null;
-		String line = "1";
+		String line = "0";
 		try {
 			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
 			bw.write(line);
