@@ -6,17 +6,12 @@ import java.awt.Font;
 import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ox_solution{
 
 	boolean ox_isCorrect;
-	public boolean isOx_isCorrect() {
-		return ox_isCorrect;
-	}
-
-	public void setOx_isCorrect(boolean ox_isCorrect) {
-		this.ox_isCorrect = ox_isCorrect;
-	}
 
 	JFrame frame;
 	JTextArea textArea;
@@ -57,6 +52,13 @@ public class ox_solution{
 		textArea = new JTextArea();
 		textArea.setForeground(Color.BLACK);
 		JButton btnNewButton = new JButton("Next");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ox_Game oxg = new ox_Game();
+				oxg.oxgame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(Color.BLACK);

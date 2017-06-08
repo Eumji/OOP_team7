@@ -14,6 +14,7 @@ import java.awt.Color;
 public class TestGame extends MENU{
 
 	JFrame frame;
+	int oxcounter=0;
 
 	/**
 	 * Launch the application.
@@ -69,15 +70,18 @@ public class TestGame extends MENU{
 		btnNewButton.setBounds(10, 72, 225, 177);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnMatchingGame = new JButton("Multiple Choice");
-		btnMatchingGame.setBackground(new Color(153, 204, 204));
-		btnMatchingGame.addActionListener(new ActionListener() {
+		JButton btnMC = new JButton("Multiple Choice");
+		btnMC.setBackground(new Color(153, 204, 204));
+		btnMC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MultipleChoice mc = new MultipleChoice();
+				mc.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
-		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 24));
-		btnMatchingGame.setBounds(10, 252, 225, 177);
-		frame.getContentPane().add(btnMatchingGame);
+		btnMC.setFont(new Font("Arial", Font.BOLD, 24));
+		btnMC.setBounds(10, 252, 225, 177);
+		frame.getContentPane().add(btnMC);
 		
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {

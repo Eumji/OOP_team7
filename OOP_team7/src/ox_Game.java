@@ -19,9 +19,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class ox_Game {
+public class ox_Game extends TestGame {
 	
-	int oxcounter = 0;
+	//int oxcounter = 0;
 
 	JFrame oxgame;
 	JButton button, button_1;
@@ -54,6 +54,7 @@ public class ox_Game {
 	 */
 	public ox_Game() {
 		initialize();
+		System.out.println(oxcounter);
 	}
 
 	/**
@@ -83,7 +84,8 @@ public class ox_Game {
 
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
-				
+				oxcounter++;
+				System.out.println(oxcounter);
 			}
 		});
 		button.setForeground(Color.GREEN);
@@ -113,6 +115,8 @@ public class ox_Game {
 
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
+				oxcounter++;
+				System.out.println(oxcounter);
 			}
 		});
 		button_2.setForeground(Color.RED);
