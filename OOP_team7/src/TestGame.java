@@ -42,9 +42,9 @@ public class TestGame extends MENU{
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 1000, 1000);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblTestGame = new JLabel("Test Game");
