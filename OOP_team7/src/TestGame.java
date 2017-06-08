@@ -58,10 +58,11 @@ public class TestGame extends MENU{
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {//ox ´©¸£¸é
+				ox_question oxq = new ox_question();
+				oxq.ox_restart(); System.out.println("Restart!");
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
-				
 				
 			}
 		});
