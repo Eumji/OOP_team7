@@ -79,7 +79,7 @@ public class Variable extends JFrame {
 		});
 		mnMenu.add(mntmGoToMenu);
 
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Previous");
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -90,8 +90,21 @@ public class Variable extends JFrame {
 			}
 		});
 		mnMenu.add(mntmNewMenuItem_1);
-
-		JMenuItem mntmNewMenuItem = new JMenuItem("Next");
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EncapsulationMenu em = new EncapsulationMenu();
+				em.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mnMenu.add(mntmNewMenuItem_2);
+		
+		JMenu mnNewMenu = new JMenu("Next");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("\u2192");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VariableCont vc = new VariableCont();
@@ -99,32 +112,7 @@ public class Variable extends JFrame {
 				setVisible(false);
 			}
 		});
-		mnMenu.add(mntmNewMenuItem);
-
-		JMenu mnBasic = new JMenu("Basic");
-		menuBar.add(mnBasic);
-
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Class&Object&method");
-		mnBasic.add(mntmNewMenuItem_2);
-
-		JMenuItem mntmModifier = new JMenuItem("Modifier");
-		mntmModifier.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Modifier mf = new Modifier();
-				mf.setVisible(true);
-				setVisible(false);
-			}
-		});
-		mnBasic.add(mntmModifier);
-		
-		JMenu mnEncapsultion = new JMenu("Encapsultion");
-		menuBar.add(mnEncapsultion);
-		
-		JMenuItem mntmGetterSetter = new JMenuItem("Getter & Setter");
-		mnEncapsultion.add(mntmGetterSetter);
-		
-		JMenuItem mntmHowToMake = new JMenuItem("How to make?");
-		mnEncapsultion.add(mntmHowToMake);
+		mnNewMenu.add(mntmNewMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));
 		contentPane.setForeground(new Color(144, 238, 144));
