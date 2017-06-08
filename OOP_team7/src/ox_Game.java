@@ -19,17 +19,17 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class ox_Game {
+public class ox_Game extends TestGame {
 	
-	int oxcounter = 0;
 
 	JFrame oxgame;
 	JButton button, button_1;
 	JTextArea textArea;
-	ox_question oxq = new ox_question();
+	private ox_question oxq = new ox_question();
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
+	
 	
 	/**
 	 * Launch the application.
@@ -38,6 +38,8 @@ public class ox_Game {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					ox_question ooxq = new ox_question();
+					ooxq.ox_restart();
 					ox_Game window = new ox_Game();
 					window.oxgame.setVisible(true);
 				} catch (Exception e) {
@@ -53,6 +55,7 @@ public class ox_Game {
 	 * Create the application.
 	 */
 	public ox_Game() {
+		oxq.plus_counter(oxq.read_counter());
 		initialize();
 	}
 
@@ -69,49 +72,49 @@ public class ox_Game {
 		panel.setBackground(Color.LIGHT_GRAY);
 		oxgame.getContentPane().add(panel, BorderLayout.CENTER);
 		
-		JButton button = new JButton("O");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//"O" ´­·¶À» ¶§
-				ox_solution oxs = new ox_solution();
-				if(answer.get(oxcounter).equals("O"))
-					oxs.textArea.setBackground(Color.GREEN);
-				else
-					oxs.textArea.setBackground(Color.RED);
-
-				
-				//oxs.solution = new String(solution.get(oxcounter));
-
-				oxs.frame.setVisible(true);
-				oxgame.setVisible(false);
-				
-			}
-		});
-		button.setForeground(Color.GREEN);
-		button.setFont(new Font("Arial Black", Font.PLAIN, 250));
-		button.setBackground(Color.BLACK);
-		
 		JTextArea textArea = new JTextArea();
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.BOLD, 50));
 		textArea.setForeground(Color.WHITE);
 		textArea.setBackground(Color.DARK_GRAY);
+		String q = new String(question.get(oxq.read_counter()));
+		textArea.setText(q);
+		System.out.println("counter after question textArea floating: "+oxq.read_counter());
 		
-		textArea.setText(question.get(oxcounter));
+		
+		JButton button = new JButton("O");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//"O" ´­·¶À» ¶§
+				ox_solution oxs = new ox_solution();
+				if(answer.get(oxq.read_counter()).equals("O"))
+					oxs.textArea.setBackground(Color.GREEN);
+				else
+					oxs.textArea.setBackground(Color.RED);
+
+				oxs.textArea.setText(solution.get(oxq.read_counter()));
+				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
+				oxs.frame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
+		button.setForeground(Color.GREEN);
+		button.setFont(new Font("Arial Black", Font.PLAIN, 250));
+		button.setBackground(Color.BLACK);
 		
 		JButton button_2 = new JButton("X");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//"X" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
-				if(answer.get(oxcounter).equals("X"))
+				if(answer.get(oxq.read_counter()).equals("X"))
 					oxs.textArea.setBackground(Color.GREEN);
 				else
 					oxs.textArea.setBackground(Color.RED);
 				
-				//oxs.solution = new String(solution.get(oxcounter));
-
+				oxs.textArea.setText(solution.get(oxq.read_counter()));
+				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 			}
@@ -119,6 +122,7 @@ public class ox_Game {
 		button_2.setForeground(Color.RED);
 		button_2.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button_2.setBackground(Color.BLACK);
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
@@ -170,42 +174,122 @@ public class ox_Game {
 		menuBar.add(mnQuestion);
 		
 		JMenuItem mntmNo = new JMenuItem("No.1");
+		mntmNo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				oxq.plus_counter(-1);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo);
 		
 		JMenuItem mntmNo_1 = new JMenuItem("No.2");
+		mntmNo_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(0);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_1.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_1);
 		
 		JMenuItem mntmNo_2 = new JMenuItem("No.3");
+		mntmNo_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(1);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_2.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_2);
 		
 		JMenuItem mntmNo_3 = new JMenuItem("No.4");
+		mntmNo_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(2);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_3.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_3);
 		
 		JMenuItem mntmNo_4 = new JMenuItem("No.5");
+		mntmNo_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(3);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_4.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_4);
 		
 		JMenuItem mntmNo_5 = new JMenuItem("No.6");
+		mntmNo_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(4);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_5.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_5);
 		
 		JMenuItem mntmNo_6 = new JMenuItem("No.7");
+		mntmNo_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(5);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_6);
 		
 		JMenuItem mntmNo_7 = new JMenuItem("No.8");
+		mntmNo_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(6);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_7);
 		
 		JMenuItem mntmNo_8 = new JMenuItem("No.9");
+		mntmNo_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(7);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_8);
 		
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
+		mntmNo_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				oxq.plus_counter(8);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
 		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 20));
 		mnQuestion.add(mntmNo_9);
 		

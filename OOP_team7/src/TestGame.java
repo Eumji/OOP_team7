@@ -14,7 +14,6 @@ import java.awt.Color;
 public class TestGame extends MENU{
 
 	JFrame frame;
-
 	/**
 	 * Launch the application.
 	 */
@@ -59,25 +58,30 @@ public class TestGame extends MENU{
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {//ox ´©¸£¸é
+				ox_question oxq = new ox_question();
+				oxq.ox_restart(); System.out.println("Restart!");
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
-				
 				
 			}
 		});
 		btnNewButton.setBounds(10, 72, 225, 177);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnMatchingGame = new JButton("Multiple Choice");
-		btnMatchingGame.setBackground(new Color(153, 204, 204));
-		btnMatchingGame.addActionListener(new ActionListener() {
+		JButton btnMC = new JButton("Multiple Choice");
+		btnMC.setBackground(new Color(153, 204, 204));
+		btnMC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MultipleChoice_Question mcq = new MultipleChoice_Question();
+				MultipleChoice_Game mcg = new MultipleChoice_Game();
+				mcg.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
-		btnMatchingGame.setFont(new Font("Arial", Font.BOLD, 24));
-		btnMatchingGame.setBounds(10, 252, 225, 177);
-		frame.getContentPane().add(btnMatchingGame);
+		btnMC.setFont(new Font("Arial", Font.BOLD, 24));
+		btnMC.setBounds(10, 252, 225, 177);
+		frame.getContentPane().add(btnMC);
 		
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {

@@ -63,15 +63,15 @@ public class MultipleChoice_Game {
 		textArea_1.setEditable(false);
 		textArea_1.setFont(new Font("Arial", Font.BOLD, 20));
 		
-		System.out.println(count);
+		//System.out.println(count);
 		textArea_1.setText(question.get(count));
-		System.out.println("q" + count);
+		//System.out.println("q" + count);
 		JButton btnNewButton = new JButton("1.");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(count).equals("1.")) {
-					System.out.println("a" + count);
+					//System.out.println("a" + count);
 					mcs.textArea.setBackground(Color.GREEN);
 				} else
 					mcs.textArea.setBackground(Color.RED);
