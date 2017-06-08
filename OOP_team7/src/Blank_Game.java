@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 import javax.swing.JMenuBar;
@@ -34,8 +35,12 @@ public class Blank_Game {
 	JFrame frame;
 	private JTextField textField;
 	boolean isright = false;
-	int problemnum=1;
-
+	Blank_question bq = new Blank_question();
+	
+	private ArrayList<String> answer = new ArrayList<String>(bq.answer());
+	private ArrayList<String> solution = new ArrayList<String>(bq.solution());
+	private ArrayList<Icon> img = new ArrayList<Icon>(bq.question());
+	private int num = bq.num();
 	/**
 	 * Launch the application.
 	 */
@@ -91,19 +96,27 @@ public class Blank_Game {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("No.1.jpg")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
+		//Icon image = (Icon)img.get(num); 
+		//lblNewLabel.setIcon(image);
 		
 		lblNewLabel.setBackground(Color.DARK_GRAY);
 		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Blank_question bq = new Blank_question();
-				String s = bq.answer(problemnum);
+				Blank_solution bs = new Blank_solution();
+				String s = answer.get(num);
+	
 				if(textField.getText().equals(s)){
+					bs.textArea.setBackground(Color.GREEN);
+				}
+				else{
+					bs.textArea.setBackground(Color.RED);
 					
 				}
+				frame.setVisible(false);
+				bs.frame.setVisible(true);
+				
 			}
 		});
 		btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));
