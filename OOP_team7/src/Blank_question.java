@@ -1,8 +1,10 @@
 import java.awt.Image;
 import java.awt.List;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -70,7 +72,7 @@ public class Blank_question {
 		return blank_solution;
 	}
 	
-	public int num(){
+	public int getnum(){
 		int number=-1;
 		BufferedReader br = null;
 		try{
@@ -85,4 +87,19 @@ public class Blank_question {
 		}
 		return number;
 	}
+	
+	public void setnum(int n){
+		BufferedWriter bw = null;
+		String line = null;
+		line = Integer.toString(n);
+		try {
+			bw = new BufferedWriter(new FileWriter("blank_counter.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
 }

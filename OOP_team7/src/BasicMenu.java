@@ -93,6 +93,13 @@ public class BasicMenu extends JFrame {
 		JLabel label = new JLabel("");
 		
 		JButton btnNewButton_3 = new JButton("Class & Object & Method");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				COM C = new COM();
+				C.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnNewButton_3.setFont(new Font("Arial", Font.PLAIN, 34));
 		btnNewButton_3.setBackground(new Color(240, 248, 255));
 		btnNewButton_3.setForeground(new Color(30, 144, 255));

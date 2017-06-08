@@ -109,10 +109,5 @@ public class ox_question {
 		}
 	}
 	
-	public static void main(String arg[]){
-		ox_question ox = new ox_question();
-		ox.ox_restart();
-		System.out.println(ox.read_counter());
-	}
 
 }

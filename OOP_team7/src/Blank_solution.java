@@ -59,7 +59,7 @@ public class Blank_solution {
 		frame.setBounds(100, 100, 1000, 10000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JTextArea textArea = new JTextArea();
+		textArea = new JTextArea();
 		textArea.setLineWrap(true);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
@@ -118,7 +118,7 @@ public class Blank_solution {
 		JMenuItem mntmNo = new JMenuItem("No.1");
 		mntmNo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				bq.plus_counter(-1);
+				bq.setnum(0);
 				Blank_Game newBlank = new Blank_Game();
 				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
@@ -130,9 +130,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_1 = new JMenuItem("No.2");
 		mntmNo_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(0);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(1);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -142,9 +142,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_2 = new JMenuItem("No.3");
 		mntmNo_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(1);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(2);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -154,9 +154,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_3 = new JMenuItem("No.4");
 		mntmNo_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(2);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(3);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -166,9 +166,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_4 = new JMenuItem("No.5");
 		mntmNo_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(3);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(4);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -178,9 +178,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_5 = new JMenuItem("No.6");
 		mntmNo_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(4);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(5);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -190,9 +190,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_6 = new JMenuItem("No.7");
 		mntmNo_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(5);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(6);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -202,9 +202,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_7 = new JMenuItem("No.8");
 		mntmNo_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(6);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(7);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -214,9 +214,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_8 = new JMenuItem("No.9");
 		mntmNo_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(7);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(8);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -226,9 +226,9 @@ public class Blank_solution {
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
 		mntmNo_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				oxq.plus_counter(8);
-				ox_Game newOX = new ox_Game();
-				newOX.oxgame.setVisible(true);
+				bq.setnum(9);
+				Blank_Game newBlank = new Blank_Game();
+				newBlank.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});

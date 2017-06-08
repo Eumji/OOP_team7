@@ -70,36 +70,39 @@ public class VariableCont extends JFrame {
 		});
 		mnMenu.add(mntmNewMenuItem);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Previous");
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				BasicMenu bm = new BasicMenu();
+				bm.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mnMenu.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EncapsulationMenu em = new EncapsulationMenu();
+				em.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mnMenu.add(mntmNewMenuItem_2);
+		
+		JMenu mnNewMenu = new JMenu("Previous");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("\u2190");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Variable v = new Variable();
 				v.setVisible(true);
 				setVisible(false);
 			}
 		});
-		mnMenu.add(mntmNewMenuItem_1);
-		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Next");
-		mnMenu.add(mntmNewMenuItem_2);
-		
-		JMenu mnNewMenu = new JMenu("Basic");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Class&Object&method");
 		mnNewMenu.add(mntmNewMenuItem_3);
-		
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Modifier");
-		mnNewMenu.add(mntmNewMenuItem_4);
-		
-		JMenu mnNewMenu_1 = new JMenu("Encapsultion");
-		menuBar.add(mnNewMenu_1);
-		
-		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Getter & Setter");
-		mnNewMenu_1.add(mntmNewMenuItem_5);
-		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("How to make?");
-		mnNewMenu_1.add(mntmNewMenuItem_6);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

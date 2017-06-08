@@ -40,7 +40,7 @@ public class Blank_Game {
 	private ArrayList<String> answer = new ArrayList<String>(bq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(bq.solution());
 	private ArrayList<Icon> img = new ArrayList<Icon>(bq.question());
-	private int num = bq.num();
+	private int num = bq.getnum();
 	/**
 	 * Launch the application.
 	 */
@@ -112,11 +112,9 @@ public class Blank_Game {
 				}
 				else{
 					bs.textArea.setBackground(Color.RED);
-					
 				}
 				frame.setVisible(false);
 				bs.frame.setVisible(true);
-				
 			}
 		});
 		btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));

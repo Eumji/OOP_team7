@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.Font;
@@ -89,9 +90,12 @@ public class ox_Game extends TestGame {
 				//"O" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
 				if(answer.get(oxq.read_counter()).equals("O"))
-					oxs.textArea.setBackground(Color.GREEN);
-				else
-					oxs.textArea.setBackground(Color.RED);
+					oxs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
+				
+				else{
+					oxs.textArea.setForeground(new Color(255,250,250));
+					oxs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+				}
 
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
 				oxs.frame.setVisible(true);
@@ -108,10 +112,11 @@ public class ox_Game extends TestGame {
 				//"X" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
 				if(answer.get(oxq.read_counter()).equals("X"))
-					oxs.textArea.setBackground(Color.GREEN);
-				else
-					oxs.textArea.setBackground(Color.red);
-				
+					oxs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
+				else{
+					oxs.textArea.setForeground(new Color(255,250,250));
+					oxs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+				}
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
