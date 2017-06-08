@@ -71,7 +71,7 @@ public class ox_solution{
 		frame.getContentPane().add(btnNewButton);
 		textArea.setLineWrap(true);
 		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 40));
+		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
 		textArea.setBounds(0, 0, 978, 944);
 		
 		frame.getContentPane().add(textArea);

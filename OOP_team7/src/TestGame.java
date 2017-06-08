@@ -59,7 +59,7 @@ public class TestGame extends MENU{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {//ox ´©¸£¸é
 				ox_question oxq = new ox_question();
-				oxq.ox_restart(); System.out.println("Restart!");
+				oxq.ox_restart();
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
