@@ -14,8 +14,6 @@ import java.awt.Color;
 public class TestGame extends MENU{
 
 	JFrame frame;
-	int oxcounter=0;
-
 	/**
 	 * Launch the application.
 	 */

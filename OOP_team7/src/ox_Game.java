@@ -21,15 +21,15 @@ import java.awt.event.ActionEvent;
 
 public class ox_Game extends TestGame {
 	
-	//int oxcounter = 0;
 
 	JFrame oxgame;
 	JButton button, button_1;
 	JTextArea textArea;
-	ox_question oxq = new ox_question();
+	private ox_question oxq = new ox_question();
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
+	
 	
 	/**
 	 * Launch the application.
@@ -54,7 +54,7 @@ public class ox_Game extends TestGame {
 	 */
 	public ox_Game() {
 		initialize();
-		System.out.println(oxcounter);
+		System.out.println("counter after ox_Game Ã¢ ¶ì¿ì±â: "+oxq.read_counter());
 	}
 
 	/**
@@ -70,58 +70,79 @@ public class ox_Game extends TestGame {
 		panel.setBackground(Color.LIGHT_GRAY);
 		oxgame.getContentPane().add(panel, BorderLayout.CENTER);
 		
-		JButton button = new JButton("O");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//"O" ´­·¶À» ¶§
-				ox_solution oxs = new ox_solution();
-				if(answer.get(oxcounter).equals("O"))
-					oxs.textArea.setBackground(Color.GREEN);
-				else
-					oxs.textArea.setBackground(Color.RED);
-
-				oxs.textArea.setText(solution.get(oxcounter));
-
-				oxs.frame.setVisible(true);
-				oxgame.setVisible(false);
-				oxcounter++;
-				System.out.println(oxcounter);
-			}
-		});
-		button.setForeground(Color.GREEN);
-		button.setFont(new Font("Arial Black", Font.PLAIN, 250));
-		button.setBackground(Color.BLACK);
-		
 		JTextArea textArea = new JTextArea();
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.BOLD, 50));
 		textArea.setForeground(Color.WHITE);
 		textArea.setBackground(Color.DARK_GRAY);
+		String q = new String(question.get(oxq.read_counter()));
+		textArea.setText(q);
+		System.out.println("counter after question textArea floating: "+oxq.read_counter());
 		
-		textArea.setText(question.get(oxcounter));
+		
+		JButton button = new JButton("O");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//"O" ´­·¶À» ¶§
+				ox_solution oxs = new ox_solution();
+				if(answer.get(oxq.read_counter()).equals("O"))
+					oxs.textArea.setBackground(Color.GREEN);
+				else
+					oxs.textArea.setBackground(Color.RED);
+
+				oxs.textArea.setText(solution.get(oxq.read_counter()));
+				oxq.plus_counter(oxq.read_counter());
+				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
+				oxs.frame.setVisible(true);
+				oxgame.setVisible(false);
+			}
+		});
+		button.setForeground(Color.GREEN);
+		button.setFont(new Font("Arial Black", Font.PLAIN, 250));
+		button.setBackground(Color.BLACK);
+		
+		/*JTextArea textArea = new JTextArea();
+		textArea.setEnabled(false);
+		textArea.setEditable(false);
+		textArea.setFont(new Font("Arial", Font.BOLD, 50));
+		textArea.setForeground(Color.WHITE);
+		textArea.setBackground(Color.DARK_GRAY);
+		
+		String q = new String(question.get(oxq.read_counter()));
+		textArea.setText(q);*/
 		
 		JButton button_2 = new JButton("X");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//"X" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
-				if(answer.get(oxcounter).equals("X"))
+				if(answer.get(oxq.read_counter()).equals("X"))
 					oxs.textArea.setBackground(Color.GREEN);
 				else
 					oxs.textArea.setBackground(Color.RED);
-
-				oxs.textArea.setText(solution.get(oxcounter));
-
+				
+				oxs.textArea.setText(solution.get(oxq.read_counter()));
+				oxq.plus_counter(oxq.read_counter());
+				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
-				oxcounter++;
-				System.out.println(oxcounter);
 			}
 		});
 		button_2.setForeground(Color.RED);
 		button_2.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button_2.setBackground(Color.BLACK);
+		
+		/*JTextArea textArea = new JTextArea();
+		textArea.setEnabled(false);
+		textArea.setEditable(false);
+		textArea.setFont(new Font("Arial", Font.BOLD, 50));
+		textArea.setForeground(Color.WHITE);
+		textArea.setBackground(Color.DARK_GRAY);
+		
+		String q = new String(question.get(oxq.read_counter()));
+		textArea.setText(q);*/
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)

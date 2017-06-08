@@ -12,6 +12,9 @@ import java.awt.event.ActionEvent;
 public class ox_solution{
 
 	boolean ox_isCorrect;
+	private ox_question oxq = new ox_question();
+	ox_Game oxg = new ox_Game();
+	
 
 	JFrame frame;
 	JTextArea textArea;
@@ -54,7 +57,8 @@ public class ox_solution{
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ox_Game oxg = new ox_Game();
+				//oxq.plus_counter(oxq.read_counter());
+				System.out.println("counter afer clicked next: "+oxq.read_counter());
 				oxg.oxgame.setVisible(true);
 				frame.setVisible(false);
 			}
