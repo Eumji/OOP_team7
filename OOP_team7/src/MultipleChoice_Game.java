@@ -67,7 +67,7 @@ public class MultipleChoice_Game {
 		JTextArea textArea_1 = new JTextArea();
 		textArea_1.setEnabled(false);
 		textArea_1.setEditable(false);
-		textArea_1.setFont(new Font("Arial", Font.BOLD, 28));
+		textArea_1.setFont(new Font("Arial", Font.BOLD, 45));
 		
 		
 		textArea_1.setText(question.get(mcq.read_counter()));
@@ -193,10 +193,13 @@ public class MultipleChoice_Game {
 		frame.setJMenuBar(menuBar);
 
 		JMenu mnMenu = new JMenu("Menu");
-		mnMenu.setFont(new Font("Cooper Black", Font.PLAIN, 25));
+		mnMenu.setBackground(SystemColor.activeCaption);
+		mnMenu.setForeground(SystemColor.controlDkShadow);
+		mnMenu.setFont(new Font("Castellar", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmGoToMenu = new JMenuItem("Go to menu");
+		mntmGoToMenu.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU home = new MENU();
@@ -207,7 +210,9 @@ public class MultipleChoice_Game {
 		mnMenu.add(mntmGoToMenu);
 
 		JMenu mnQuestion = new JMenu("Question");
-		mnQuestion.setFont(new Font("Broadway", Font.PLAIN, 25));
+		mnQuestion.setBackground(SystemColor.info);
+		mnQuestion.setForeground(SystemColor.controlDkShadow);
+		mnQuestion.setFont(new Font("Castellar", Font.PLAIN, 25));
 		menuBar.add(mnQuestion);
 
 		JMenuItem mntmQ = new JMenuItem("No.1");

@@ -78,7 +78,7 @@ public class MultipleChoice_Solution {
 		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 30));
+		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
 		textArea.setBounds(0, 0, 982, 953);
 		
 		frame.getContentPane().add(textArea);
