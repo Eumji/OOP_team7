@@ -1,0 +1,38 @@
+[Encapsulation] <Data Hiding>
+: A mechanism of wrapping the data (variables) and 
+  code acting on the data (methods) together as a single unit.  
+
+- In encapsulation, the variables of a class will be hidden 
+from other classes, and can be accessed only through the methods 
+of their current class.
+
+<Why use encapsulation?>
+- For non-encapsulated variables, 
+you can use the dot operator to change values.
+- Encapsulation is used to prevent wrong people from approaching 
+and changing values strangely.
+
+Example)----------------------------------------------------
+theCat.height // Variable to change the size of the cat
+
+theCat.height = 0; 
+// Without encapsulation, it is possible to change 
+   the size of the cat strangely.
+
+theCat.setHeight(25);
+// By forcing them to use the setter method, 
+   you can prevent cat's size from changing nonsensically.
+
+------------------------------------------------------------
+
+<Getter & Setter>
+- Getters and setters are methods for retrieving (getter) and changing
+(setter) values of instance variables.
+
+*Getter : The getter method simply returns the value of the variable.
+
+*Setter : The setter method is written to check the value specified 
+in the parameter and to change the value of the member variable 
+only when the value matches the condition.
+
+- Also known as "accessors" (getters) and "mutators" (setters).
