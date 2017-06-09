@@ -94,7 +94,7 @@ public class ox_Game extends TestGame {
 		JLabel hearticon = new JLabel(img4);
 
 		Score score = new Score();
-		heart = score.read_score();
+		heart = score.read_score()+1;
 		switch (heart) {
 		case 3:
 			hearticon = new JLabel(img3);
