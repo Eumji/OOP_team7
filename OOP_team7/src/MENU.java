@@ -59,7 +59,7 @@ public class MENU extends JFrame {
 		btnStudy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Study s = new Study();
-				s.frame.setVisible(true);
+				s.setVisible(true);
 				frame.setVisible(false);
 			}
 		});

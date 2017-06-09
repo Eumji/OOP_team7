@@ -57,9 +57,11 @@ public class VariableCont extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnMenu = new JMenu("MENU");
+		mnMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Go to Menu");
+		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU D = new MENU();
@@ -71,6 +73,7 @@ public class VariableCont extends JFrame {
 		mnMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
+		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -82,6 +85,7 @@ public class VariableCont extends JFrame {
 		mnMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
+		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EncapsulationMenu em = new EncapsulationMenu();
@@ -92,9 +96,11 @@ public class VariableCont extends JFrame {
 		mnMenu.add(mntmNewMenuItem_2);
 		
 		JMenu mnNewMenu = new JMenu("Previous");
+		mnNewMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("\u2190");
+		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Variable v = new Variable();
