@@ -73,6 +73,13 @@ public class Blank_Game {
       frame.setBounds(100, 100, 1000, 1000);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
+      JLabel lblNewLabel = new JLabel("");
+      System.out.println(img.get(bq.getnum()));
+      Icon image = img.get(bq.getnum()); 
+      lblNewLabel.setIcon(image);
+      
+      lblNewLabel.setBackground(Color.DARK_GRAY);
+
       JPanel panel = new JPanel();
       GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
       groupLayout.setHorizontalGroup(
@@ -129,17 +136,13 @@ public class Blank_Game {
       textField.setFont(new Font("Arial", Font.BOLD, 35));
       textField.setColumns(10);
       
-      JLabel lblNewLabel = new JLabel("");
-      //Icon image = (Icon)img.get(num); 
-      //lblNewLabel.setIcon(image);
-      
-      lblNewLabel.setBackground(Color.DARK_GRAY);
       
       JButton btnSubmit = new JButton("Submit");
       btnSubmit.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             Blank_solution bs = new Blank_solution();
             int num = bq.getnum();
+            System.out.println(num);
             String s = answer.get(num);
             bs.lblNewLabel_1 = new JLabel(solution.get(bq.getnum()));
             bs.lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 45));

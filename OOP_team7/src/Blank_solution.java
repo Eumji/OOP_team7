@@ -30,8 +30,7 @@ public class Blank_solution{
    boolean Blank_isCorrect;
    private Blank_question bq = new Blank_question();
    private ArrayList<String> solution = new ArrayList<String>(bq.solution());
-   Blank_Game bg = new Blank_Game();
-   
+  
    
    JFrame frame;
    private JMenuBar menuBar;
@@ -86,6 +85,7 @@ public class Blank_solution{
     	    		bq.setnum(bq.getnum()+1);
     	    		
     	    		frame.setVisible(false);
+    	    		Blank_Game bg = new Blank_Game();
     	    		bg.frame.setVisible(true);
     	    	}
     		}
@@ -93,6 +93,7 @@ public class Blank_solution{
       });
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) { 
+        	 //System.out.println(bq.getnum());
         	if(bq.getnum()==9){
         		bq.setnum(0);
                 frame.setVisible(false);
@@ -101,6 +102,7 @@ public class Blank_solution{
         	}
         	else{
         		bq.setnum(bq.getnum()+1);
+        		Blank_Game bg = new Blank_Game();
         		bg.frame.setVisible(true);
         		frame.setVisible(false);
         	}
@@ -144,6 +146,7 @@ public class Blank_solution{
       mntmNo.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             bq.setnum(0);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -155,6 +158,7 @@ public class Blank_solution{
       mntmNo_1.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(1);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -166,6 +170,7 @@ public class Blank_solution{
       mntmNo_2.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(2);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -177,6 +182,7 @@ public class Blank_solution{
       mntmNo_3.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(3);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -188,6 +194,7 @@ public class Blank_solution{
       mntmNo_4.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(4);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -199,6 +206,7 @@ public class Blank_solution{
       mntmNo_5.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(5);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -210,6 +218,7 @@ public class Blank_solution{
       mntmNo_6.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(6);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -221,6 +230,7 @@ public class Blank_solution{
       mntmNo_7.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(7);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -232,6 +242,7 @@ public class Blank_solution{
       mntmNo_8.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(8);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }
@@ -243,6 +254,7 @@ public class Blank_solution{
       mntmNo_9.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             bq.setnum(9);
+            Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
          }

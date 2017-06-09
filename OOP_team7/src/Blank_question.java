@@ -15,18 +15,30 @@ public class Blank_question {
    public ArrayList<Icon> question(){
       ArrayList<Icon> img = new ArrayList<>();
 
-      /*
-      Icon i1 = (Icon) new ImageIcon(this.getClass().getResource("No.1.jpg")).getImage();
-      Icon i2 = (Icon) new ImageIcon(this.getClass().getResource("No.2.jpg")).getImage();
-      Icon i3 = (Icon) new ImageIcon(this.getClass().getResource("No.3.jpg")).getImage();
-      Icon i4 = (Icon) new ImageIcon(this.getClass().getResource("No.4.jpg")).getImage();
+      ImageIcon i1 = new ImageIcon("No.1.jpg");
+      ImageIcon i2 = new ImageIcon("No.2.jpg");
+      ImageIcon i3 = new ImageIcon("No.3.jpg");
+      ImageIcon i4 = new ImageIcon("No.4.jpg");
+      ImageIcon i5 = new ImageIcon("No.5.jpg");
+      ImageIcon i6 = new ImageIcon("No.6.jpg");
+      ImageIcon i7 = new ImageIcon("No.7.jpg");
+      ImageIcon i8 = new ImageIcon("No.8.jpg");
+      ImageIcon i9 = new ImageIcon("No.9.jpg");
+      ImageIcon i10 = new ImageIcon("No.10.jpg");
       
+
       img.add(i1);
       img.add(i2);
       img.add(i3);
       img.add(i4);
+      img.add(i5);
+      img.add(i6);
+      img.add(i7);
+      img.add(i8);
+      img.add(i9);
+      img.add(i10);
       
-      */
+      
       return img;
    }
    
