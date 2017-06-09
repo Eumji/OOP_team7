@@ -1,11 +1,11 @@
 
-s1
-s2
-s3
-s4
-s5
-s6
-s7
+Rules for variable naming:                                    1) It is case-sensitive and has no limit on length. 2) Do not use reserved words.                            3) The name must not start with a number.         4) Only special characters "-" and "$" are                allowed.
+The method declaration consists of a method name, a parameter declaration, and a return type.
+Float and double stored real number; not integer. Float is used to increase the speed of operation or to save memory.
+If there is no return value, void is the return type.
+Private access modifier is the most restrictive access level. Variables that are declared private can be accessed outside the class, if public getter methods are present in the class.
+To achieve encapsulation in Java. Declare the variables of a class as private. And provide public setter and getter methods to modify and view the variables values.
+1) You have to use setter and getter method to   access encapsulated variable.                           2) For non-encapsulated variables, you can use   the dot operator to change values.                     4) Even if the operation method inside the object changes, the usage method does not change.
 s8
 s9
 s10

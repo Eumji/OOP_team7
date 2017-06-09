@@ -32,6 +32,10 @@ public class MultipleChoice_Game {
 	private ArrayList<String> question = new ArrayList<String>(mcq.question());
 	private ArrayList<String> answer = new ArrayList<String>(mcq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
+	private ArrayList<String> mc1 = new ArrayList<String>(mcq.mc1());
+	private ArrayList<String> mc2 = new ArrayList<String>(mcq.mc2());
+	private ArrayList<String> mc3 = new ArrayList<String>(mcq.mc3());
+	private ArrayList<String> mc4 = new ArrayList<String>(mcq.mc4());
 	private ArrayList<Icon> ht = new ArrayList<Icon>(h.heart());
 
 	/**
@@ -80,10 +84,12 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(lblNewLabel_1);
 
 		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setLineWrap(true);
+		textArea_1.setFont(new Font("Arial", Font.BOLD, 45));
 		textArea_1.setBounds(14, 12, 954, 458);
 		textArea_1.setEnabled(false);
 		textArea_1.setEditable(false);
-		textArea_1.setFont(new Font("Arial", Font.BOLD, 45));
+		
 
 		textArea_1.setText(question.get(mcq.read_counter()));
 
@@ -206,20 +212,39 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(button_1);
 
 		JTextArea textArea_2 = new JTextArea();
-		textArea_2.setFont(new Font("Monospaced", Font.PLAIN, 30));
+		textArea_2.setLineWrap(true);
+		textArea_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_2.setBounds(89, 499, 879, 72);
+		textArea_2.setEnabled(false);
+		textArea_2.setEditable(false);
+		textArea_2.setText(mc1.get(mcq.read_counter()));
 		frame.getContentPane().add(textArea_2);
 
 		JTextArea textArea_3 = new JTextArea();
+		textArea_3.setLineWrap(true);
+		textArea_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_3.setBounds(89, 602, 879, 76);
+		textArea_3.setEnabled(false);
+		textArea_3.setEditable(false);
+		textArea_3.setText(mc2.get(mcq.read_counter()));
 		frame.getContentPane().add(textArea_3);
 
 		JTextArea textArea_4 = new JTextArea();
+		textArea_4.setLineWrap(true);
+		textArea_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_4.setBounds(89, 703, 879, 74);
+		textArea_4.setEnabled(false);
+		textArea_4.setEditable(false);
+		textArea_4.setText(mc3.get(mcq.read_counter()));
 		frame.getContentPane().add(textArea_4);
 
 		JTextArea textArea_5 = new JTextArea();
+		textArea_5.setLineWrap(true);
+		textArea_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_5.setBounds(89, 813, 879, 76);
+		textArea_5.setEnabled(false);
+		textArea_5.setEditable(false);
+		textArea_5.setText(mc4.get(mcq.read_counter()));
 		frame.getContentPane().add(textArea_5);
 
 		JMenuBar menuBar = new JMenuBar();

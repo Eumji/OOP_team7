@@ -47,11 +47,11 @@ public class MENU extends JFrame {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(135, 206, 235));
-		frame.setBounds(100, 100, 500, 500);
+		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JLabel lblMenu = new JLabel("MENU");
-		lblMenu.setFont(new Font("Bodoni MT Black", Font.PLAIN, 50));
+		lblMenu.setFont(new Font("Bauhaus 93", Font.PLAIN, 99));
 
 		JButton btnStudy = new JButton("Study");
 		btnStudy.setForeground(new Color(0, 0, 0));
@@ -63,7 +63,7 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnStudy.setFont(new Font("Bell MT", Font.PLAIN, 35));
+		btnStudy.setFont(new Font("Arial", Font.PLAIN, 70));
 
 		JButton btnTestGame = new JButton("Test \r\n\r\nGame");
 		btnTestGame.setForeground(new Color(0, 0, 0));
@@ -75,31 +75,31 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnTestGame.setFont(new Font("Bell MT", Font.PLAIN, 30));
+		btnTestGame.setFont(new Font("Arial", Font.PLAIN, 70));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 465, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(btnTestGame, GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+							.addContainerGap())
 						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addComponent(btnStudy, GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnTestGame, GroupLayout.PREFERRED_SIZE, 221, GroupLayout.PREFERRED_SIZE)
-							.addGap(23))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addComponent(lblMenu)
-							.addGap(164))))
+							.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
+							.addGap(313))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(46)
-					.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
-					.addGap(10)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnStudy, GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-						.addComponent(btnTestGame, GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(34)
+					.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE)
+					.addGap(50)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnTestGame, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnStudy, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		frame.getContentPane().setLayout(groupLayout);

@@ -68,7 +68,88 @@ public class MultipleChoice_Question {
 		}
 		return mc_quiz;
 	}
+	public ArrayList<String> mc1() {
+		ArrayList<String> mc_quiz;
+		BufferedReader br = null;
+		mc_quiz = new ArrayList<String>();
+		try {
+			br = new BufferedReader(new FileReader("mc1.txt"));
+			String line;
 
+			while ((line = br.readLine()) != null) {
+				mc_quiz.add(line);
+			}
+
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return mc_quiz;
+	}
+	public ArrayList<String> mc2() {
+		ArrayList<String> mc_quiz;
+		BufferedReader br = null;
+		mc_quiz = new ArrayList<String>();
+		try {
+			br = new BufferedReader(new FileReader("mc2.txt"));
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				mc_quiz.add(line);
+			}
+
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return mc_quiz;
+	}
+	public ArrayList<String> mc3() {
+		ArrayList<String> mc_quiz;
+		BufferedReader br = null;
+		mc_quiz = new ArrayList<String>();
+		try {
+			br = new BufferedReader(new FileReader("mc3.txt"));
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				mc_quiz.add(line);
+			}
+
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return mc_quiz;
+	}
+	public ArrayList<String> mc4() {
+		ArrayList<String> mc_quiz;
+		BufferedReader br = null;
+		mc_quiz = new ArrayList<String>();
+		try {
+			br = new BufferedReader(new FileReader("mc1.txt"));
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				mc_quiz.add(line);
+			}
+
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return mc_quiz;
+	}
+	
+	
 	public int read_counter() {
 		int counter = 0;
 		String line = null;
