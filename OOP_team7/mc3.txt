@@ -1,11 +1,11 @@
 
-1
-2
-3
-4
-5
-6
-7
+_myScore
+variable declaration
+short
+If there is no return value, method cannot return anything.
+private modifier is deleted.
+main method
+Encapsulation is used to prevent wrong people from approaching and changing values strangely.
 8
 9
 10

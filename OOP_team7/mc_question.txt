@@ -1,11 +1,11 @@
 
-q1
-q2
-q3
-q4
-q5
-q6
-q7
+1.Which is not valid variable name in java?
+2.Choose the wrong answer. The method declaration consists of (       ).
+3.Which variable type does not stored integer variable?
+4.Which of the following statement is wrong?
+5.Choose the right answer.Variables that are declared private can be accessed outside the class, if (           ).
+6.Choose the right answer.To achieve encapsulation in Java, declare the variable of a class as private and provide public (      ) methods to modify and view the variables values.
+7.Why we use encapsulation?
 q8
 q9
 q10
