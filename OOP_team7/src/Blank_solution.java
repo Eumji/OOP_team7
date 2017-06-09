@@ -2,6 +2,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,22 +14,25 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+import java.awt.Label;
 
 public class Blank_solution {
 
    
+
    boolean Blank_isCorrect;
    private Blank_question bq = new Blank_question();
+   private ArrayList<String> solution = new ArrayList<String>(bq.solution());
    Blank_Game bg = new Blank_Game();
    
    
    JFrame frame;
-   JTextArea textArea;
    private JMenuBar menuBar;
-   JLabel lblNewLabel;
+   JLabel lblNewLabel, lblNewLabel_1;
    
    /**
     * Launch the application.
@@ -62,17 +66,15 @@ public class Blank_solution {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.getContentPane().setLayout(null);
       
-      textArea = new JTextArea();
-      textArea.setForeground(Color.BLACK);
-      textArea.setOpaque(false);
+
       JButton btnNewButton = new JButton("Next");
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) { 
         	if(bq.getnum()==9){
         		bq.setnum(0);
                 frame.setVisible(false);
-                MENU home = new MENU();
-                home.frame.setVisible(true);
+                TestGame tg = new TestGame();
+                tg.frame.setVisible(true);
         	}
         	else{
         		bq.setnum(bq.getnum()+1);
@@ -87,9 +89,8 @@ public class Blank_solution {
       btnNewButton.setBounds(829, 845, 132, 53);
       frame.getContentPane().add(btnNewButton);
       
-      lblNewLabel = new JLabel("");
-      lblNewLabel.setBounds(0, 0, 978, 913);
-      frame.getContentPane().add(lblNewLabel);
+     
+     
       
       menuBar = new JMenuBar();
       frame.setJMenuBar(menuBar);
@@ -227,5 +228,4 @@ public class Blank_solution {
       mnQuestion.add(mntmNo_9);
       
    }
-   
 }

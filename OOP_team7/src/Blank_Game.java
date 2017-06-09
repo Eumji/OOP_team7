@@ -29,6 +29,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JEditorPane;
 import javax.swing.JProgressBar;
 import javax.swing.JButton;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Blank_Game {
 
@@ -91,6 +93,39 @@ public class Blank_Game {
       lblAnser.setFont(new Font("Arial", Font.BOLD, 45));
       
       textField = new JTextField();
+      textField.addKeyListener(new KeyAdapter() {
+      	@Override
+      	public void keyPressed(KeyEvent ke) {
+      		if(ke.getKeyChar()=='\n'){
+      			 Blank_solution bs = new Blank_solution();
+                 int num = bq.getnum();
+                 String s = answer.get(num);
+                 bs.lblNewLabel_1 = new JLabel(solution.get(bq.getnum()));
+                 bs.lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 45));
+                 bs.lblNewLabel_1.setBounds(17, 15, 900, 600);
+                 bs.frame.getContentPane().add(bs.lblNewLabel_1);
+              
+                 if(textField.getText().equals(s)){
+                      bs.lblNewLabel = new JLabel("");
+                      bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+                      bs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
+                      bs.lblNewLabel.setBounds(0, 0, 978, 913);
+                      bs.frame.getContentPane().add(bs.lblNewLabel);     
+                 }
+                 else{
+                     bs.lblNewLabel = new JLabel("");
+                     bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+                     bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+                     bs.lblNewLabel.setBounds(0, 0, 978, 913);
+                     bs.frame.getContentPane().add(bs.lblNewLabel);
+                 }
+               
+
+                 frame.setVisible(false);
+                 bs.frame.setVisible(true);
+      		}
+      	}
+      });
       textField.setFont(new Font("Arial", Font.BOLD, 35));
       textField.setColumns(10);
       
@@ -106,16 +141,29 @@ public class Blank_Game {
             Blank_solution bs = new Blank_solution();
             int num = bq.getnum();
             String s = answer.get(num);
+            bs.lblNewLabel_1 = new JLabel(solution.get(bq.getnum()));
+            bs.lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 45));
+            bs.lblNewLabel_1.setBounds(17, 15, 900, 600);
+            bs.frame.getContentPane().add(bs.lblNewLabel_1);
+         
             if(textField.getText().equals(s)){
-               bs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
+                 bs.lblNewLabel = new JLabel("");
+                 bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+                 bs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
+                 bs.lblNewLabel.setBounds(0, 0, 978, 913);
+                 bs.frame.getContentPane().add(bs.lblNewLabel);     
             }
             else{
-               bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+                bs.lblNewLabel = new JLabel("");
+                bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+                bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+                bs.lblNewLabel.setBounds(0, 0, 978, 913);
+                bs.frame.getContentPane().add(bs.lblNewLabel);
             }
-           
+          
+
             frame.setVisible(false);
             bs.frame.setVisible(true);
-            bs.textArea.setText(solution.get(bq.getnum()));
          }
       });
       btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));
