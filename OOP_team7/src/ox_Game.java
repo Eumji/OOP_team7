@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.Font;
