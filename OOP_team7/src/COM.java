@@ -56,9 +56,11 @@ public class COM extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("MENU");
+		mnNewMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Go to Menu");
+		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU M = new MENU();
@@ -69,6 +71,7 @@ public class COM extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
+		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BasicMenu bm = new BasicMenu();
@@ -76,9 +79,11 @@ public class COM extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
+		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EncapsulationMenu em = new EncapsulationMenu();
@@ -86,6 +91,7 @@ public class COM extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));

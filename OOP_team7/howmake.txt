@@ -1,0 +1,15 @@
+<Three steps of encapsulation>
+1. mark all instance variables "private" so they are well hidden.
+
+2. 
+- mark getters and setters public so they can be accessed by anyone.
+  (in some cases you might want to restrict this).
+- The getter method is named 'get + member variable name', 
+  and the setter method is named 'set + member variable name'.
+
+3. Add guardians to setters (if needed).
+
+* this? Means the object currently being used. 
+It means 'own instance' created in memory after object orientation. 
+This is typically used when the constructor or method parameter uses 
+the same name as the object variable.
