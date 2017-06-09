@@ -109,57 +109,24 @@ public class VariableCont extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
+		panel.setBounds(84, 51, 804, 331);
 		panel.setBackground(new Color(245, 255, 250));
 		
-		ImageIcon img = new ImageIcon("cast.jpg");
-		ImageIcon img2 = new ImageIcon("vtd.jpg");
-		
 		JLabel lblNewLabel = new JLabel("Casting");
+		lblNewLabel.setBounds(84, 394, 78, 31);
 		lblNewLabel.setForeground(new Color(0, 191, 255));
 		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
 		
-		JLabel lblNewLabel_1 = new JLabel(img);
-		
 		JLabel lblNewLabel_2 = new JLabel("Variable types according to declaration");
+		lblNewLabel_2.setBounds(416, 394, 397, 31);
 		lblNewLabel_2.setForeground(new Color(0, 191, 255));
 		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_3 = new JLabel(img2);
-		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_1))
-					.addGap(62)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_2)
-						.addComponent(lblNewLabel_3))
-					.addContainerGap(681, Short.MAX_VALUE))
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 499, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_2))
-					.addGap(3)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(lblNewLabel_3))
-					.addContainerGap(295, Short.MAX_VALUE))
-		);
 		
 	
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
-		textArea.setFont(new Font("Segoe Print", Font.PLAIN, 22));
-		textArea.setBackground(new Color(245, 255, 250));
+		textArea.setFont(new Font("Lucida Sans Typewriter", Font.PLAIN, 18));
+		textArea.setBackground(new Color(230, 230, 250));
 		
 		File VariF = new File("VariableCont.txt");
 
@@ -194,16 +161,35 @@ public class VariableCont extends JFrame {
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
+				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 491, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 329, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(59, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(lblNewLabel);
+		contentPane.add(lblNewLabel_2);
+		contentPane.add(panel);
+		
+		ImageIcon img = new ImageIcon("cast.jpg");
+		ImageIcon img2 = new ImageIcon("vtd.jpg");
+		ImageIcon img3 = new ImageIcon("computer.jpg");
+		
+		JLabel lblNewLabel_1 = new JLabel(img);
+		lblNewLabel_1.setBounds(84, 430, 304, 179);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_3 = new JLabel(img2);
+		lblNewLabel_3.setBounds(385, 430, 472, 158);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel(img3);
+		lblNewLabel_4.setBounds(0, 0, 968, 862);
+		contentPane.add(lblNewLabel_4);
 	}
 
 }
