@@ -119,16 +119,12 @@ public class Blank_question {
 		ImageIcon i3 = new ImageIcon("heart3.png");
 		ImageIcon i4 = new ImageIcon("heart4.png");
 		
-
 		h.add(i1);
 		h.add(i2);
 		h.add(i3);
 		h.add(i4);
 
-
-		return h;
-		
-		
+		return h;	
 	}
 	
 	public void setheart(int n) {
