@@ -12,6 +12,8 @@ import javax.swing.JTextArea;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -41,7 +43,9 @@ public class Blank_Game {
    private ArrayList<String> answer = new ArrayList<String>(bq.answer());
    private ArrayList<String> solution = new ArrayList<String>(bq.solution());
    private ArrayList<Icon> img = new ArrayList<Icon>(bq.question());
-
+   private ArrayList<Icon> ht = new ArrayList<Icon>(bq.heart());
+   
+   
    /**
     * Launch the application.
     */
@@ -74,13 +78,19 @@ public class Blank_Game {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
       JLabel lblNewLabel = new JLabel("");
-      System.out.println(img.get(bq.getnum()));
+     // System.out.println(img.get(bq.getnum()));
       Icon image = img.get(bq.getnum()); 
       lblNewLabel.setIcon(image);
+      
+      JLabel lblNewLabel_1 = new JLabel("");
+      //System.out.println(ht.get(bq.getnum()));
+      Icon heart = ht.get(bq.getheart()); 
+      lblNewLabel_1.setIcon(heart);
       
       lblNewLabel.setBackground(Color.DARK_GRAY);
 
       JPanel panel = new JPanel();
+      panel.setBackground(Color.DARK_GRAY);
       GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
       groupLayout.setHorizontalGroup(
          groupLayout.createParallelGroup(Alignment.LEADING)
@@ -97,6 +107,7 @@ public class Blank_Game {
       );
       
       JLabel lblAnser = new JLabel("Answer : ");
+      lblAnser.setForeground(Color.BLACK);
       lblAnser.setFont(new Font("Arial", Font.BOLD, 45));
       
       textField = new JTextField();
@@ -118,18 +129,31 @@ public class Blank_Game {
                       bs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
                       bs.lblNewLabel.setBounds(0, 0, 978, 913);
                       bs.frame.getContentPane().add(bs.lblNewLabel);     
+                      frame.setVisible(false);
+                      bs.frame.setVisible(true);
                  }
                  else{
-                     bs.lblNewLabel = new JLabel("");
-                     bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
-                     bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
-                     bs.lblNewLabel.setBounds(0, 0, 978, 913);
-                     bs.frame.getContentPane().add(bs.lblNewLabel);
+                	 if(bq.getheart()==0){
+                		 bq.setheart(3);
+                		 JOptionPane.showMessageDialog(null, "Study hard!");
+                		 frame.setVisible(false);
+                		 Study study = new Study();
+                		 study.frame.setVisible(true);
+                	 }
+                	 else{
+                		 bq.setheart(bq.getheart()-1);
+	                     bs.lblNewLabel = new JLabel("");
+	                     bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+	                     bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+	                     bs.lblNewLabel.setBounds(0, 0, 978, 913);
+	                     bs.frame.getContentPane().add(bs.lblNewLabel);
+	                     frame.setVisible(false);
+	                     bs.frame.setVisible(true);
+                	 }
                  }
                
 
-                 frame.setVisible(false);
-                 bs.frame.setVisible(true);
+                
       		}
       	}
       });
@@ -154,49 +178,67 @@ public class Blank_Game {
                  bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
                  bs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
                  bs.lblNewLabel.setBounds(0, 0, 978, 913);
-                 bs.frame.getContentPane().add(bs.lblNewLabel);     
+                 bs.frame.getContentPane().add(bs.lblNewLabel);   
+                 frame.setVisible(false);
+                 bs.frame.setVisible(true);
             }
             else{
-                bs.lblNewLabel = new JLabel("");
-                bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
-                bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
-                bs.lblNewLabel.setBounds(0, 0, 978, 913);
-                bs.frame.getContentPane().add(bs.lblNewLabel);
+            	 if(bq.getheart()==0){
+            		 JOptionPane.showMessageDialog(null, "Study hard!");
+            		 frame.setVisible(false);
+            		 Study study = new Study();
+            		 study.frame.setVisible(true);
+            	 }
+            	 bq.setheart(bq.getheart()-1);
+                 bs.lblNewLabel = new JLabel("");
+                 bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+                 bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
+                 bs.lblNewLabel.setBounds(0, 0, 978, 913);
+                 bs.frame.getContentPane().add(bs.lblNewLabel);
+                 frame.setVisible(false);
+                 bs.frame.setVisible(true);
             }
           
 
-            frame.setVisible(false);
-            bs.frame.setVisible(true);
+           
          }
       });
       btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));
+      
       GroupLayout gl_panel = new GroupLayout(panel);
       gl_panel.setHorizontalGroup(
-         gl_panel.createParallelGroup(Alignment.TRAILING)
-            .addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
-               .addGap(101)
-               .addComponent(lblAnser, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
-               .addPreferredGap(ComponentPlacement.RELATED)
-               .addComponent(textField, GroupLayout.PREFERRED_SIZE, 338, GroupLayout.PREFERRED_SIZE)
-               .addPreferredGap(ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-               .addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
-               .addGap(63))
-            .addGroup(gl_panel.createSequentialGroup()
-               .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 919, GroupLayout.PREFERRED_SIZE)
-               .addGap(28))
+      	gl_panel.createParallelGroup(Alignment.LEADING)
+      		.addGroup(gl_panel.createSequentialGroup()
+      			.addContainerGap()
+      			.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 919, GroupLayout.PREFERRED_SIZE)
+      			.addContainerGap(28, Short.MAX_VALUE))
+      		.addGroup(gl_panel.createSequentialGroup()
+      			.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+      				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+      					.addGap(45)
+      					.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+      				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+      					.addGap(101)
+      					.addComponent(lblAnser, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
+      			.addPreferredGap(ComponentPlacement.RELATED)
+      			.addComponent(textField, GroupLayout.PREFERRED_SIZE, 338, GroupLayout.PREFERRED_SIZE)
+      			.addPreferredGap(ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+      			.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
+      			.addGap(63))
       );
       gl_panel.setVerticalGroup(
-         gl_panel.createParallelGroup(Alignment.LEADING)
-            .addGroup(gl_panel.createSequentialGroup()
-               .addGap(47)
-               .addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 597, GroupLayout.PREFERRED_SIZE)
-               .addGap(42)
-               .addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-                  .addComponent(lblAnser, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
-                  .addComponent(textField, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-                  .addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE))
-               .addGap(25))
+      	gl_panel.createParallelGroup(Alignment.LEADING)
+      		.addGroup(gl_panel.createSequentialGroup()
+      			.addGap(47)
+      			.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)
+      			.addGap(34)
+      			.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
+      			.addPreferredGap(ComponentPlacement.RELATED)
+      			.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+      				.addComponent(lblAnser, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
+      				.addComponent(textField, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+      				.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE))
+      			.addGap(25))
       );
       panel.setLayout(gl_panel);
       frame.getContentPane().setLayout(groupLayout);
@@ -211,6 +253,7 @@ public class Blank_Game {
       mntmGoToMenu.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
         	bq.setnum(0);
+        	bq.setheart(3);
             MENU m= new MENU();
             frame.setVisible(false);
             m.frame.setVisible(true);
@@ -225,6 +268,7 @@ public class Blank_Game {
       mntmNo.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             bq.setnum(0);
+            bq.setheart(3);
             frame.setVisible(true);
             Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(false);
@@ -344,5 +388,4 @@ public class Blank_Game {
       mnQuestion.add(mntmNo_9);
       
    }
-   
 }
