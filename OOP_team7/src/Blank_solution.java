@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -21,12 +22,13 @@ public class Blank_solution {
 	
 	boolean Blank_isCorrect;
 	private Blank_question bq = new Blank_question();
-	Blank_Game oxg = new Blank_Game();
+	Blank_Game bg = new Blank_Game();
 	
 	
 	JFrame frame;
 	JTextArea textArea;
 	private JMenuBar menuBar;
+	JLabel lblNewLabel;
 	
 	/**
 	 * Launch the application.
@@ -56,41 +58,32 @@ public class Blank_solution {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1000, 10000);
+		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		
 		textArea = new JTextArea();
-		textArea.setLineWrap(true);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
-		textArea.setBounds(0, 0, 978, 944);
+		textArea.setForeground(Color.BLACK);
+		textArea.setOpaque(false);
+		JButton btnNewButton = new JButton("Next");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				bq.setnum(bq.getnum()+1);
+				bg.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setBounds(829, 845, 132, 53);
+		frame.getContentPane().add(btnNewButton);
 		
-		frame.getContentPane().add(textArea);
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 978, 913);
+		frame.getContentPane().add(lblNewLabel);
 		
-		JButton btnNext = new JButton("Next");
-		btnNext.setFont(new Font("Arial", Font.BOLD, 30));
-		btnNext.setForeground(Color.WHITE);
-		btnNext.setBackground(Color.BLACK);
-		btnNext.setBounds(829, 845, 132, 53);
-		
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(809, Short.MAX_VALUE)
-					.addComponent(btnNext, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 967, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(btnNext, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		frame.getContentPane().setLayout(groupLayout);
 		menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 		
@@ -119,8 +112,7 @@ public class Blank_solution {
 		mntmNo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				bq.setnum(0);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -131,8 +123,7 @@ public class Blank_solution {
 		mntmNo_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(1);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -143,8 +134,7 @@ public class Blank_solution {
 		mntmNo_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(2);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -155,8 +145,7 @@ public class Blank_solution {
 		mntmNo_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(3);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -167,8 +156,7 @@ public class Blank_solution {
 		mntmNo_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(4);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -179,8 +167,7 @@ public class Blank_solution {
 		mntmNo_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(5);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -191,8 +178,7 @@ public class Blank_solution {
 		mntmNo_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(6);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -203,8 +189,7 @@ public class Blank_solution {
 		mntmNo_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(7);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -215,8 +200,7 @@ public class Blank_solution {
 		mntmNo_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(8);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -227,8 +211,7 @@ public class Blank_solution {
 		mntmNo_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bq.setnum(9);
-				Blank_Game newBlank = new Blank_Game();
-				newBlank.frame.setVisible(true);
+				bg.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
