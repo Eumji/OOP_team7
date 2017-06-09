@@ -64,19 +64,15 @@ public class MultipleChoice_Game {
 		textArea_1.setEditable(false);
 		textArea_1.setFont(new Font("Arial", Font.BOLD, 28));
 		
-		//System.out.println(count);
+		
 		textArea_1.setText(question.get(count));
-		//System.out.println("q" + count);
+		
 		JButton btnNewButton = new JButton("1.");
 		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(count).equals("1.")) {
-					//System.out.println("a" + count);
-					mcs.textArea.setBackground(Color.GREEN);
-				} else
-					mcs.textArea.setBackground(Color.RED);
+			
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 
@@ -88,11 +84,7 @@ public class MultipleChoice_Game {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(count).equals("2."))
-					mcs.textArea.setBackground(Color.GREEN);
-				else
-					mcs.textArea.setBackground(Color.RED);
-
+			
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 
@@ -104,10 +96,7 @@ public class MultipleChoice_Game {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(count).equals("3."))
-					mcs.textArea.setBackground(Color.GREEN);
-				else
-					mcs.textArea.setBackground(Color.RED);
+	
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 			}
@@ -118,10 +107,7 @@ public class MultipleChoice_Game {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(count).equals("4."))
-					mcs.textArea.setBackground(Color.GREEN);
-				else
-					mcs.textArea.setBackground(Color.RED);
+				
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 			}
