@@ -45,7 +45,6 @@ public class VariableCont extends JFrame {
 		});
 	}
 
-	
 	/**
 	 * Create the frame.
 	 */

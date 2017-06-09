@@ -26,6 +26,7 @@ public class MultipleChoice_Game {
 	JTextArea textArea;
 	JLabel lblNewLabel_1;
 	ArrayList<Icon> img = new ArrayList<>();
+	Score score = new Score();
 	MultipleChoice_Question mcq = new MultipleChoice_Question();
 	private ArrayList<String> question = new ArrayList<String>(mcq.question());
 	private ArrayList<String> answer = new ArrayList<String>(mcq.answer());
@@ -73,12 +74,12 @@ public class MultipleChoice_Game {
 		ImageIcon i2 = new ImageIcon("heart3.png");
 		ImageIcon i3 = new ImageIcon("heart2.png");
 		ImageIcon i4 = new ImageIcon("heart1.png");
-		img.add(i1);
-		img.add(i2);
-		img.add(i3);
 		img.add(i4);
+		img.add(i3);
+		img.add(i2);
+		img.add(i1);
 
-		lblNewLabel_1 = new JLabel(img.get(0));
+		lblNewLabel_1 = new JLabel(img.get(score.read_score()));
 		lblNewLabel_1.setBounds(38, 385, 315, 67);
 		frame.getContentPane().add(lblNewLabel_1);
 
@@ -98,9 +99,10 @@ public class MultipleChoice_Game {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(mcq.read_counter()).equals("1.") == true)
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else
-
+				else{
+                    score.minus_score(score.read_score());
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+				}
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 
@@ -115,9 +117,10 @@ public class MultipleChoice_Game {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(mcq.read_counter()).equals("2.") == true)
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else
-
+				else{
+					score.minus_score(score.read_score());
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+				}
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 
@@ -132,9 +135,10 @@ public class MultipleChoice_Game {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(mcq.read_counter()).equals("3.") == true)
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else
-
+				else{
+					score.minus_score(score.read_score());
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+				}
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 			}
@@ -148,9 +152,10 @@ public class MultipleChoice_Game {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(mcq.read_counter()).equals("4.") == true)
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else
-
+				else{
+					score.minus_score(score.read_score());
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+				}
 				mcs.frame.setVisible(true);
 				frame.setVisible(false);
 

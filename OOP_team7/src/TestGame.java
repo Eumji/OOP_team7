@@ -41,6 +41,7 @@ public class TestGame extends MENU{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -53,11 +54,17 @@ public class TestGame extends MENU{
 		lblTestGame.setFont(new Font("Arial Black", Font.PLAIN, 60));
 		frame.getContentPane().add(lblTestGame);
 		
+		
+		
 		JButton btnNewButton = new JButton("OX");
 		btnNewButton.setBackground(new Color(153, 204, 204));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 70));
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {//ox 누르면
+			public void actionPerformed(ActionEvent arg0) {
+				//ox 누르면
+				Score sco = new Score();
+				sco.game_restart();
+				
 				ox_question oxq = new ox_question();
 				oxq.ox_restart();
 				ox_Game ox = new ox_Game();
@@ -87,6 +94,8 @@ public class TestGame extends MENU{
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Blank_question bq = new Blank_question();
+				bq.setnum(0);
 				Blank_Game bg = new Blank_Game();
 				bg.frame.setVisible(true);
 				frame.setVisible(false);

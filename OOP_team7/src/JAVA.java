@@ -27,6 +27,7 @@ public class JAVA {
 	private JTextField textField;
 	private String Nickname;
 	private JPasswordField textField_1;
+	
 	/**
 	 * Launch the application.
 	 */
