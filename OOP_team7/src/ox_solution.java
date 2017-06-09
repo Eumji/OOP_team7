@@ -74,12 +74,6 @@ public class ox_solution{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		frame.getContentPane().add(btnNewButton);
-		textArea.setLineWrap(true);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
-		textArea.setBounds(0, 0, 978, 944);
-		
-		frame.getContentPane().add(textArea);
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(0, 0, 978, 913);

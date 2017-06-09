@@ -42,20 +42,20 @@ public class TestGame extends MENU{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setBounds(100, 100, 1000, 1000);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblTestGame = new JLabel("Test Game");
-		lblTestGame.setBounds(0, 0, 478, 73);
+		lblTestGame.setBounds(0, 0, 978, 151);
 		lblTestGame.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTestGame.setFont(new Font("Arial Black", Font.PLAIN, 40));
+		lblTestGame.setFont(new Font("Arial Black", Font.PLAIN, 60));
 		frame.getContentPane().add(lblTestGame);
 		
 		JButton btnNewButton = new JButton("OX");
 		btnNewButton.setBackground(new Color(153, 204, 204));
-		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 70));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {//ox ´©¸£¸é
 				ox_question oxq = new ox_question();
@@ -66,7 +66,7 @@ public class TestGame extends MENU{
 				
 			}
 		});
-		btnNewButton.setBounds(10, 72, 225, 177);
+		btnNewButton.setBounds(11, 160, 467, 375);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnMC = new JButton("Multiple Choice");
@@ -79,8 +79,8 @@ public class TestGame extends MENU{
 				frame.setVisible(false);
 			}
 		});
-		btnMC.setFont(new Font("Arial", Font.BOLD, 24));
-		btnMC.setBounds(10, 252, 225, 177);
+		btnMC.setFont(new Font("Arial", Font.BOLD, 50));
+		btnMC.setBounds(11, 559, 467, 375);
 		frame.getContentPane().add(btnMC);
 		
 		JButton btnBlank = new JButton("Blank");
@@ -92,8 +92,8 @@ public class TestGame extends MENU{
 			}
 		});
 		btnBlank.setBackground(new Color(153, 204, 204));
-		btnBlank.setFont(new Font("Arial", Font.BOLD, 30));
-		btnBlank.setBounds(242, 72, 225, 357);
+		btnBlank.setFont(new Font("Arial", Font.BOLD, 70));
+		btnBlank.setBounds(500, 160, 467, 774);
 		frame.getContentPane().add(btnBlank);
 		
 		JButton btnHome = new JButton("menu");
@@ -105,8 +105,8 @@ public class TestGame extends MENU{
 			}
 		});
 		btnHome.setBackground(new Color(100, 149, 237));
-		btnHome.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		btnHome.setBounds(17, 15, 78, 29);
+		btnHome.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		btnHome.setBounds(17, 15, 139, 54);
 		frame.getContentPane().add(btnHome);
 	}
 }

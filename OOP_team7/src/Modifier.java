@@ -94,9 +94,11 @@ public class Modifier extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
+		panel.setBounds(99, 72, 415, 555);
 		panel.setBackground(new Color(255, 250, 250));
 		
 		JLabel lblNewLabel = new JLabel("Default");
+		lblNewLabel.setBounds(586, 5, 77, 31);
 		lblNewLabel.setForeground(new Color(95, 158, 160));
 		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
 		
@@ -105,36 +107,14 @@ public class Modifier extends JFrame {
 		ImageIcon img3 = new ImageIcon("canused.jpg");
 		
 		JLabel lblNewLabel_2 = new JLabel("Public");
+		lblNewLabel_2.setBounds(586, 44, 63, 31);
 		lblNewLabel_2.setForeground(new Color(95, 158, 160));
 		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
 		
 		JLabel lblNewLabel_4 = new JLabel("Where it can be used");
+		lblNewLabel_4.setBounds(586, 84, 211, 31);
 		lblNewLabel_4.setForeground(new Color(95, 158, 160));
 		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 568, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_2)
-						.addComponent(lblNewLabel_4))
-					.addContainerGap(166, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel)
-					.addGap(8)
-					.addComponent(lblNewLabel_2)
-					.addGap(9)
-					.addComponent(lblNewLabel_4)
-					.addContainerGap(742, Short.MAX_VALUE))
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
-		);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
@@ -164,6 +144,7 @@ public class Modifier extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		contentPane.setLayout(null);
 		
 		textArea.setCaretPosition(0);
 		JScrollPane scrollPane = new JScrollPane(textArea);
@@ -176,10 +157,15 @@ public class Modifier extends JFrame {
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 642, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(210, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.add(panel);
+		contentPane.add(lblNewLabel);
+		contentPane.add(lblNewLabel_2);
+		contentPane.add(lblNewLabel_4);
 	}
 
 }

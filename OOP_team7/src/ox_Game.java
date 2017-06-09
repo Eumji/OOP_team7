@@ -66,6 +66,8 @@ public class ox_Game extends TestGame {
 	 */
 	private void initialize() {
 		oxgame = new JFrame();
+		oxgame.setBackground(Color.WHITE);
+		oxgame.getContentPane().setBackground(Color.WHITE);
 		oxgame.setBounds(100, 100, 1000, 1000);
 		oxgame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
