@@ -52,6 +52,7 @@ public class Variable extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.
