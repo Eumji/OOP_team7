@@ -95,9 +95,9 @@ public class MultipleChoice_Game {
 		textArea_1.setText(question.get(mcq.read_counter()));
 
 		JButton btnNewButton = new JButton("1.");
-		btnNewButton.setBackground(new Color(135, 206, 250));
+		btnNewButton.setBackground(new Color(175, 238, 238));
 		btnNewButton.setBounds(14, 499, 61, 72);
-		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 25));
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -125,9 +125,9 @@ public class MultipleChoice_Game {
 		});
 
 		JButton btnNewButton_1 = new JButton("2.");
-		btnNewButton_1.setBackground(new Color(135, 206, 250));
+		btnNewButton_1.setBackground(new Color(255, 182, 193));
 		btnNewButton_1.setBounds(14, 602, 61, 76);
-		btnNewButton_1.setFont(new Font("±¼¸²", Font.PLAIN, 25));
+		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -153,9 +153,9 @@ public class MultipleChoice_Game {
 		});
 
 		JButton button = new JButton("3.");
-		button.setBackground(new Color(135, 206, 250));
+		button.setBackground(new Color(255, 250, 205));
 		button.setBounds(14, 703, 61, 74);
-		button.setFont(new Font("±¼¸²", Font.PLAIN, 25));
+		button.setFont(new Font("Arial", Font.PLAIN, 30));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -181,9 +181,9 @@ public class MultipleChoice_Game {
 		});
 
 		JButton button_1 = new JButton("4.");
-		button_1.setBackground(new Color(135, 206, 250));
+		button_1.setBackground(new Color(230, 230, 250));
 		button_1.setBounds(14, 813, 61, 76);
-		button_1.setFont(new Font("±¼¸²", Font.PLAIN, 25));
+		button_1.setFont(new Font("Arial", Font.PLAIN, 30));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();

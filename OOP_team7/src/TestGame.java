@@ -110,7 +110,7 @@ public class TestGame extends MENU {
 		btnBlank.setBounds(500, 160, 467, 774);
 		frame.getContentPane().add(btnBlank);
 
-		JButton btnHome = new JButton("menu");
+		JButton btnHome = new JButton("Menu");
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MENU home = new MENU();
