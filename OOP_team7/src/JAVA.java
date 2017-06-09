@@ -20,6 +20,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.UIManager;
+import java.awt.Color;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class JAVA {
 
@@ -65,20 +68,30 @@ public class JAVA {
 	private void initialize() {
 		
 		frame = new JFrame("Java");
+		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblJavaGame = new JLabel("JAVA GAME");
-		lblJavaGame.setFont(new Font("Baskerville Old Face", Font.PLAIN, 50));
+		lblJavaGame.setForeground(new Color(0, 0, 0));
+		lblJavaGame.setBackground(new Color(255, 255, 255));
+		lblJavaGame.setFont(new Font("Bauhaus 93", Font.PLAIN, 60));
 		
 		JLabel label_1 = new JLabel("ID :");
+		label_1.setFont(new Font("Arial", Font.PLAIN, 27));
 		
 		textField = new JTextField();
+		textField.setForeground(new Color(0, 0, 0));
+		textField.setFont(new Font("Arial", Font.PLAIN, 30));
+		textField.setBackground(new Color(255, 255, 255));
 		textField.setColumns(10);
 		
 		JLabel label_2 = new JLabel("Password : ");
+		label_2.setFont(new Font("Arial", Font.PLAIN, 27));
 		
 		JButton button = new JButton("sign up");
+		button.setFont(new Font("Arial", Font.PLAIN, 30));
+		button.setBackground(new Color(255, 255, 255));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SignUp su = new SignUp();
@@ -87,6 +100,8 @@ public class JAVA {
 		});
 		
 		JButton button_1 = new JButton("login");
+		button_1.setBackground(new Color(255, 255, 255));
+		button_1.setFont(new Font("Arial", Font.PLAIN, 30));
 
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,6 +140,9 @@ public class JAVA {
 		});
 		
 		textField_1 = new JPasswordField();
+		textField_1.setForeground(new Color(0, 0, 0));
+		textField_1.setFont(new Font("Arial", Font.PLAIN, 30));
+		textField_1.setBackground(new Color(255, 255, 255));
 		textField_1.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -167,6 +185,8 @@ public class JAVA {
 		char echoChar = textField_1.getEchoChar(); 
 		
 		JRadioButton rdbtnShowPassword = new JRadioButton("Show password");
+		rdbtnShowPassword.setFont(new Font("Arial", Font.PLAIN, 23));
+		rdbtnShowPassword.setBackground(new Color(135, 206, 250));
 		rdbtnShowPassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(textField_1.getEchoChar()==echoChar){ 
@@ -182,53 +202,50 @@ public class JAVA {
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(44)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(17)
+							.addComponent(button, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)))
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(44)
+							.addGap(14)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(39)
-									.addComponent(button, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-									.addGap(90)
-									.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addGap(66)
-											.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
-										.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-									.addGap(68)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(textField_1)
-										.addComponent(textField)
-										.addComponent(rdbtnShowPassword)))))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(79)
-							.addComponent(lblJavaGame, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(174, Short.MAX_VALUE))
+								.addComponent(textField_1)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 217, GroupLayout.PREFERRED_SIZE)
+								.addComponent(rdbtnShowPassword))
+							.addGap(25))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
+							.addGap(48))))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap(102, Short.MAX_VALUE)
+					.addComponent(lblJavaGame, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+					.addGap(80))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(24)
+					.addGap(33)
 					.addComponent(lblJavaGame, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-					.addGap(45)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label_1))
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(39)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(label_1)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
 					.addGap(29)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(label_2)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addComponent(rdbtnShowPassword)
 					.addGap(48)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(button)
-						.addComponent(button_1))
-					.addContainerGap(123, Short.MAX_VALUE))
+						.addComponent(button, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+						.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(95, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}

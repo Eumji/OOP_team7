@@ -225,9 +225,11 @@ public class Blank_Game {
 		frame.setJMenuBar(menuBar);
 
 		JMenu mnMenu = new JMenu("Menu");
+		mnMenu.setFont(new Font("Arial", Font.PLAIN, 25));
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmGoToMenu = new JMenuItem("Go to Menu");
+		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 20));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				bq.setnum(0);
@@ -240,6 +242,7 @@ public class Blank_Game {
 		mnMenu.add(mntmGoToMenu);
 
 		JMenu mnQuestion = new JMenu("Question");
+		mnQuestion.setFont(new Font("Arial", Font.PLAIN, 25));
 		menuBar.add(mnQuestion);
 
 		JMenuItem mntmNo = new JMenuItem("No.1");
