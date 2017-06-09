@@ -7,5 +7,5 @@ private modifier is deleted.
 main method
 Encapsulation is used to prevent wrong people from approaching and changing values strangely.
 32bits
-9
-10
+instance variable
+blueprint

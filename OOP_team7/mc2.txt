@@ -7,5 +7,5 @@ private methods that have same name of variables are present.
 setting and getting method
 For encapsulated variables, you can use the dot operator to change values.
 16bits
-9
-10
+local variable
+greenprint

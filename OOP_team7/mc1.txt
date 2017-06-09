@@ -7,5 +7,5 @@ new variable that are not declared private is written.
 setter and getter method
 You can use functions freely.
 8bits
-9
-10
+class variable
+redprint
