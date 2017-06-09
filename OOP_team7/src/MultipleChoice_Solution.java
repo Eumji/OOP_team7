@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 public class MultipleChoice_Solution {
 
 	boolean mc_isCorrect;
+
 	public boolean isMc_isCorrect() {
 		return mc_isCorrect;
 	}
@@ -24,9 +25,9 @@ public class MultipleChoice_Solution {
 	JTextArea textArea;
 	MultipleChoice_Question mcq = new MultipleChoice_Question();
 	MultipleChoice_Game mcg = new MultipleChoice_Game();
+	
 	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
 	private JButton btnNext;
-	
 
 	/**
 	 * Launch the application.
@@ -55,6 +56,7 @@ public class MultipleChoice_Solution {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		TestGame tg = new TestGame();
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,10 +67,15 @@ public class MultipleChoice_Solution {
 		btnNext.setFont(new Font("±¼¸²", Font.PLAIN, 30));
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				mcg.frame.setVisible(true);
-				frame.setVisible(false);
-				
+				if(mcq.read_counter()==11){
+					TestGame t = new TestGame();
+					t.frame.setVisible(true);
+					frame.setVisible(false);
+				}
+				else{
+					mcg.frame.setVisible(true);
+				    frame.setVisible(false);
+				}
 			}
 		});
 		
@@ -86,9 +93,10 @@ public class MultipleChoice_Solution {
 		
 		if(mc_isCorrect == true)
 			textArea.setBackground(new Color(60,179,113));
-		else
-			textArea.setBackground(new Color(178,34,34));
-		
+		else{
+		 textArea.setBackground(new Color(178,34,34));
+		 
+		}
 	}
 
 }
