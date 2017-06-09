@@ -38,7 +38,6 @@ public class Blank_question {
       img.add(i9);
       img.add(i10);
       
-      
       return img;
    }
    

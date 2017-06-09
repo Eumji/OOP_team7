@@ -45,6 +45,7 @@ public class ox_question {
 		return ox_quiz;
 	}
 	
+	
 	public ArrayList<String> solution(){
 		ArrayList<String> ox_quiz;
 		BufferedReader br = null;

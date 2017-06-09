@@ -56,33 +56,34 @@ public class MultipleChoice_Solution {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 500, 500);
+		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textArea = new JTextArea();
 		btnNext = new JButton("Next");
+		btnNext.setFont(new Font("±¼¸²", Font.PLAIN, 30));
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				mcg.count++;
 				mcg.frame.setVisible(true);
 				frame.setVisible(false);
-				System.out.println("s"+mcg.count);
+				
 			}
 		});
 		
-		btnNext.setBounds(363, 414, 105, 27);
+		btnNext.setBounds(789, 824, 167, 97);
 		frame.getContentPane().add(btnNext);
 		
 		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.PLAIN, 30));
-		textArea.setBounds(0, 0, 482, 453);
+		textArea.setBounds(0, 0, 982, 953);
 		
 		frame.getContentPane().add(textArea);
-		
+		textArea.setText(solution.get(mcg.count));
 		
 		if(mc_isCorrect == true)
 			textArea.setBackground(Color.GREEN);

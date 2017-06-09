@@ -44,7 +44,6 @@ public class COM extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
