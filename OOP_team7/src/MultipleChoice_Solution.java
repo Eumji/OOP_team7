@@ -66,7 +66,6 @@ public class MultipleChoice_Solution {
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				mcg.count++;
 				mcg.frame.setVisible(true);
 				frame.setVisible(false);
 				
@@ -83,12 +82,12 @@ public class MultipleChoice_Solution {
 		textArea.setBounds(0, 0, 982, 953);
 		
 		frame.getContentPane().add(textArea);
-		textArea.setText(solution.get(mcg.count));
+		textArea.setText(solution.get(mcq.read_counter()));
 		
 		if(mc_isCorrect == true)
-			textArea.setBackground(Color.GREEN);
+			textArea.setBackground(new Color(60,179,113));
 		else
-			textArea.setBackground(Color.RED);
+			textArea.setBackground(new Color(178,34,34));
 		
 	}
 

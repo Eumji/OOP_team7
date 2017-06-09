@@ -66,4 +66,47 @@ public class MultipleChoice_Question {
 		return mc_quiz;
 	}
 
+	public int read_counter(){
+		int counter = 0;
+		String line = null;
+		BufferedReader br = null;
+		try{
+			br = new BufferedReader(new FileReader("ox_counter.txt"));
+			line = br.readLine();
+			br.close();
+		}catch(FileNotFoundException fnfe){
+			System.out.println("File is not found.");
+		}catch(IOException ioe){
+			System.out.println("File input//output error.");
+		}
+		counter = Integer.parseInt(line);
+		return counter;
+	}
+	
+	public void plus_counter(int co){
+		BufferedWriter bw = null;
+		String line = null;
+		line = Integer.toString(co+1);
+		try {
+			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void mc_restart(){
+		BufferedWriter bw = null;
+		String line = "0";
+		try {
+			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
