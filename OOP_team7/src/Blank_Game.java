@@ -329,7 +329,8 @@ public class Blank_Game {
       
       JMenuItem mntmNo_9 = new JMenuItem("No.10");
       mntmNo_9.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
+         public void actionPerformed(ActionEvent e) 
+         {
             bq.setnum(9);
             frame.setVisible(true);
             Blank_Game bg = new Blank_Game();

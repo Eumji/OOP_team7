@@ -19,8 +19,11 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.Label;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Blank_solution {
+public class Blank_solution{
 
    
 
@@ -68,6 +71,26 @@ public class Blank_solution {
       
 
       JButton btnNewButton = new JButton("Next");
+      btnNewButton.addKeyListener(new KeyAdapter() {
+      	@Override
+      	public void keyPressed(KeyEvent e) {
+      		if(e.getKeyChar()=='\n'){
+    			if(bq.getnum()==9){
+    	    		bq.setnum(0);
+    	          
+    	            TestGame tg = new TestGame();
+    	            tg.frame.setVisible(true);
+    	            frame.setVisible(false);
+    	    	}
+    	    	else{
+    	    		bq.setnum(bq.getnum()+1);
+    	    		
+    	    		frame.setVisible(false);
+    	    		bg.frame.setVisible(true);
+    	    	}
+    		}
+      	}
+      });
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) { 
         	if(bq.getnum()==9){
@@ -228,4 +251,8 @@ public class Blank_solution {
       mnQuestion.add(mntmNo_9);
       
    }
+
+	
+
+
 }
