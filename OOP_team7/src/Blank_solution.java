@@ -68,9 +68,17 @@ public class Blank_solution {
       JButton btnNewButton = new JButton("Next");
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) { 
-        	bq.setnum(bq.getnum()+1);
-            bg.frame.setVisible(true);
-            frame.setVisible(false);
+        	if(bq.getnum()==9){
+        		bq.setnum(0);
+                frame.setVisible(false);
+                MENU home = new MENU();
+                home.frame.setVisible(true);
+        	}
+        	else{
+        		bq.setnum(bq.getnum()+1);
+        		bg.frame.setVisible(true);
+        		frame.setVisible(false);
+        	}
          }
       });
       btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
@@ -95,6 +103,7 @@ public class Blank_solution {
       mntmGoToMenu.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             //menu로 돌아가기
+        	bq.setnum(0);
             MENU home = new MENU();
             home.frame.setVisible(true);
             frame.setVisible(false);

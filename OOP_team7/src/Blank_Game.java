@@ -112,6 +112,7 @@ public class Blank_Game {
             else{
                bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
             }
+            bs.textArea.setText(solution.get(bq.getnum()));
             frame.setVisible(false);
             bs.frame.setVisible(true);
          }
@@ -157,7 +158,7 @@ public class Blank_Game {
       JMenuItem mntmGoToMenu = new JMenuItem("Go to Menu");
       mntmGoToMenu.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
-            
+        	bq.setnum(0);
             MENU m= new MENU();
             frame.setVisible(false);
             m.frame.setVisible(true);
