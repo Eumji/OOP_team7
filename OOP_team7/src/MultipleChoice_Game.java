@@ -27,12 +27,12 @@ public class MultipleChoice_Game {
 	JTextArea textArea;
 	JLabel lblNewLabel_1;
 	ArrayList<Icon> img = new ArrayList<>();
-
+	HEART h = new HEART();
 	MultipleChoice_Question mcq = new MultipleChoice_Question();
 	private ArrayList<String> question = new ArrayList<String>(mcq.question());
 	private ArrayList<String> answer = new ArrayList<String>(mcq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
-	private ArrayList<Icon> ht = new ArrayList<Icon>(mcq.heart());
+	private ArrayList<Icon> ht = new ArrayList<Icon>(h.heart());
 
 	/**
 	 * Launch the application.
@@ -69,12 +69,12 @@ public class MultipleChoice_Game {
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		// String q = new String(question.get(mcq.read_counter()));
 		// textArea.setText(q);
 
 		lblNewLabel_1 = new JLabel("");
-		Icon heart = ht.get(mcq.getheart());
+		Icon heart = ht.get(h.getheart());
 		lblNewLabel_1.setIcon(heart);
 		lblNewLabel_1.setBounds(38, 385, 315, 67);
 		frame.getContentPane().add(lblNewLabel_1);
@@ -99,14 +99,14 @@ public class MultipleChoice_Game {
 					frame.setVisible(false);
 				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (mcq.getheart() == 0) {
-						mcq.setheart(3);
+					if (h.getheart() == 0) {
+						h.setheart(3);
 						JOptionPane.showMessageDialog(null, "study hard");
 						frame.setVisible(false);
 						Study study = new Study();
 						study.frame.setVisible(true);
 					} else {
-						mcq.setheart(mcq.getheart() - 1);
+						h.setheart(h.getheart() - 1);
 						mcs.frame.setVisible(true);
 						frame.setVisible(false);
 					}
@@ -128,14 +128,14 @@ public class MultipleChoice_Game {
 					frame.setVisible(false);
 				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (mcq.getheart() == 0) {
-						mcq.setheart(3);
+					if (h.getheart() == 0) {
+						h.setheart(3);
 						JOptionPane.showMessageDialog(null, "study hard");
 						frame.setVisible(false);
 						Study study = new Study();
 						study.frame.setVisible(true);
 					} else {
-						mcq.setheart(mcq.getheart() - 1);
+						h.setheart(h.getheart() - 1);
 						mcs.frame.setVisible(true);
 						frame.setVisible(false);
 					}
@@ -155,18 +155,18 @@ public class MultipleChoice_Game {
 					frame.setVisible(false);
 				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (mcq.getheart() == 0) {
-						mcq.setheart(3);
+					if (h.getheart() == 0) {
+						h.setheart(3);
 						JOptionPane.showMessageDialog(null, "study hard");
 						frame.setVisible(false);
 						Study study = new Study();
 						study.frame.setVisible(true);
 					} else {
-						mcq.setheart(mcq.getheart() - 1);
+						h.setheart(h.getheart() - 1);
 						mcs.frame.setVisible(true);
 						frame.setVisible(false);
 					}
-			}
+				}
 			}
 		});
 
@@ -182,14 +182,14 @@ public class MultipleChoice_Game {
 					frame.setVisible(false);
 				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (mcq.getheart() == 0) {
-						mcq.setheart(3);
+					if (h.getheart() == 0) {
+						h.setheart(3);
 						JOptionPane.showMessageDialog(null, "study hard");
 						frame.setVisible(false);
 						Study study = new Study();
 						study.frame.setVisible(true);
 					} else {
-						mcq.setheart(mcq.getheart() - 1);
+						h.setheart(h.getheart() - 1);
 						mcs.frame.setVisible(true);
 						frame.setVisible(false);
 					}

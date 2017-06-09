@@ -1,5 +1,4 @@
-이 아래아래줄부터
-그니까 여기 아래줄부터 풀이입니다요
+ 여기 아래줄부터 풀이입니다요
 - char : It stored one character per variable.         Variables store Unicode characters.
 - Local variable is declared within a method and  can only be used within a method. When the      method ends, it is destroyed and cannot be        used.
 3.
