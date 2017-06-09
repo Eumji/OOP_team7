@@ -133,7 +133,7 @@ public class MultipleChoice_Question {
 		BufferedReader br = null;
 		mc_quiz = new ArrayList<String>();
 		try {
-			br = new BufferedReader(new FileReader("mc4.txt"));
+			br = new BufferedReader(new FileReader("mc1.txt"));
 			String line;
 
 			while ((line = br.readLine()) != null) {

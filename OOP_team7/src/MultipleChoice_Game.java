@@ -213,7 +213,7 @@ public class MultipleChoice_Game {
 
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setLineWrap(true);
-		textArea_2.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		textArea_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_2.setBounds(89, 499, 879, 72);
 		textArea_2.setEnabled(false);
 		textArea_2.setEditable(false);
@@ -222,7 +222,7 @@ public class MultipleChoice_Game {
 
 		JTextArea textArea_3 = new JTextArea();
 		textArea_3.setLineWrap(true);
-		textArea_3.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		textArea_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_3.setBounds(89, 602, 879, 76);
 		textArea_3.setEnabled(false);
 		textArea_3.setEditable(false);
@@ -231,7 +231,7 @@ public class MultipleChoice_Game {
 
 		JTextArea textArea_4 = new JTextArea();
 		textArea_4.setLineWrap(true);
-		textArea_4.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		textArea_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_4.setBounds(89, 703, 879, 74);
 		textArea_4.setEnabled(false);
 		textArea_4.setEditable(false);
@@ -240,7 +240,7 @@ public class MultipleChoice_Game {
 
 		JTextArea textArea_5 = new JTextArea();
 		textArea_5.setLineWrap(true);
-		textArea_5.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		textArea_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_5.setBounds(89, 813, 879, 76);
 		textArea_5.setEnabled(false);
 		textArea_5.setEditable(false);

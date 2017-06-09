@@ -51,7 +51,7 @@ public class MENU extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JLabel lblMenu = new JLabel("MENU");
-		lblMenu.setFont(new Font("Bodoni MT Black", Font.PLAIN, 90));
+		lblMenu.setFont(new Font("Bauhaus 93", Font.PLAIN, 99));
 
 		JButton btnStudy = new JButton("Study");
 		btnStudy.setForeground(new Color(0, 0, 0));
@@ -63,7 +63,7 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnStudy.setFont(new Font("Bell MT", Font.PLAIN, 70));
+		btnStudy.setFont(new Font("Arial", Font.PLAIN, 70));
 
 		JButton btnTestGame = new JButton("Test \r\n\r\nGame");
 		btnTestGame.setForeground(new Color(0, 0, 0));
@@ -75,28 +75,28 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnTestGame.setFont(new Font("Bell MT", Font.PLAIN, 70));
+		btnTestGame.setFont(new Font("Arial", Font.PLAIN, 70));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
 							.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 465, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(btnTestGame, GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(328)
-							.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap())
+							.addComponent(btnTestGame, GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+							.addContainerGap())
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
+							.addGap(313))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGap(35)
+					.addGap(34)
 					.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE)
-					.addGap(49)
+					.addGap(50)
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 						.addComponent(btnTestGame, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(btnStudy, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))

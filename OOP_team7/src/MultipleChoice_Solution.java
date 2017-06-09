@@ -64,7 +64,7 @@ public class MultipleChoice_Solution {
 		
 		textArea = new JTextArea();
 		btnNext = new JButton("Next");
-		btnNext.setFont(new Font("±¼¸²", Font.PLAIN, 30));
+		btnNext.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(mcq.read_counter()==10){
