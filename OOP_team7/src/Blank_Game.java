@@ -45,6 +45,7 @@ public class Blank_Game {
    private ArrayList<Icon> img = new ArrayList<Icon>(bq.question());
    private ArrayList<Icon> ht = new ArrayList<Icon>(bq.heart());
    
+   
    /**
     * Launch the application.
     */
