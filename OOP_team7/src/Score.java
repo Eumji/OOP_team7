@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-public class Score {
-
-=======
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -65,5 +61,5 @@ public class Score {
 		System.out.println(score.read_score());
 		
 	}
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
+
 }
