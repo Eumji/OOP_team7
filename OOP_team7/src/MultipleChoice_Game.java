@@ -84,6 +84,7 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(lblNewLabel_1);
 
 		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBackground(Color.DARK_GRAY);
 		textArea_1.setLineWrap(true);
 		textArea_1.setFont(new Font("Arial", Font.BOLD, 45));
 		textArea_1.setBounds(14, 12, 954, 458);
@@ -94,6 +95,7 @@ public class MultipleChoice_Game {
 		textArea_1.setText(question.get(mcq.read_counter()));
 
 		JButton btnNewButton = new JButton("1.");
+		btnNewButton.setBackground(new Color(135, 206, 250));
 		btnNewButton.setBounds(14, 499, 61, 72);
 		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -123,6 +125,7 @@ public class MultipleChoice_Game {
 		});
 
 		JButton btnNewButton_1 = new JButton("2.");
+		btnNewButton_1.setBackground(new Color(135, 206, 250));
 		btnNewButton_1.setBounds(14, 602, 61, 76);
 		btnNewButton_1.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -150,6 +153,7 @@ public class MultipleChoice_Game {
 		});
 
 		JButton button = new JButton("3.");
+		button.setBackground(new Color(135, 206, 250));
 		button.setBounds(14, 703, 61, 74);
 		button.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		button.addActionListener(new ActionListener() {
@@ -177,6 +181,7 @@ public class MultipleChoice_Game {
 		});
 
 		JButton button_1 = new JButton("4.");
+		button_1.setBackground(new Color(135, 206, 250));
 		button_1.setBounds(14, 813, 61, 76);
 		button_1.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		button_1.addActionListener(new ActionListener() {
@@ -212,6 +217,7 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(button_1);
 
 		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setBackground(Color.DARK_GRAY);
 		textArea_2.setLineWrap(true);
 		textArea_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_2.setBounds(89, 499, 879, 72);
@@ -221,6 +227,7 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(textArea_2);
 
 		JTextArea textArea_3 = new JTextArea();
+		textArea_3.setBackground(Color.DARK_GRAY);
 		textArea_3.setLineWrap(true);
 		textArea_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_3.setBounds(89, 602, 879, 76);
@@ -230,6 +237,7 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(textArea_3);
 
 		JTextArea textArea_4 = new JTextArea();
+		textArea_4.setBackground(Color.DARK_GRAY);
 		textArea_4.setLineWrap(true);
 		textArea_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_4.setBounds(89, 703, 879, 74);
@@ -239,6 +247,7 @@ public class MultipleChoice_Game {
 		frame.getContentPane().add(textArea_4);
 
 		JTextArea textArea_5 = new JTextArea();
+		textArea_5.setBackground(Color.DARK_GRAY);
 		textArea_5.setLineWrap(true);
 		textArea_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		textArea_5.setBounds(89, 813, 879, 76);
