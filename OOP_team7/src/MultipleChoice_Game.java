@@ -68,7 +68,7 @@ public class MultipleChoice_Game {
 		textArea_1.setText(question.get(count));
 		//System.out.println("q" + count);
 		JButton btnNewButton = new JButton("1.");
-		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -84,7 +84,7 @@ public class MultipleChoice_Game {
 		});
 
 		JButton btnNewButton_1 = new JButton("2.");
-		btnNewButton_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		btnNewButton_1.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -100,7 +100,7 @@ public class MultipleChoice_Game {
 		});
 
 		JButton button = new JButton("3.");
-		button.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		button.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -114,7 +114,7 @@ public class MultipleChoice_Game {
 		});
 
 		JButton button_1 = new JButton("4.");
-		button_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		button_1.setFont(new Font("±¼¸²", Font.PLAIN, 25));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
@@ -128,14 +128,16 @@ public class MultipleChoice_Game {
 		});
 
 		JTextArea textArea_2 = new JTextArea();
-
+		textArea_2.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		
 		JTextArea textArea_3 = new JTextArea();
-		textArea_3.setFont(new Font("Monospaced", Font.PLAIN, 20));
+		textArea_3.setFont(new Font("Monospaced", Font.PLAIN, 25));
 
 		JTextArea textArea_4 = new JTextArea();
-
+		textArea_4.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		
 		JTextArea textArea_5 = new JTextArea();
-		textArea_5.setFont(new Font("Monospaced", Font.PLAIN, 20));
+		textArea_5.setFont(new Font("Monospaced", Font.PLAIN, 25));
 
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -204,27 +206,67 @@ public class MultipleChoice_Game {
 		menuBar.add(mnQuestion);
 
 		JMenuItem mntmQ = new JMenuItem("Q1");
+		mntmQ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=0;
+			}
+		});
 		mnQuestion.add(mntmQ);
 
 		JMenuItem mntmQ_1 = new JMenuItem("Q2");
+		mntmQ_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=1;
+			}
+		});
 		mnQuestion.add(mntmQ_1);
 
 		JMenuItem mntmQ_2 = new JMenuItem("Q3");
+		mntmQ_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=2;
+			}
+		});
 		mnQuestion.add(mntmQ_2);
 
 		JMenuItem mntmQ_3 = new JMenuItem("Q4");
+		mntmQ_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=3;
+			}
+		});
 		mnQuestion.add(mntmQ_3);
 
 		JMenuItem mntmQ_4 = new JMenuItem("Q5");
+		mntmQ_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=4;
+			}
+		});
 		mnQuestion.add(mntmQ_4);
 
 		JMenuItem mntmQ_5 = new JMenuItem("Q6");
+		mntmQ_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=5;
+			}
+		});
 		mnQuestion.add(mntmQ_5);
 
 		JMenuItem mntmQ_6 = new JMenuItem("Q7");
+		mntmQ_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=6;
+			}
+		});
 		mnQuestion.add(mntmQ_6);
 
 		JMenuItem mntmQ_7 = new JMenuItem("Q8");
+		mntmQ_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				count=7;
+			}
+		});
 		mnQuestion.add(mntmQ_7);
 
 		JMenuItem mntmQ_8 = new JMenuItem("Q9");
