@@ -261,12 +261,12 @@ public class MultipleChoice_Game {
 
 		JMenu mnMenu = new JMenu("Menu");
 		mnMenu.setBackground(SystemColor.activeCaption);
-		mnMenu.setForeground(SystemColor.controlDkShadow);
-		mnMenu.setFont(new Font("Castellar", Font.PLAIN, 30));
+		mnMenu.setForeground(new Color(0, 0, 0));
+		mnMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmGoToMenu = new JMenuItem("Go to menu");
-		mntmGoToMenu.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU home = new MENU();
@@ -278,12 +278,12 @@ public class MultipleChoice_Game {
 
 		JMenu mnQuestion = new JMenu("Question");
 		mnQuestion.setBackground(SystemColor.info);
-		mnQuestion.setForeground(SystemColor.controlDkShadow);
-		mnQuestion.setFont(new Font("Castellar", Font.PLAIN, 25));
+		mnQuestion.setForeground(new Color(0, 0, 0));
+		mnQuestion.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnQuestion);
 
 		JMenuItem mntmQ = new JMenuItem("No.1");
-		mntmQ.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ.setBackground(SystemColor.menu);
 		mntmQ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -297,7 +297,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ);
 
 		JMenuItem mntmQ_1 = new JMenuItem("No.2");
-		mntmQ_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(0);
@@ -310,7 +310,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_1);
 
 		JMenuItem mntmQ_2 = new JMenuItem("No.3");
-		mntmQ_2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(1);
@@ -323,7 +323,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_2);
 
 		JMenuItem mntmQ_3 = new JMenuItem("No.4");
-		mntmQ_3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(2);
@@ -335,7 +335,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_3);
 
 		JMenuItem mntmQ_4 = new JMenuItem("No.5");
-		mntmQ_4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(3);
@@ -348,7 +348,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_4);
 
 		JMenuItem mntmQ_5 = new JMenuItem("No.6");
-		mntmQ_5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(4);
@@ -361,7 +361,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_5);
 
 		JMenuItem mntmQ_6 = new JMenuItem("No.7");
-		mntmQ_6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_6.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(5);
@@ -374,7 +374,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_6);
 
 		JMenuItem mntmQ_7 = new JMenuItem("No.8");
-		mntmQ_7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_7.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(6);
@@ -387,7 +387,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_7);
 
 		JMenuItem mntmQ_8 = new JMenuItem("No.9");
-		mntmQ_8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_8.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(7);
@@ -400,7 +400,7 @@ public class MultipleChoice_Game {
 		mnQuestion.add(mntmQ_8);
 
 		JMenuItem mntmQ_9 = new JMenuItem("No.10");
-		mntmQ_9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		mntmQ_9.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mcq.plus_counter(8);
