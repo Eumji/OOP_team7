@@ -97,11 +97,13 @@ public class TestGame extends MENU{
       JButton btnBlank = new JButton("Blank");
       btnBlank.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
+        	
             Score sco = new Score();
             sco.game_restart();
             
             Blank_question bq = new Blank_question();
             bq.setnum(0);
+            bq.setheart(3);
             Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);
