@@ -103,7 +103,8 @@ public class TestGame extends MENU{
             
             Blank_question bq = new Blank_question();
             bq.setnum(0);
-            bq.setheart(3);
+            HEART h = new HEART();
+            h.setheart(3);
             Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(true);
             frame.setVisible(false);

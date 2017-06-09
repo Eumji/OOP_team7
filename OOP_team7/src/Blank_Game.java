@@ -39,11 +39,11 @@ public class Blank_Game {
    JFrame frame;
    private JTextField textField;
    Blank_question bq = new Blank_question();
-   
+   HEART h = new HEART();
    private ArrayList<String> answer = new ArrayList<String>(bq.answer());
    private ArrayList<String> solution = new ArrayList<String>(bq.solution());
    private ArrayList<Icon> img = new ArrayList<Icon>(bq.question());
-   private ArrayList<Icon> ht = new ArrayList<Icon>(bq.heart());
+   private ArrayList<Icon> ht = new ArrayList<Icon>(h.heart());
    
    
    /**
@@ -84,7 +84,7 @@ public class Blank_Game {
       
       JLabel lblNewLabel_1 = new JLabel("");
       //System.out.println(ht.get(bq.getnum()));
-      Icon heart = ht.get(bq.getheart()); 
+      Icon heart = ht.get(h.getheart()); 
       lblNewLabel_1.setIcon(heart);
       
       lblNewLabel.setBackground(Color.DARK_GRAY);
@@ -133,15 +133,15 @@ public class Blank_Game {
                       bs.frame.setVisible(true);
                  }
                  else{
-                	 if(bq.getheart()==0){
-                		 bq.setheart(3);
+                	 if(h.getheart()==0){
+                		 h.setheart(3);
                 		 JOptionPane.showMessageDialog(null, "Study hard!");
                 		 frame.setVisible(false);
                 		 Study study = new Study();
                 		 study.frame.setVisible(true);
                 	 }
                 	 else{
-                		 bq.setheart(bq.getheart()-1);
+                		 h.setheart(h.getheart()-1);
 	                     bs.lblNewLabel = new JLabel("");
 	                     bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
 	                     bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
@@ -183,13 +183,13 @@ public class Blank_Game {
                  bs.frame.setVisible(true);
             }
             else{
-            	 if(bq.getheart()==0){
+            	 if(h.getheart()==0){
             		 JOptionPane.showMessageDialog(null, "Study hard!");
             		 frame.setVisible(false);
             		 Study study = new Study();
             		 study.frame.setVisible(true);
             	 }
-            	 bq.setheart(bq.getheart()-1);
+            	 h.setheart(h.getheart()-1);
                  bs.lblNewLabel = new JLabel("");
                  bs.lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 45));
                  bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
@@ -253,7 +253,7 @@ public class Blank_Game {
       mntmGoToMenu.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
         	bq.setnum(0);
-        	bq.setheart(3);
+        	h.setheart(3);
             MENU m= new MENU();
             frame.setVisible(false);
             m.frame.setVisible(true);
@@ -268,7 +268,7 @@ public class Blank_Game {
       mntmNo.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             bq.setnum(0);
-            bq.setheart(3);
+            //h.setheart(3);
             frame.setVisible(true);
             Blank_Game bg = new Blank_Game();
             bg.frame.setVisible(false);
