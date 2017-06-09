@@ -72,6 +72,7 @@ public class ox_Game extends TestGame {
 		oxgame.getContentPane().add(panel, BorderLayout.CENTER);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.BOLD, 50));
@@ -79,7 +80,6 @@ public class ox_Game extends TestGame {
 		textArea.setBackground(Color.DARK_GRAY);
 		String q = new String(question.get(oxq.read_counter()));
 		textArea.setText(q);
-		System.out.println("counter after question textArea floating: "+oxq.read_counter());
 		
 		
 		JButton button = new JButton("O");
@@ -88,12 +88,13 @@ public class ox_Game extends TestGame {
 				//"O" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
 				if(answer.get(oxq.read_counter()).equals("O"))
-					oxs.textArea.setBackground(Color.GREEN);
-				else
-					oxs.textArea.setBackground(Color.RED);
+					oxs.textArea.setBackground(new Color(60,179,113));
+				else{
+					oxs.textArea.setForeground(new Color(255,250,250));
+					oxs.textArea.setBackground(new Color(178,34,34));
+				}
 
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
-				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 			}
@@ -108,12 +109,13 @@ public class ox_Game extends TestGame {
 				//"X" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
 				if(answer.get(oxq.read_counter()).equals("X"))
-					oxs.textArea.setBackground(Color.GREEN);
-				else
-					oxs.textArea.setBackground(Color.RED);
+					oxs.textArea.setBackground(new Color(60,179,113));
+				else{
+					oxs.textArea.setForeground(new Color(255,250,250));
+					oxs.textArea.setBackground(new Color(178,34,34));
+				}
 				
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
-				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 			}
