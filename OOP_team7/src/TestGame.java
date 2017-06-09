@@ -62,8 +62,6 @@ public class TestGame extends MENU{
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             //ox ´©¸£¸é
-            Score sco = new Score();
-            sco.game_restart();
             
             ox_question oxq = new ox_question();
             oxq.ox_restart();
@@ -80,8 +78,6 @@ public class TestGame extends MENU{
       btnMC.setBackground(new Color(153, 204, 204));
       btnMC.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
-            Score sco = new Score();
-            sco.game_restart();
             
             MultipleChoice_Question mcq = new MultipleChoice_Question();
             mcq.mc_restart();
@@ -97,8 +93,6 @@ public class TestGame extends MENU{
       JButton btnBlank = new JButton("Blank");
       btnBlank.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
-            Score sco = new Score();
-            sco.game_restart();
             
             Blank_question bq = new Blank_question();
             bq.setnum(0);
