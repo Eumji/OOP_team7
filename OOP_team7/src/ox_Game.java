@@ -6,8 +6,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
-import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -18,6 +18,7 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class ox_Game extends TestGame {
 	
@@ -73,6 +74,7 @@ public class ox_Game extends TestGame {
 		oxgame.getContentPane().add(panel, BorderLayout.CENTER);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setBounds(39, 36, 901, 462);
 		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
@@ -84,6 +86,7 @@ public class ox_Game extends TestGame {
 		
 		
 		JButton button = new JButton("O");
+		button.setBounds(97, 532, 342, 334);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//"O" ´­·¶À» ¶§
@@ -105,6 +108,7 @@ public class ox_Game extends TestGame {
 		button.setBackground(Color.BLACK);
 		
 		JButton button_2 = new JButton("X");
+		button_2.setBounds(542, 532, 342, 334);
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//"X" ´­·¶À» ¶§
@@ -124,33 +128,15 @@ public class ox_Game extends TestGame {
 		button_2.setForeground(Color.RED);
 		button_2.setFont(new Font("Arial Black", Font.PLAIN, 250));
 		button_2.setBackground(Color.BLACK);
+		panel.setLayout(null);
+		panel.add(button);
+		panel.add(button_2);
 		
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(92)
-					.addComponent(button, GroupLayout.PREFERRED_SIZE, 342, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-					.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 342, GroupLayout.PREFERRED_SIZE)
-					.addGap(89))
-				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
-					.addGap(34)
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 901, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(33, Short.MAX_VALUE))
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(31)
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 462, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(button, GroupLayout.PREFERRED_SIZE, 334, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 334, GroupLayout.PREFERRED_SIZE))
-					.addGap(42))
-		);
-		panel.setLayout(gl_panel);
+		ImageIcon img = new ImageIcon("heart4.png");
+		JLabel hearticon = new JLabel(img);
+		hearticon.setBounds(39, 413, 354, 85);
+		panel.add(hearticon);
+		panel.add(textArea);
 		
 		JMenuBar menuBar = new JMenuBar();
 		oxgame.setJMenuBar(menuBar);
