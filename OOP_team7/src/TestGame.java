@@ -29,8 +29,6 @@ public class TestGame extends MENU{
 			}
 		});
 	}
-	
-	
 
 	/**
 	 * Create the application.
@@ -82,6 +80,9 @@ public class TestGame extends MENU{
 		btnMC.setBackground(new Color(153, 204, 204));
 		btnMC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Score sco = new Score();
+				sco.game_restart();
+				
 				MultipleChoice_Question mcq = new MultipleChoice_Question();
 				MultipleChoice_Game mcg = new MultipleChoice_Game();
 				mcg.frame.setVisible(true);
@@ -95,6 +96,9 @@ public class TestGame extends MENU{
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Score sco = new Score();
+				sco.game_restart();
+				
 				Blank_question bq = new Blank_question();
 				bq.setnum(0);
 				Blank_Game bg = new Blank_Game();
