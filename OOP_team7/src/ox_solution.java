@@ -59,8 +59,15 @@ public class ox_solution{
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				oxg.oxgame.setVisible(true);
-				frame.setVisible(false);
+				if(oxq.read_counter()==11){
+					TestGame t = new TestGame();
+					t.frame.setVisible(true);
+					frame.setVisible(false);
+				}
+				else {
+					oxg.oxgame.setVisible(true);
+					frame.setVisible(false);
+				}
 			}
 		});
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
