@@ -69,6 +69,7 @@ public class GetSet extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");

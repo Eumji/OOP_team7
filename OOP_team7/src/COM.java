@@ -79,6 +79,7 @@ public class COM extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
@@ -90,6 +91,7 @@ public class COM extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));

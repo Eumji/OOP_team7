@@ -82,6 +82,7 @@ public class VariableCont extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
@@ -93,6 +94,7 @@ public class VariableCont extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnMenu.add(mntmNewMenuItem_2);
 		
 		JMenu mnNewMenu = new JMenu("Previous");
