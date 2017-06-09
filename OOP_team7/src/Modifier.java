@@ -94,27 +94,23 @@ public class Modifier extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(99, 72, 415, 555);
+		panel.setBounds(70, 47, 572, 618);
 		panel.setBackground(new Color(255, 250, 250));
 		
 		JLabel lblNewLabel = new JLabel("Default");
-		lblNewLabel.setBounds(586, 5, 77, 31);
+		lblNewLabel.setBounds(652, 41, 77, 31);
 		lblNewLabel.setForeground(new Color(95, 158, 160));
-		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		ImageIcon img = new ImageIcon("default.jpg");
-		ImageIcon img2 = new ImageIcon("public.jpg");
-		ImageIcon img3 = new ImageIcon("canused.jpg");
-		
+		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 20));
+
 		JLabel lblNewLabel_2 = new JLabel("Public");
-		lblNewLabel_2.setBounds(586, 44, 63, 31);
+		lblNewLabel_2.setBounds(652, 213, 63, 31);
 		lblNewLabel_2.setForeground(new Color(95, 158, 160));
-		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
+		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 20));
 		
 		JLabel lblNewLabel_4 = new JLabel("Where it can be used");
-		lblNewLabel_4.setBounds(586, 84, 211, 31);
+		lblNewLabel_4.setBounds(652, 389, 211, 31);
 		lblNewLabel_4.setForeground(new Color(95, 158, 160));
-		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 25));
+		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 20));
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
@@ -153,19 +149,39 @@ public class Modifier extends JFrame {
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 642, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(210, Short.MAX_VALUE))
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 615, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		contentPane.add(panel);
 		contentPane.add(lblNewLabel);
 		contentPane.add(lblNewLabel_2);
 		contentPane.add(lblNewLabel_4);
+		
+		ImageIcon img = new ImageIcon("default.jpg");
+		ImageIcon img2 = new ImageIcon("public.jpg");
+		ImageIcon img3 = new ImageIcon("canused.jpg");
+		ImageIcon img4 = new ImageIcon("computer.jpg");
+		
+		JLabel lblNewLabel_1 = new JLabel(img);
+		lblNewLabel_1.setBounds(611, 47, 314, 176);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel label = new JLabel(img2);
+		label.setBounds(632, 231, 291, 164);
+		contentPane.add(label);
+		
+		JLabel lblNewLabel_3 = new JLabel(img3);
+		lblNewLabel_3.setBounds(575, 413, 403, 252);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_5 = new JLabel(img4);
+		lblNewLabel_5.setBounds(0, 0, 968, 862);
+		contentPane.add(lblNewLabel_5);
 	}
-
 }

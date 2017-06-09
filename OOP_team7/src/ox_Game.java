@@ -6,11 +6,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
-import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextArea;
 import javax.swing.JMenuBar;
@@ -66,8 +64,6 @@ public class ox_Game extends TestGame {
 	 */
 	private void initialize() {
 		oxgame = new JFrame();
-		oxgame.setBackground(Color.WHITE);
-		oxgame.getContentPane().setBackground(Color.WHITE);
 		oxgame.setBounds(100, 100, 1000, 1000);
 		oxgame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -77,7 +73,6 @@ public class ox_Game extends TestGame {
 		oxgame.getContentPane().add(panel, BorderLayout.CENTER);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.BOLD, 50));
@@ -85,6 +80,7 @@ public class ox_Game extends TestGame {
 		textArea.setBackground(Color.DARK_GRAY);
 		String q = new String(question.get(oxq.read_counter()));
 		textArea.setText(q);
+		System.out.println("counter after question textArea floating: "+oxq.read_counter());
 		
 		
 		JButton button = new JButton("O");
@@ -93,14 +89,12 @@ public class ox_Game extends TestGame {
 				//"O" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
 				if(answer.get(oxq.read_counter()).equals("O"))
-					oxs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
-				
-				else{
-					oxs.textArea.setForeground(new Color(255,250,250));
-					oxs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
-				}
+					oxs.textArea.setBackground(Color.GREEN);
+				else
+					oxs.textArea.setBackground(Color.RED);
 
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
+				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 			}
@@ -115,12 +109,12 @@ public class ox_Game extends TestGame {
 				//"X" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
 				if(answer.get(oxq.read_counter()).equals("X"))
-					oxs.lblNewLabel.setIcon(new ImageIcon("o.jpg"));
-				else{
-					oxs.textArea.setForeground(new Color(255,250,250));
-					oxs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
-				}
+					oxs.textArea.setBackground(Color.GREEN);
+				else
+					oxs.textArea.setBackground(Color.RED);
+				
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
+				System.out.println("counter after clicking o/x button: "+ oxq.read_counter());
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
 			}
