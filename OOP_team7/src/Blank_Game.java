@@ -112,9 +112,10 @@ public class Blank_Game {
             else{
                bs.lblNewLabel.setIcon(new ImageIcon("x.jpg"));
             }
-            bs.textArea.setText(solution.get(bq.getnum()));
+           
             frame.setVisible(false);
             bs.frame.setVisible(true);
+            bs.textArea.setText(solution.get(bq.getnum()));
          }
       });
       btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));
