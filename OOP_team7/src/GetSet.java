@@ -156,12 +156,14 @@ public class GetSet extends JFrame {
 		lblNewLabel_1.setBounds(77, 419, 372, 35);
 		contentPane.add(lblNewLabel_1);
 		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setForeground(new Color(0, 128, 128));
-		textArea_1.setFont(new Font("Corbel", Font.PLAIN, 15));
-		textArea_1.setBounds(565, 419, 372, 81);
-		contentPane.add(textArea_1);
-		textArea_1.setOpaque(false);
+		JTextArea txtrSinceItPrevents = new JTextArea();
+		txtrSinceItPrevents.setText("Since it prevents the strange value from being entered,\r\nthe value initialized to the variable is stored as it is.");
+		txtrSinceItPrevents.setLineWrap(true);
+		txtrSinceItPrevents.setForeground(new Color(0, 128, 128));
+		txtrSinceItPrevents.setFont(new Font("Corbel", Font.PLAIN, 15));
+		txtrSinceItPrevents.setBounds(565, 419, 372, 81);
+		contentPane.add(txtrSinceItPrevents);
+		txtrSinceItPrevents.setOpaque(false);
 		
 		ImageIcon img = new ImageIcon("theCat.jpg");
 		ImageIcon img2 = new ImageIcon("cattest.jpg");
@@ -184,29 +186,6 @@ public class GetSet extends JFrame {
 		lblNewLabel_5.setBounds(0, 0, 968, 862);
 		contentPane.add(lblNewLabel_5);
 		
-		File pf = new File("printExplan.txt");
-
-		FileReader pfr;
-		try {
-			pfr = new FileReader(pf);
-			BufferedReader br = new BufferedReader(pfr);
-
-			String line;
-
-			do {
-				line = br.readLine();
-				textArea_1.append(line);
-				textArea_1.append("\n");
-				
-			} while (line != null);
-
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		
 	}
 }
