@@ -6,6 +6,6 @@ If there is no return value, method cannot return anything.
 private modifier is deleted.
 main method
 Encapsulation is used to prevent wrong people from approaching and changing values strangely.
-8
+32bits
 9
 10

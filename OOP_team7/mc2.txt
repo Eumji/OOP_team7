@@ -6,6 +6,6 @@ The method provides information about what values are needed to do the job and w
 private methods that have same name of variables are present.
 setting and getting method
 For encapsulated variables, you can use the dot operator to change values.
-8
+16bits
 9
 10
