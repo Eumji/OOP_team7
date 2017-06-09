@@ -93,6 +93,8 @@ public class TestGame extends MENU{
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Blank_question bq = new Blank_question();
+				bq.setnum(0);
 				Blank_Game bg = new Blank_Game();
 				bg.frame.setVisible(true);
 				frame.setVisible(false);

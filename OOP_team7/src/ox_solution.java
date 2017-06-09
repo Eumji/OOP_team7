@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.Font;
-import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -12,6 +11,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class ox_solution{
 
@@ -22,6 +22,7 @@ public class ox_solution{
 
 	JFrame frame;
 	JTextArea textArea;
+	JLabel lblNewLabel;
 	private JMenuBar menuBar;
 	
 
@@ -56,18 +57,15 @@ public class ox_solution{
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		textArea = new JTextArea();
+		textArea.setForeground(Color.BLACK);
+		textArea.setOpaque(false);
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(oxq.read_counter()==11){
-					TestGame t = new TestGame();
-					t.frame.setVisible(true);
-					frame.setVisible(false);
-				}
-				else {
-					oxg.oxgame.setVisible(true);
-					frame.setVisible(false);
-				}
+				oxg.oxgame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
@@ -76,15 +74,9 @@ public class ox_solution{
 		btnNewButton.setBounds(829, 845, 132, 53);
 		frame.getContentPane().add(btnNewButton);
 		
-		textArea = new JTextArea();
-		textArea.setForeground(Color.BLACK);
-		textArea.setBackground(null);
-		textArea.setLineWrap(true);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
-		textArea.setBounds(0, 0, 978, 913);
-		
-		frame.getContentPane().add(textArea);
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 978, 913);
+		frame.getContentPane().add(lblNewLabel);
 		
 		menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
