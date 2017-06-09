@@ -28,9 +28,7 @@ public class ox_Game extends TestGame {
 	JButton button, button_1;
 	JTextArea textArea;
 	private ox_question oxq = new ox_question();
-	// private Score score = new Score();
 	int heart = 0;
-	private boolean study = false;
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
@@ -93,8 +91,6 @@ public class ox_Game extends TestGame {
 		ImageIcon img1 = new ImageIcon("heart1.png");
 		JLabel hearticon = new JLabel(img4);
 
-		Score score = new Score();
-		heart = score.read_score()+1;
 		switch (heart) {
 		case 3:
 			hearticon = new JLabel(img3);
@@ -106,14 +102,13 @@ public class ox_Game extends TestGame {
 			hearticon = new JLabel(img1);
 			break;
 		case 0:
-			study = true;
+			//study = true;
 		default:
 			break;
 		}
 		hearticon.setBounds(39, 413, 354, 85);
 		panel.add(hearticon);
 		panel.add(textArea);
-		System.out.println(score.read_score());
 
 		JButton button = new JButton("O");
 		button.setBounds(97, 532, 342, 334);
@@ -125,7 +120,6 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setBackground(new Color(60, 179, 113));
 
 				else {
-					score.minus_score(score.read_score());
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
 				}
@@ -133,12 +127,12 @@ public class ox_Game extends TestGame {
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
-				if (study == true) {
+				/*if (study == true) {
 					JOptionPane.showMessageDialog(null, "Study Hard!!!!!", "Notice", JOptionPane.INFORMATION_MESSAGE);
 					BasicMenu basic = new BasicMenu();
 					basic.setVisible(true);
 					frame.setVisible(false);
-				}
+				}*/
 			}
 		});
 		button.setForeground(Color.GREEN);
@@ -154,7 +148,6 @@ public class ox_Game extends TestGame {
 				if (answer.get(oxq.read_counter()).equals("X"))
 					oxs.textArea.setBackground(new Color(60, 179, 113));
 				else {
-					score.minus_score(score.read_score());
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
 				}
@@ -162,12 +155,12 @@ public class ox_Game extends TestGame {
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
-				if (study == true) {
+				/*if (study == true) {
 					JOptionPane.showMessageDialog(null, "Study Hard!!!!!", "Notice", JOptionPane.INFORMATION_MESSAGE);
 					BasicMenu basic = new BasicMenu();
 					basic.setVisible(true);
 					frame.setVisible(false);
-				}
+				}*/
 			}
 		});
 		button_2.setForeground(Color.RED);

@@ -69,6 +69,7 @@ public class MultipleChoice_Game {
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		// String q = new String(question.get(mcq.read_counter()));
 		// textArea.setText(q);
 
