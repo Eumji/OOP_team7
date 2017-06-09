@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class ox_solution{
 
@@ -20,6 +22,7 @@ public class ox_solution{
 
 	JFrame frame;
 	JTextArea textArea;
+	JLabel lblNewLabel;
 	private JMenuBar menuBar;
 	
 
@@ -57,6 +60,7 @@ public class ox_solution{
 		
 		textArea = new JTextArea();
 		textArea.setForeground(Color.BLACK);
+		textArea.setOpaque(false);
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -69,12 +73,10 @@ public class ox_solution{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		frame.getContentPane().add(btnNewButton);
-		textArea.setLineWrap(true);
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 40));
-		textArea.setBounds(0, 0, 978, 944);
 		
-		frame.getContentPane().add(textArea);
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 978, 913);
+		frame.getContentPane().add(lblNewLabel);
 		
 		menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);

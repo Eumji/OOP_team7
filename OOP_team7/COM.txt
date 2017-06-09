@@ -1,0 +1,31 @@
+"Class" defines an object.
+- Type(blueprint or model) of an object
+- "Class" is used to create objects.
+
+- Two ways to get a class
+1. Use one that someone else published in the "Java Class Library" or another library.
+2. Define your own class
+
+"Object" is an instance of the class
+- Many objects of the class can exist.
+
+Instantiate : The process of creating an object from a class is called class instantiation.
+instance : An object created from a class is called an instance of that class.
+
+Class has variables and methods
+- variable(State) : variable must have a type(base type or reference type)
+- methods(Behavior)
+
+<Method>
+A method is a set that performs a specific action.
+- main()method : Every Java program has at least one class with a main() method.
+ ¡æ If a class doesn't have a main method, 
+   it can be used by other classes but it cannot be executed as a program.
+
+- The method declaration consists of a method name, a parameter declaration, 
+  and a return type.
+- The method provides information about what values are needed to do the job 
+  and what type of value to return as a result.
+- If there is no return value, void is the return type.
+- In the Method Implementation section, insert the statement to be executed 
+  when the method is called.

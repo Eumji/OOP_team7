@@ -1,6 +1,6 @@
-
-1. JAVA is hard.
-2. I like OOP class.
+이 아래줄부터 문제입니다요
+1. Variable type <char> stored several characters per variable.
+2. Local variable which is declared      within a method is not destroyed        after the method ends.
 3.
 4.
 5.
@@ -9,3 +9,4 @@
 8.
 9.
 10.
+no.11 XXXX

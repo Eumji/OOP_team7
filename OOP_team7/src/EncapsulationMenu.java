@@ -92,12 +92,26 @@ public class EncapsulationMenu extends JFrame {
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton btnNewButton = new JButton("Getter & Setter");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GetSet gs = new GetSet();
+				gs.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnNewButton.setBackground(new Color(240, 248, 255));
 		btnNewButton.setForeground(new Color(30, 144, 255));
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 50));
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("How to Make?");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HowMake hm = new HowMake();
+				hm.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnNewButton_1.setForeground(new Color(30, 144, 255));
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 50));
 		btnNewButton_1.setBackground(new Color(240, 248, 255));
