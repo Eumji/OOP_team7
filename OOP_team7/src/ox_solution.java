@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.Font;
+import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -11,7 +12,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 
 public class ox_solution{
 
@@ -73,6 +73,12 @@ public class ox_solution{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		frame.getContentPane().add(btnNewButton);
+		textArea.setLineWrap(true);
+		textArea.setEditable(false);
+		textArea.setFont(new Font("Arial", Font.PLAIN, 40));
+		textArea.setBounds(0, 0, 978, 944);
+		
+		frame.getContentPane().add(textArea);
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(0, 0, 978, 913);
