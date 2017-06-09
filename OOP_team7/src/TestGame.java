@@ -29,6 +29,8 @@ public class TestGame extends MENU{
 			}
 		});
 	}
+	
+	
 
 	/**
 	 * Create the application.
