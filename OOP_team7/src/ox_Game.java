@@ -29,7 +29,6 @@ public class ox_Game extends TestGame {
 	JTextArea textArea;
 	private ox_question oxq = new ox_question();
 	int heart = 0;
-	private boolean study = false;
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
@@ -103,7 +102,7 @@ public class ox_Game extends TestGame {
 			hearticon = new JLabel(img1);
 			break;
 		case 0:
-			study = true;
+			//study = true;
 		default:
 			break;
 		}
@@ -128,12 +127,12 @@ public class ox_Game extends TestGame {
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
-				if (study == true) {
+				/*if (study == true) {
 					JOptionPane.showMessageDialog(null, "Study Hard!!!!!", "Notice", JOptionPane.INFORMATION_MESSAGE);
 					BasicMenu basic = new BasicMenu();
 					basic.setVisible(true);
 					frame.setVisible(false);
-				}
+				}*/
 			}
 		});
 		button.setForeground(Color.GREEN);
@@ -156,12 +155,12 @@ public class ox_Game extends TestGame {
 				oxs.textArea.setText(solution.get(oxq.read_counter()));
 				oxs.frame.setVisible(true);
 				oxgame.setVisible(false);
-				if (study == true) {
+				/*if (study == true) {
 					JOptionPane.showMessageDialog(null, "Study Hard!!!!!", "Notice", JOptionPane.INFORMATION_MESSAGE);
 					BasicMenu basic = new BasicMenu();
 					basic.setVisible(true);
 					frame.setVisible(false);
-				}
+				}*/
 			}
 		});
 		button_2.setForeground(Color.RED);
