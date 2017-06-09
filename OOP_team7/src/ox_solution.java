@@ -41,6 +41,7 @@ public class ox_solution{
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the application.

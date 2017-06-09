@@ -104,21 +104,13 @@ public class Modifier extends JFrame {
 		ImageIcon img2 = new ImageIcon("public.jpg");
 		ImageIcon img3 = new ImageIcon("canused.jpg");
 		
-		JLabel lblNewLabel_1 = new JLabel(img);
-		lblNewLabel_1.setText("");
-		
 		JLabel lblNewLabel_2 = new JLabel("Public");
 		lblNewLabel_2.setForeground(new Color(95, 158, 160));
 		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
 		
-		JLabel lblNewLabel_3 = new JLabel(img2);
-		lblNewLabel_3.setText("");
-		
 		JLabel lblNewLabel_4 = new JLabel("Where it can be used");
 		lblNewLabel_4.setForeground(new Color(95, 158, 160));
 		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_5 = new JLabel(img3);
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -128,28 +120,19 @@ public class Modifier extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_1)
 						.addComponent(lblNewLabel_2)
-						.addComponent(lblNewLabel_3)
-						.addComponent(lblNewLabel_4)
-						.addComponent(lblNewLabel_5))
+						.addComponent(lblNewLabel_4))
 					.addContainerGap(166, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(lblNewLabel)
-					.addGap(3)
-					.addComponent(lblNewLabel_1)
-					.addGap(5)
+					.addGap(8)
 					.addComponent(lblNewLabel_2)
-					.addGap(4)
-					.addComponent(lblNewLabel_3)
-					.addGap(5)
+					.addGap(9)
 					.addComponent(lblNewLabel_4)
-					.addGap(6)
-					.addComponent(lblNewLabel_5)
-					.addContainerGap(631, Short.MAX_VALUE))
+					.addContainerGap(742, Short.MAX_VALUE))
 				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
 		);
 		

@@ -120,81 +120,34 @@ public class Variable extends JFrame {
 		setContentPane(contentPane);
 	
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(245, 255, 250));
+		panel.setBounds(73, 41, 828, 369);
+		panel.setBackground(new Color(255, 255, 240));
 		panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		
-		ImageIcon img = new ImageIcon("vd.jpg");
-		ImageIcon img2 = new ImageIcon("range.jpg");
-		ImageIcon img3 = new ImageIcon("rv.jpg");
-		
 		JLabel lblNewLabel = new JLabel("Variable Declaration");
-		lblNewLabel.setForeground(new Color(106, 90, 205));
+		lblNewLabel.setBounds(73, 416, 208, 31);
+		lblNewLabel.setForeground(new Color(128, 128, 128));
 		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_1 = new JLabel(img);
 		
 		
 		JLabel lblNewLabel_2 = new JLabel("Variable 's Range and Memory");
-		lblNewLabel_2.setForeground(new Color(106, 90, 205));
+		lblNewLabel_2.setBounds(437, 416, 309, 31);
+		lblNewLabel_2.setForeground(new Color(128, 128, 128));
 		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_3 = new JLabel(img2);
-		
-		
-		JLabel lblNewLabel_4 = new JLabel(img3);
 		
 		
 		JLabel lblReferenceTypeVariable = new JLabel("Reference Type Variable");
-		lblReferenceTypeVariable.setForeground(new Color(106, 90, 205));
+		lblReferenceTypeVariable.setBackground(new Color(169, 169, 169));
+		lblReferenceTypeVariable.setBounds(73, 517, 248, 31);
+		lblReferenceTypeVariable.setForeground(new Color(128, 128, 128));
 		lblReferenceTypeVariable.setFont(new Font("Corbel", Font.PLAIN, 25));
 		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_1))
-					.addGap(123)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_4)
-						.addComponent(lblReferenceTypeVariable))
-					.addContainerGap(379, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel_2)
-					.addContainerGap())
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel_3)
-					.addContainerGap())
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 383, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblReferenceTypeVariable)
-						.addComponent(lblNewLabel))
-					.addGap(1)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(lblNewLabel_4))
-					.addGap(2)
-					.addComponent(lblNewLabel_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblNewLabel_3)
-					.addContainerGap(306, Short.MAX_VALUE))
-		);
-		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(245, 255, 250));
+		textArea.setBackground(new Color(250, 240, 230));
 		textArea.setEditable(false);
 		textArea.setForeground(Color.BLACK);
-		textArea.setFont(new Font("Segoe Print", Font.PLAIN, 22));
+		textArea.setFont(new Font("Lucida Sans Typewriter", Font.PLAIN, 20));
 		panel.add(textArea);
-		contentPane.setLayout(gl_contentPane);
 
 		File VariF = new File("Variable.txt");
 
@@ -219,23 +172,57 @@ public class Variable extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		contentPane.setLayout(null);
 		
 		textArea.setCaretPosition(0);
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 826, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(5)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
+		contentPane.add(panel);
+		contentPane.add(lblNewLabel);
+		contentPane.add(lblReferenceTypeVariable);
+		contentPane.add(lblNewLabel_2);
+		
+		ImageIcon img = new ImageIcon("vd.JPG");
+		ImageIcon img2 = new ImageIcon("range.jpg");
+		ImageIcon img3 = new ImageIcon("rv.jpg");
+		ImageIcon img4 = new ImageIcon("computer.jpg");
+		
+		JLabel lblNewLabel_3 = new JLabel(img);
+		lblNewLabel_3.setText("");
+		lblNewLabel_3.setBounds(12, 416, 352, 118);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel(img2);
+		lblNewLabel_4.setBounds(412, 426, 456, 246);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel(img3);
+		lblNewLabel_5.setBackground(new Color(250, 235, 215));
+		lblNewLabel_5.setBounds(22, 499, 361, 177);
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_1 = new JLabel(img4);
+		lblNewLabel_1.setBounds(0, 0, 968, 862);
+		contentPane.add(lblNewLabel_1);
+		
+		
+		
+
+		
 		
 	}
 }

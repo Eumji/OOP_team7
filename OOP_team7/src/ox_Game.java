@@ -52,6 +52,7 @@ public class ox_Game extends TestGame {
 		
 	}
 
+	
 	/**
 	 * Create the application.
 	 */

@@ -7,6 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -21,6 +22,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class COM extends JFrame {
 
@@ -90,25 +93,16 @@ public class COM extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(248, 248, 255));
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(492, Short.MAX_VALUE)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE))
-		);
+		ImageIcon img = new ImageIcon("computer.jpg");
+		JLabel lblNewLabel = new JLabel(img);
+		lblNewLabel.setBounds(14, 5, 949, 852);
+		lblNewLabel.setText("");
+		
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Segoe Print", Font.PLAIN, 20));
-		textArea.setEditable(false);
-		textArea.setBackground(new Color(248, 248, 255));
-		
+		textArea.setBackground(new Color(255, 255, 240));
+		textArea.setForeground(new Color(0, 0, 0));
+		textArea.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		File CF = new File("COM.txt");
 
 		FileReader Cfr;
@@ -132,23 +126,14 @@ public class COM extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		contentPane.setLayout(null);
 		
 		textArea.setCaretPosition(0);
-		JScrollPane jsp = new JScrollPane(textArea);
-		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addComponent(jsp, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(jsp, GroupLayout.PREFERRED_SIZE, 350, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-		);
-		panel.setLayout(gl_panel);
-		contentPane.setLayout(gl_contentPane);
+		JScrollPane jsp = new JScrollPane(textArea);
+		jsp.setBounds(84, 46, 811, 244);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		contentPane.add(jsp);
+		contentPane.add(lblNewLabel);
 	}
 }
