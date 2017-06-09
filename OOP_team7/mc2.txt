@@ -1,0 +1,11 @@
+
+class
+parameter declaration
+float
+The method provides information about what values are needed to do the job and what type of value to return as a result.
+private methods that have same name of variables are present.
+setting and getting method
+For encapsulated variables, you can use the dot operator to change values.
+8
+9
+10

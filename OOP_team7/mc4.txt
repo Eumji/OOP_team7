@@ -1,0 +1,11 @@
+
+$A12ND
+return type
+long
+In the method implementation section, insert the statement to be executed when the method is called.
+public getter methods are present in the class.
+void method
+If the operation method inside the object changed, the usage method change.
+8
+9
+10

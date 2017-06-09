@@ -15,9 +15,9 @@ public class Blank_question {
 	public ArrayList<Icon> question() {
 		ArrayList<Icon> img = new ArrayList<>();
 
-		ImageIcon i1 = new ImageIcon("No.1.jpg");
-		ImageIcon i2 = new ImageIcon("No.2.jpg");
-		ImageIcon i3 = new ImageIcon("No.3.jpg");
+		ImageIcon i1 = new ImageIcon("No.1.png");
+		ImageIcon i2 = new ImageIcon("No.2.png");
+		ImageIcon i3 = new ImageIcon("No.3.png");
 		ImageIcon i4 = new ImageIcon("No.4.jpg");
 		ImageIcon i5 = new ImageIcon("No.5.jpg");
 		ImageIcon i6 = new ImageIcon("No.6.jpg");

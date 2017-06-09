@@ -1,6 +1,6 @@
-j
-i
-h
+setAge
+int
+Puppy
 y
 e
 j
