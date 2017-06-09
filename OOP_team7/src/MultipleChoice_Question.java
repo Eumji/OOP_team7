@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.ArrayList;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 public class MultipleChoice_Question {
 
 	public ArrayList<String> question(){
@@ -71,7 +74,7 @@ public class MultipleChoice_Question {
 		String line = null;
 		BufferedReader br = null;
 		try{
-			br = new BufferedReader(new FileReader("ox_counter.txt"));
+			br = new BufferedReader(new FileReader("mc_counter.txt"));
 			line = br.readLine();
 			br.close();
 		}catch(FileNotFoundException fnfe){
@@ -88,7 +91,7 @@ public class MultipleChoice_Question {
 		String line = null;
 		line = Integer.toString(co+1);
 		try {
-			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
+			bw = new BufferedWriter(new FileWriter("mc_counter.txt"));
 			bw.write(line);
 			bw.close();
 		} catch (IOException e) {
@@ -101,12 +104,55 @@ public class MultipleChoice_Question {
 		BufferedWriter bw = null;
 		String line = "0";
 		try {
-			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
+			bw = new BufferedWriter(new FileWriter("mc_counter.txt"));
 			bw.write(line);
 			bw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+	public ArrayList<Icon> heart() {
+	      
+	      ArrayList<Icon> h = new ArrayList<>();
+
+	      ImageIcon i1 = new ImageIcon("heart1.png");
+	      ImageIcon i2 = new ImageIcon("heart2.png");
+	      ImageIcon i3 = new ImageIcon("heart3.png");
+	      ImageIcon i4 = new ImageIcon("heart4.png");
+	      
+	      h.add(i1);
+	      h.add(i2);
+	      h.add(i3);
+	      h.add(i4);
+
+	      return h;   
+	   }
+	   
+	   public void setheart(int n) {
+	      BufferedWriter bw = null;
+	      String line = null;
+	      line = Integer.toString(n);
+	      try {
+	         bw = new BufferedWriter(new FileWriter("mc_heart.txt"));
+	         bw.write(line);
+	         bw.close();
+	      } catch (IOException e) {
+	         e.printStackTrace();
+	      }
+	   }
+	   public int getheart() {
+	      int number = -1;
+	      BufferedReader br = null;
+	      try {
+	         br = new BufferedReader(new FileReader("mc_heart.txt"));
+	         String line = br.readLine();
+	         number = Integer.parseInt(line);
+	         br.close();
+	      } catch (FileNotFoundException fnfe) {
+	         System.out.println("File is not found.");
+	      } catch (IOException ioe) {
+	         System.out.println("File input//output error.");
+	      }
+	      return number;
+	   }
 }

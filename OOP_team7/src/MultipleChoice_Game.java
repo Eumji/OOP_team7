@@ -14,6 +14,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -26,11 +27,12 @@ public class MultipleChoice_Game {
 	JTextArea textArea;
 	JLabel lblNewLabel_1;
 	ArrayList<Icon> img = new ArrayList<>();
-	Score score = new Score();
+
 	MultipleChoice_Question mcq = new MultipleChoice_Question();
 	private ArrayList<String> question = new ArrayList<String>(mcq.question());
 	private ArrayList<String> answer = new ArrayList<String>(mcq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
+	private ArrayList<Icon> ht = new ArrayList<Icon>(mcq.heart());
 
 	/**
 	 * Launch the application.
@@ -70,16 +72,9 @@ public class MultipleChoice_Game {
 		// String q = new String(question.get(mcq.read_counter()));
 		// textArea.setText(q);
 
-		ImageIcon i1 = new ImageIcon("heart4.png");
-		ImageIcon i2 = new ImageIcon("heart3.png");
-		ImageIcon i3 = new ImageIcon("heart2.png");
-		ImageIcon i4 = new ImageIcon("heart1.png");
-		img.add(i4);
-		img.add(i3);
-		img.add(i2);
-		img.add(i1);
-
-		lblNewLabel_1 = new JLabel(img.get(score.read_score()));
+		lblNewLabel_1 = new JLabel("");
+		Icon heart = ht.get(mcq.getheart());
+		lblNewLabel_1.setIcon(heart);
 		lblNewLabel_1.setBounds(38, 385, 315, 67);
 		frame.getContentPane().add(lblNewLabel_1);
 
@@ -97,14 +92,25 @@ public class MultipleChoice_Game {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("1.") == true)
+				if (answer.get(mcq.read_counter()).equals("1.") == true) {
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else{
-                    score.minus_score(score.read_score());
+					mcs.frame.setVisible(true);
+					frame.setVisible(false);
+				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+					if (mcq.getheart() == 0) {
+						mcq.setheart(3);
+						JOptionPane.showMessageDialog(null, "study hard");
+						frame.setVisible(false);
+						Study study = new Study();
+						study.frame.setVisible(true);
+					} else {
+						mcq.setheart(mcq.getheart() - 1);
+						mcs.frame.setVisible(true);
+						frame.setVisible(false);
+					}
+
 				}
-				mcs.frame.setVisible(true);
-				frame.setVisible(false);
 
 			}
 		});
@@ -115,15 +121,24 @@ public class MultipleChoice_Game {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("2.") == true)
+				if (answer.get(mcq.read_counter()).equals("2.") == true) {
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else{
-					score.minus_score(score.read_score());
+					mcs.frame.setVisible(true);
+					frame.setVisible(false);
+				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+					if (mcq.getheart() == 0) {
+						mcq.setheart(3);
+						JOptionPane.showMessageDialog(null, "study hard");
+						frame.setVisible(false);
+						Study study = new Study();
+						study.frame.setVisible(true);
+					} else {
+						mcq.setheart(mcq.getheart() - 1);
+						mcs.frame.setVisible(true);
+						frame.setVisible(false);
+					}
 				}
-				mcs.frame.setVisible(true);
-				frame.setVisible(false);
-
 			}
 		});
 
@@ -133,14 +148,24 @@ public class MultipleChoice_Game {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("3.") == true)
+				if (answer.get(mcq.read_counter()).equals("3.") == true) {
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else{
-					score.minus_score(score.read_score());
+					mcs.frame.setVisible(true);
+					frame.setVisible(false);
+				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
-				}
-				mcs.frame.setVisible(true);
-				frame.setVisible(false);
+					if (mcq.getheart() == 0) {
+						mcq.setheart(3);
+						JOptionPane.showMessageDialog(null, "study hard");
+						frame.setVisible(false);
+						Study study = new Study();
+						study.frame.setVisible(true);
+					} else {
+						mcq.setheart(mcq.getheart() - 1);
+						mcs.frame.setVisible(true);
+						frame.setVisible(false);
+					}
+			}
 			}
 		});
 
@@ -150,15 +175,24 @@ public class MultipleChoice_Game {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("4.") == true)
+				if (answer.get(mcq.read_counter()).equals("4.") == true) {
 					mcs.textArea.setBackground(new Color(60, 179, 113));
-				else{
-					score.minus_score(score.read_score());
+					mcs.frame.setVisible(true);
+					frame.setVisible(false);
+				} else {
 					mcs.textArea.setBackground(new Color(178, 34, 34));
+					if (mcq.getheart() == 0) {
+						mcq.setheart(3);
+						JOptionPane.showMessageDialog(null, "study hard");
+						frame.setVisible(false);
+						Study study = new Study();
+						study.frame.setVisible(true);
+					} else {
+						mcq.setheart(mcq.getheart() - 1);
+						mcs.frame.setVisible(true);
+						frame.setVisible(false);
+					}
 				}
-				mcs.frame.setVisible(true);
-				frame.setVisible(false);
-
 			}
 		});
 		frame.getContentPane().setLayout(null);

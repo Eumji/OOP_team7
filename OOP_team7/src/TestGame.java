@@ -84,6 +84,7 @@ public class TestGame extends MENU{
             sco.game_restart();
             
             MultipleChoice_Question mcq = new MultipleChoice_Question();
+            mcq.mc_restart();
             MultipleChoice_Game mcg = new MultipleChoice_Game();
             mcg.frame.setVisible(true);
             frame.setVisible(false);

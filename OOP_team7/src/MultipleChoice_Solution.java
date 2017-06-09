@@ -24,7 +24,7 @@ public class MultipleChoice_Solution {
 	JFrame frame;
 	JTextArea textArea;
 	MultipleChoice_Question mcq = new MultipleChoice_Question();
-	MultipleChoice_Game mcg = new MultipleChoice_Game();
+	
 	
 	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
 	private JButton btnNext;
@@ -73,6 +73,7 @@ public class MultipleChoice_Solution {
 					frame.setVisible(false);
 				}
 				else{
+					MultipleChoice_Game mcg = new MultipleChoice_Game();
 					mcg.frame.setVisible(true);
 				    frame.setVisible(false);
 				}
