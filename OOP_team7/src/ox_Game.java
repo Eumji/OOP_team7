@@ -7,6 +7,7 @@ import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
@@ -32,6 +33,9 @@ public class ox_Game extends TestGame {
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
+	
+	HEART h = new HEART();
+	private ArrayList<Icon> ht = new ArrayList<Icon>(h.heart());
 
 	/**
 	 * Launch the application.
@@ -85,27 +89,8 @@ public class ox_Game extends TestGame {
 		textArea.setText(q);
 
 		// ÇÏÆ® ¶ì¿ì±â
-		ImageIcon img4 = new ImageIcon("heart4.png");
-		ImageIcon img3 = new ImageIcon("heart3.png");
-		ImageIcon img2 = new ImageIcon("heart2.png");
-		ImageIcon img1 = new ImageIcon("heart1.png");
-		JLabel hearticon = new JLabel(img4);
-
-		switch (heart) {
-		case 3:
-			hearticon = new JLabel(img3);
-			break;
-		case 2:
-			hearticon = new JLabel(img2);
-			break;
-		case 1:
-			hearticon = new JLabel(img1);
-			break;
-		case 0:
-			//study = true;
-		default:
-			break;
-		}
+		Icon heart = ht.get(h.getheart());
+		JLabel hearticon = new JLabel(heart);
 		hearticon.setBounds(39, 413, 354, 85);
 		panel.add(hearticon);
 		panel.add(textArea);
@@ -116,23 +101,30 @@ public class ox_Game extends TestGame {
 			public void actionPerformed(ActionEvent e) {
 				// "O" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
-				if (answer.get(oxq.read_counter()).equals("O"))
+				
+				if (answer.get(oxq.read_counter()).equals("O")){
 					oxs.textArea.setBackground(new Color(60, 179, 113));
-
+					oxs.textArea.setText(solution.get(oxq.read_counter()));
+					oxs.frame.setVisible(true);
+					oxgame.setVisible(false);
+				}
 				else {
+					if(h.getheart()==0){
+						JOptionPane.showMessageDialog(null, "Study Hard!!");
+						oxgame.setVisible(false);
+						Study study = new Study();
+						study.frame.setVisible(true);
+					}
+					else{
+					h.setheart(h.getheart()-1);
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
+					oxs.textArea.setText(solution.get(oxq.read_counter()));
+					oxs.frame.setVisible(true);
+					oxgame.setVisible(false);
+						
+					}
 				}
-
-				oxs.textArea.setText(solution.get(oxq.read_counter()));
-				oxs.frame.setVisible(true);
-				oxgame.setVisible(false);
-				/*if (study == true) {
-					JOptionPane.showMessageDialog(null, "Study Hard!!!!!", "Notice", JOptionPane.INFORMATION_MESSAGE);
-					BasicMenu basic = new BasicMenu();
-					basic.setVisible(true);
-					frame.setVisible(false);
-				}*/
 			}
 		});
 		button.setForeground(Color.GREEN);
@@ -145,22 +137,30 @@ public class ox_Game extends TestGame {
 			public void actionPerformed(ActionEvent e) {
 				// "X" ´­·¶À» ¶§
 				ox_solution oxs = new ox_solution();
-				if (answer.get(oxq.read_counter()).equals("X"))
+				
+				if (answer.get(oxq.read_counter()).equals("X")){
 					oxs.textArea.setBackground(new Color(60, 179, 113));
+					oxs.textArea.setText(solution.get(oxq.read_counter()));
+					oxs.frame.setVisible(true);
+					oxgame.setVisible(false);
+				}
 				else {
+					if(h.getheart()==0){
+						JOptionPane.showMessageDialog(null, "Study Hard!!");
+						oxgame.setVisible(false);
+						Study study = new Study();
+						study.frame.setVisible(true);
+					}
+					else{
+					h.setheart(h.getheart()-1); 
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
+					oxs.textArea.setText(solution.get(oxq.read_counter()));
+					oxs.frame.setVisible(true);
+					oxgame.setVisible(false);
+						
+					}
 				}
-
-				oxs.textArea.setText(solution.get(oxq.read_counter()));
-				oxs.frame.setVisible(true);
-				oxgame.setVisible(false);
-				/*if (study == true) {
-					JOptionPane.showMessageDialog(null, "Study Hard!!!!!", "Notice", JOptionPane.INFORMATION_MESSAGE);
-					BasicMenu basic = new BasicMenu();
-					basic.setVisible(true);
-					frame.setVisible(false);
-				}*/
 			}
 		});
 		button_2.setForeground(Color.RED);
