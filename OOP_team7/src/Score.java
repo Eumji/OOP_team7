@@ -39,7 +39,7 @@ public class Score {
 	
 	public void game_restart(){
 		BufferedWriter bw = null;
-		String line = "4";
+		String line = "3";
 		try {
 			bw = new BufferedWriter(new FileWriter("gameScore.txt"));
 			bw.write(line);
