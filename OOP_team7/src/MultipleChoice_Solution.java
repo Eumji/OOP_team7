@@ -83,7 +83,7 @@ public class MultipleChoice_Solution {
 		textArea.setBounds(0, 0, 982, 953);
 		
 		frame.getContentPane().add(textArea);
-		
+		textArea.setText(solution.get(mcg.count));
 		
 		if(mc_isCorrect == true)
 			textArea.setBackground(Color.GREEN);
