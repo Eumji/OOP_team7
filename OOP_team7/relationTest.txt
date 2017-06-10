@@ -1,0 +1,14 @@
+<How to determine relationships between classes>
+¡æ "IS -A" test : You can test the inheritance relationship.
+ex) Cat 'is a' animal.
+¡æ "HAS- A"test : You can test the composition relationship.
+ex) Cat 'has a' color.
+
+*Composition? : Composition is the declaration of a reference variable 
+                of another class type as a member variable of a class.
+
+- If one class is a more specific type of class, use inheritance.
+- If there is a common behavior for several classes 
+  of the same generic type, Consider inheritance.
+- If it is not inheritence relatinoship, Allows you to rewrite code 
+  from other classes without using inheritance.

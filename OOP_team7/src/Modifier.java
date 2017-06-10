@@ -95,6 +95,17 @@ public class Modifier extends JFrame {
 		});
 		
 		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Inheritance Menu");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InheritanceMenu im = new InheritanceMenu();
+				im.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
