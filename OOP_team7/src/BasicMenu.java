@@ -10,9 +10,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.TitledBorder;
-import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -20,6 +18,11 @@ public class BasicMenu extends JFrame {
 
 	private JPanel contentPane;
 
+	public Variable v = new Variable();
+	public Modifier mf = new Modifier();
+	public COM C = new COM();
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -96,7 +99,6 @@ public class BasicMenu extends JFrame {
 		JButton btnNewButton_3 = new JButton("Class & Object & Method");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				COM C = new COM();
 				C.setVisible(true);
 				setVisible(false);
 			}
@@ -108,7 +110,6 @@ public class BasicMenu extends JFrame {
 		JButton btnNewButton_2 = new JButton("Modifier");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Modifier mf = new Modifier();
 				mf.setVisible(true);
 				setVisible(false);
 			}
@@ -121,7 +122,6 @@ public class BasicMenu extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Variable v = new Variable();
 				v.setVisible(true);
 				setVisible(false);
 			}
