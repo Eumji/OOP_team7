@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.Font;
-import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -11,11 +10,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.swing.JLabel;
 
 public class ox_solution extends TestGame{
 
-	boolean ox_isCorrect;
 	private ox_question oxq = new ox_question();
 	
 

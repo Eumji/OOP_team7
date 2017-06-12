@@ -1,1 +1,9 @@
+<<<<<<< HEAD
+3
+=======
+<<<<<<< HEAD
+0
+=======
 2
+>>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
+>>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
