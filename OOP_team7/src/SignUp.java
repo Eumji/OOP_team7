@@ -44,6 +44,7 @@ public class SignUp extends JFrame implements Serializable{
 	private JPasswordField textPW;
 	private JPasswordField textPW1;
 	private JLabel lblPWC;
+	ArrayList<People> alp = new ArrayList<>();
 	/**
 	 * Launch the application.
 	 */
@@ -126,7 +127,6 @@ public class SignUp extends JFrame implements Serializable{
 				}
 					
 				else{
-					ArrayList<People> alp = new ArrayList<>();
 					alp = su.loadFromCSV();
 					alp.add(new People(textName.getText(), textID.getText(), textPW.getText(),textNN.getText(), (int)spinnerM.getValue(), (int)spinnerD.getValue()));
 					su.saveToCSV(alp);
@@ -158,9 +158,9 @@ public class SignUp extends JFrame implements Serializable{
 		btnId.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SignUp s = new SignUp();
-				ArrayList<People> p=s.loadFromCSV();
+				alp=s.loadFromCSV();
 				boolean isIDex=false;
-				for(People person : p){
+				for(People person : alp){
 					if(person.getID().equals(textID.getText())==true){
 						isIDex=true;
 						break;

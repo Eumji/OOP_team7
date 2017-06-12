@@ -99,7 +99,7 @@ public class TestGame {
 				HEART h = new HEART();
 				h.setheart(3);
 				Blank_Game bg = new Blank_Game();
-				bg.frame.setVisible(true);
+				bg.gframe.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
