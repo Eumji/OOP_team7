@@ -17,8 +17,10 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Study extends MENU{
-
+public class Study{
+	public InheritanceMenu im = new InheritanceMenu();
+	public EncapsulationMenu em = new EncapsulationMenu();
+	public 	BasicMenu bm = new BasicMenu();
 	JFrame frame;
 
 	/**
@@ -108,7 +110,7 @@ public class Study extends MENU{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				BasicMenu bm = new BasicMenu();
+			//	BasicMenu bm = new BasicMenu();
 				bm.setVisible(true);
 				frame.setVisible(false);
 			}
@@ -122,7 +124,7 @@ public class Study extends MENU{
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 50));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EncapsulationMenu em = new EncapsulationMenu();
+			//	EncapsulationMenu em = new EncapsulationMenu();
 				em.setVisible(true);
 				frame.setVisible(false);
 
@@ -133,7 +135,7 @@ public class Study extends MENU{
 		btnNewButton_2.setBackground(new Color(240, 248, 255));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InheritanceMenu im = new InheritanceMenu();
+			//	InheritanceMenu im = new InheritanceMenu();
 				im.setVisible(true);
 				frame.setVisible(false);
 			}
