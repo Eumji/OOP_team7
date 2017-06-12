@@ -31,6 +31,8 @@ public class JAVA {
 	private String Nickname;
 	private JPasswordField textField_1;
 	private SignUp su;
+	
+	
 	/**
 	 * Launch the application.
 	 */
