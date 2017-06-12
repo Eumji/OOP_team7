@@ -1,10 +1,10 @@
 setAge
 int
 Puppy
-y
-e
-j
-j
-a
-n
-g
+Puppy_Age:7
+coding everybody
+numbering
+extends
+8
+9
+10
