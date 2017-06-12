@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="MultipleChoice_Game" project="OOP_team7" 
     file="/OOP_team7/src/MultipleChoice_Game.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1042" y="812"/>    
+    <position height="-1" width="-1" x="1044" y="810"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
