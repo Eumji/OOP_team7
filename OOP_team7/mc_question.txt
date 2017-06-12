@@ -1,4 +1,3 @@
-
 1.Which is not valid variable name in java?
 2.Choose the wrong answer. The method declaration consists of (       ).
 3.Which variable type does not stored integer variable?
@@ -9,5 +8,3 @@
 8.What is the size of short data type in java?
 9.Which of the following describes the variable type?; All instances share a common storage space.
 10.Choose the right answer. ¡°Class¡± is type  ( ________ or model) of an object.
-q11
-q12

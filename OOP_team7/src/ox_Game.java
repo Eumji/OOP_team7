@@ -52,7 +52,6 @@ public class ox_Game extends TestGame{
 	 * Create the application.
 	 */
 	public ox_Game() {
-		//oxq.plus_counter(oxq.read_counter());
 		initialize();
 	}
 

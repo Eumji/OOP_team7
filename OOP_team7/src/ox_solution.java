@@ -3,20 +3,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.Font;
-import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.swing.JLabel;
-
 public class ox_solution extends ox_Game{
 
 	boolean ox_isCorrect;
-	private ox_content oxq = new ox_content();
 	
 
 	JFrame frame_this;
@@ -59,16 +57,7 @@ public class ox_solution extends ox_Game{
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(getOXnum()==9){
-					frame_this.setVisible(false);
-					frame.setVisible(true);
-				}
-				else {
-					setOXnum(getOXnum()+1);
-					ox_Game oxg = new ox_Game();
-					oxg.oxgame.setVisible(true);
-					frame_this.setVisible(false);
-				}
+				gonext();
 			}
 		});
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
@@ -78,6 +67,14 @@ public class ox_solution extends ox_Game{
 		frame_this.getContentPane().add(btnNewButton);
 		
 		textArea = new JTextArea();
+		textArea.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyChar() == '\n') {
+					gonext();
+				}
+			}
+		});
 		textArea.setForeground(Color.BLACK);
 		textArea.setBackground(null);
 		textArea.setLineWrap(true);
@@ -209,5 +206,19 @@ public class ox_solution extends ox_Game{
 		ox_Game newOX = new ox_Game();
 		newOX.oxgame.setVisible(true);
 		frame_this.setVisible(false);
+	}
+	
+
+	public void gonext(){
+		if(getOXnum()==9){
+			frame_this.setVisible(false);
+			frame.setVisible(true);
+		}
+		else {
+			setOXnum(getOXnum()+1);
+			ox_Game oxg = new ox_Game();
+			oxg.oxgame.setVisible(true);
+			frame_this.setVisible(false);
+		}
 	}
 }

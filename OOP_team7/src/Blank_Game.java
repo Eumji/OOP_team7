@@ -28,8 +28,8 @@ public class Blank_Game extends TestGame {
 
 	JFrame gframe;
 	private JTextField textField;
-	Blank_content bq;
-	Blank_solution bs;
+	private Blank_content bq;
+
 	private HEART h;
 	private ArrayList<String> answer;
 	private ArrayList<String> solution;
@@ -268,7 +268,7 @@ public class Blank_Game extends TestGame {
 	}
 
 	public void submit() {
-		bs = new Blank_solution();
+		Blank_solution bs = new Blank_solution();
 		int num = getBlanknum();
 		String s = answer.get(num);
 		bs.lblNewLabel_1 = new JLabel(solution.get(getBlanknum()));

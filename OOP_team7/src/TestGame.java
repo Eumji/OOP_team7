@@ -69,8 +69,6 @@ public class TestGame {
 
 				HEART h = new HEART();
 				h.setheart(3);
-				/*ox_question oxq = new ox_question();
-				oxq.ox_restart();*/
 				setOXnum(0);
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
@@ -87,9 +85,7 @@ public class TestGame {
 			public void actionPerformed(ActionEvent e) {
 				HEART h = new HEART();
 				h.setheart(3);
-
-				MultipleChoice_Question mcq = new MultipleChoice_Question();
-				mcq.mc_restart();
+				setMCnum(0);
 				MultipleChoice_Game mcg = new MultipleChoice_Game();
 				mcg.frame.setVisible(true);
 				frame.setVisible(false);
@@ -183,6 +179,36 @@ public class TestGame {
 		line = Integer.toString(n);
 		try {
 			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public int getMCnum() {
+		int number = -1;
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("mc_counter.txt"));
+			String line = br.readLine();
+			number = Integer.parseInt(line);
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return number;
+	}
+
+	
+	public void setMCnum(int n) {
+		BufferedWriter bw = null;
+		String line = null;
+		line = Integer.toString(n);
+		try {
+			bw = new BufferedWriter(new FileWriter("mc_counter.txt"));
 			bw.write(line);
 			bw.close();
 		} catch (IOException e) {

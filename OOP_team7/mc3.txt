@@ -1,4 +1,3 @@
-
 _myScore
 variable declaration
 short

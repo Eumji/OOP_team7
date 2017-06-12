@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class MultipleChoice_Question {
+public class MultipleChoice_content implements Contents{
 
+	@Override
 	public ArrayList<String> question() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;
@@ -26,7 +27,8 @@ public class MultipleChoice_Question {
 		}
 		return mc_quiz;
 	}
-
+	
+	@Override
 	public ArrayList<String> answer() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;
@@ -48,6 +50,7 @@ public class MultipleChoice_Question {
 		return mc_quiz;
 	}
 
+	@Override
 	public ArrayList<String> solution() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;
@@ -68,6 +71,7 @@ public class MultipleChoice_Question {
 		}
 		return mc_quiz;
 	}
+	
 	public ArrayList<String> mc1() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;
@@ -150,7 +154,7 @@ public class MultipleChoice_Question {
 	}
 	
 	
-	public int read_counter() {
+	/*public int read_counter() {
 		int counter = 0;
 		String line = null;
 		BufferedReader br = null;
@@ -192,5 +196,5 @@ public class MultipleChoice_Question {
 			e.printStackTrace();
 		}
 
-	}
+	}*/
 }
