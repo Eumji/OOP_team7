@@ -8,4 +8,4 @@ setter and getter method
 You can use functions freely.
 8bits
 class variable
-redprint
+You can write common code in the superclass to reduce duplicate code.

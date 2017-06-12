@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.Icon;
 
-public class MultipleChoice_Game {
+public class MultipleChoice_Game extends TestGame{
 
 	JFrame frame;
 	JTextArea textArea;

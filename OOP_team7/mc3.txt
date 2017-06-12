@@ -8,4 +8,4 @@ main method
 Encapsulation is used to prevent wrong people from approaching and changing values strangely.
 32bits
 instance variable
-blueprint
+The superclass allows you to define a common form for a group of classes.
