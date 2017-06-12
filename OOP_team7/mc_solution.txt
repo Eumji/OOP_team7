@@ -6,7 +6,6 @@ If there is no return value, void is the return type.
 Private access modifier is the most restrictive access level. Variables that are declared private can be accessed outside the class, if public getter methods are present in the class.
 To achieve encapsulation in Java. Declare the variables of a class as private. And provide public setter and getter methods to modify and view the variables values.
 1) You have to use setter and getter method to   access encapsulated variable.                           2) For non-encapsulated variables, you can use   the dot operator to change values.                     4) Even if the operation method inside the object changes, the usage method does not change.
-s8
-s9
+There are five variable types of integers. Short type has 2byte/16bits memory usage size.
+class variable: All instances share a common storage space. Just add static before the instance variable.
 s10
-s11
