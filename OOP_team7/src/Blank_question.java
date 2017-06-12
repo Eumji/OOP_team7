@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class Blank_question {
-	public ArrayList<Icon> question() {
+public class Blank_question implements Contents{
+	
+	public ArrayList<Icon> questionIcon() {
 		ArrayList<Icon> img = new ArrayList<>();
 
 		ImageIcon i1 = new ImageIcon("No.1.png");
@@ -39,7 +40,8 @@ public class Blank_question {
 
 		return img;
 	}
-
+	
+	@Override
 	public ArrayList<String> answer() {
 		ArrayList<String> blank_answer;
 		BufferedReader br = null;
@@ -60,6 +62,7 @@ public class Blank_question {
 		return blank_answer;
 	}
 
+	@Override
 	public ArrayList<String> solution() {
 		ArrayList<String> blank_solution;
 		BufferedReader br = null;
@@ -109,6 +112,12 @@ public class Blank_question {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public ArrayList<String> question() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

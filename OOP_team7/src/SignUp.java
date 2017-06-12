@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -44,7 +43,7 @@ public class SignUp extends JFrame implements Serializable{
    private JPasswordField textPW;
    private JPasswordField textPW1;
    private JLabel lblPWC;
-   ArrayList<People> alp = new ArrayList<>();
+   ArrayList<People> alp;
    /**
     * Launch the application.
     */
@@ -65,6 +64,9 @@ public class SignUp extends JFrame implements Serializable{
     * Create the frame.
     */
    public SignUp() {
+	   
+
+	  alp = new ArrayList<>();
       setTitle("Sign Up");
       setBounds(100, 100, 500, 800);
       contentPane = new JPanel();
@@ -114,7 +116,8 @@ public class SignUp extends JFrame implements Serializable{
       btnSignUp.setBackground(new Color(135, 206, 250));
       btnSignUp.setFont(new Font("Arial", Font.PLAIN, 25));
       btnSignUp.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent arg0) {
+         @SuppressWarnings("deprecation")
+		public void actionPerformed(ActionEvent arg0) {
             SignUp su = new SignUp();
             if(IDchk==false){
                   JOptionPane.showMessageDialog(null, "Error: Please do ID overlap check");
@@ -174,7 +177,8 @@ public class SignUp extends JFrame implements Serializable{
       textPW = new JPasswordField();
       textPW.setFont(new Font("Arial", Font.PLAIN, 25));
       textPW.addKeyListener(new KeyAdapter() {
-         public void keyPressed(KeyEvent k) {
+         @SuppressWarnings("deprecation")
+		public void keyPressed(KeyEvent k) {
             String s1, s2; s1=textPW.getText(); s2=textPW1.getText();
             char c=k.getKeyChar();
             s1+=c;
@@ -325,7 +329,6 @@ public class SignUp extends JFrame implements Serializable{
    
    
    public ArrayList<People> loadFromCSV(){   
-      ArrayList<People> lp = new ArrayList<>();
         try{
             File f=new File("people.txt");
             FileReader fr = new FileReader(f);
@@ -334,14 +337,14 @@ public class SignUp extends JFrame implements Serializable{
             String s;
             while((s = br.readLine()) != null) {
                 String[] line = s.split(";");
-                lp.add(new People(line[0],line[1],line[2],line[3],Integer.parseInt(line[4]),Integer.parseInt(line[5])));
+                alp.add(new People(line[0],line[1],line[2],line[3],Integer.parseInt(line[4]),Integer.parseInt(line[5])));
             }
             
             br.close();
             }catch(IOException e){
                 e.printStackTrace();
         }
-        return lp;
+        return alp;
    
    }
 }

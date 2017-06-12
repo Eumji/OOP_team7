@@ -30,7 +30,7 @@ public class JAVA {
 	private JTextField textField;
 	private String Nickname;
 	private JPasswordField textField_1;
-	
+	private SignUp su;
 	/**
 	 * Launch the application.
 	 */
@@ -66,6 +66,8 @@ public class JAVA {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		su = new SignUp();
+		
 		
 		frame = new JFrame("Java");
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
@@ -94,7 +96,6 @@ public class JAVA {
 		button.setBackground(new Color(255, 255, 255));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SignUp su = new SignUp();
 				su.setVisible(true);
 			}
 		});
@@ -105,7 +106,6 @@ public class JAVA {
 
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SignUp su = new SignUp();
 				ArrayList<People> people = new ArrayList<>();
 				people = su.loadFromCSV();
 				
@@ -147,13 +147,11 @@ public class JAVA {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyChar()=='\n'){
-					SignUp su = new SignUp();
-					ArrayList<People> people = new ArrayList<>();
-					people = su.loadFromCSV();
+					su.alp = su.loadFromCSV();
 					
 					boolean loginPW = false;
 					boolean loginID=false;
-					for(People p : people){
+					for(People p : su.alp){
 						if(p.getID().equals(textField.getText())==true){
 							loginID = true;
 							
