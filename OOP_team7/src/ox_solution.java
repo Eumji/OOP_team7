@@ -17,7 +17,6 @@ public class ox_solution{
 
 	boolean ox_isCorrect;
 	private ox_question oxq = new ox_question();
-	ox_Game oxg = new ox_Game();
 	
 
 	JFrame frame;
@@ -40,6 +39,7 @@ public class ox_solution{
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the application.
@@ -59,12 +59,13 @@ public class ox_solution{
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(oxq.read_counter()==11){
+				if(oxq.read_counter()==10){
 					TestGame t = new TestGame();
 					t.frame.setVisible(true);
 					frame.setVisible(false);
 				}
 				else {
+					ox_Game oxg = new ox_Game();
 					oxg.oxgame.setVisible(true);
 					frame.setVisible(false);
 				}

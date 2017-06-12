@@ -48,6 +48,7 @@ public class Modifier extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
 	public Modifier() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1000, 1000);
@@ -57,9 +58,11 @@ public class Modifier extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("MENU");
+		mnNewMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Go to Menu");
+		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU E= new MENU();
@@ -70,6 +73,7 @@ public class Modifier extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
+		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BasicMenu bm = new BasicMenu();
@@ -77,9 +81,11 @@ public class Modifier extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
+		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EncapsulationMenu em = new EncapsulationMenu();
@@ -87,71 +93,42 @@ public class Modifier extends JFrame {
 				setVisible(false);
 			}
 		});
+		
 		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Inheritance Menu");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InheritanceMenu im = new InheritanceMenu();
+				im.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
+		panel.setBounds(70, 47, 572, 618);
 		panel.setBackground(new Color(255, 250, 250));
 		
 		JLabel lblNewLabel = new JLabel("Default");
+		lblNewLabel.setBounds(652, 41, 77, 31);
 		lblNewLabel.setForeground(new Color(95, 158, 160));
-		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		ImageIcon img = new ImageIcon("default.jpg");
-		ImageIcon img2 = new ImageIcon("public.jpg");
-		ImageIcon img3 = new ImageIcon("canused.jpg");
-		
-		JLabel lblNewLabel_1 = new JLabel(img);
-		lblNewLabel_1.setText("");
-		
+		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 20));
+
 		JLabel lblNewLabel_2 = new JLabel("Public");
+		lblNewLabel_2.setBounds(652, 213, 63, 31);
 		lblNewLabel_2.setForeground(new Color(95, 158, 160));
-		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_3 = new JLabel(img2);
-		lblNewLabel_3.setText("");
+		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 20));
 		
 		JLabel lblNewLabel_4 = new JLabel("Where it can be used");
+		lblNewLabel_4.setBounds(652, 389, 211, 31);
 		lblNewLabel_4.setForeground(new Color(95, 158, 160));
-		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_5 = new JLabel(img3);
-		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 568, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_1)
-						.addComponent(lblNewLabel_2)
-						.addComponent(lblNewLabel_3)
-						.addComponent(lblNewLabel_4)
-						.addComponent(lblNewLabel_5))
-					.addContainerGap(166, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel)
-					.addGap(3)
-					.addComponent(lblNewLabel_1)
-					.addGap(5)
-					.addComponent(lblNewLabel_2)
-					.addGap(4)
-					.addComponent(lblNewLabel_3)
-					.addGap(5)
-					.addComponent(lblNewLabel_4)
-					.addGap(6)
-					.addComponent(lblNewLabel_5)
-					.addContainerGap(631, Short.MAX_VALUE))
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
-		);
+		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 20));
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
@@ -181,6 +158,7 @@ public class Modifier extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		contentPane.setLayout(null);
 		
 		textArea.setCaretPosition(0);
 		JScrollPane scrollPane = new JScrollPane(textArea);
@@ -189,14 +167,39 @@ public class Modifier extends JFrame {
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 615, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.add(panel);
+		contentPane.add(lblNewLabel);
+		contentPane.add(lblNewLabel_2);
+		contentPane.add(lblNewLabel_4);
+		
+		ImageIcon img = new ImageIcon("default.jpg");
+		ImageIcon img2 = new ImageIcon("public.jpg");
+		ImageIcon img3 = new ImageIcon("canused.jpg");
+		ImageIcon img4 = new ImageIcon("computer.jpg");
+		
+		JLabel lblNewLabel_1 = new JLabel(img);
+		lblNewLabel_1.setBounds(611, 47, 314, 176);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel label = new JLabel(img2);
+		label.setBounds(632, 231, 291, 164);
+		contentPane.add(label);
+		
+		JLabel lblNewLabel_3 = new JLabel(img3);
+		lblNewLabel_3.setBounds(575, 413, 403, 252);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_5 = new JLabel(img4);
+		lblNewLabel_5.setBounds(0, 0, 968, 862);
+		contentPane.add(lblNewLabel_5);
 	}
-
 }

@@ -15,6 +15,7 @@ public class ox_question {
 				ox_quiz.add(line);
 			}
 			
+			
 		br.close();
 		}catch(FileNotFoundException fnfe){
 			System.out.println("File is not found.");
@@ -44,6 +45,7 @@ public class ox_question {
 		}
 		return ox_quiz;
 	}
+	
 	
 	public ArrayList<String> solution(){
 		ArrayList<String> ox_quiz;

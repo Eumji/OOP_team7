@@ -15,3 +15,10 @@ It is used to match types when computing between different types.
 3. local variable 
 - It is declared within a method and can only be used within a method.
 - When the method ends, it is destroyed and can not be used.
+
+<Variable comparison>
+- Base type 
+  : Base type variables can be compared with the "==" operator.
+- Reference type
+  1. Use equals to ensure that the two objects are equal.
+  2. Use "==" to see if it refers to the same object in the heap.

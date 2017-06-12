@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.Window;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class MENU extends JFrame {
 
@@ -45,13 +46,16 @@ public class MENU extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 500, 500);
+		frame.getContentPane().setBackground(new Color(135, 206, 250));
+		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JLabel lblMenu = new JLabel("MENU");
-		lblMenu.setFont(new Font("Bodoni MT Black", Font.PLAIN, 40));
+		lblMenu.setFont(new Font("Bauhaus 93", Font.PLAIN, 99));
 
 		JButton btnStudy = new JButton("Study");
+		btnStudy.setForeground(new Color(0, 0, 0));
+		btnStudy.setBackground(new Color(255, 255, 255));
 		btnStudy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Study s = new Study();
@@ -59,9 +63,11 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnStudy.setFont(new Font("Arial", Font.PLAIN, 25));
+		btnStudy.setFont(new Font("Arial", Font.PLAIN, 70));
 
-		JButton btnTestGame = new JButton("Test Game");
+		JButton btnTestGame = new JButton("Test \r\n\r\nGame");
+		btnTestGame.setForeground(new Color(0, 0, 0));
+		btnTestGame.setBackground(new Color(255, 255, 255));
 		btnTestGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TestGame tg = new TestGame();
@@ -69,31 +75,32 @@ public class MENU extends JFrame {
 				frame.setVisible(false);
 			}
 		});
-		btnTestGame.setFont(new Font("Arial", Font.PLAIN, 25));
+		btnTestGame.setFont(new Font("Arial", Font.PLAIN, 70));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(89)
-					.addComponent(btnStudy)
-					.addPreferredGap(ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-					.addComponent(btnTestGame)
-					.addGap(49))
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-					.addGap(165)
-					.addComponent(lblMenu)
-					.addContainerGap(182, Short.MAX_VALUE))
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 465, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(btnTestGame, GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+							.addContainerGap())
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
+							.addGap(313))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(65)
-					.addComponent(lblMenu)
-					.addGap(75)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnTestGame)
-						.addComponent(btnStudy, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(227, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(34)
+					.addComponent(lblMenu, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE)
+					.addGap(50)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnTestGame, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnStudy, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}

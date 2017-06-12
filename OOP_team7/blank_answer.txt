@@ -1,4 +1,10 @@
-beautiful
-pretty
-cute
-jihyejjang
+setAge
+int
+Puppy
+y
+e
+j
+j
+a
+n
+g

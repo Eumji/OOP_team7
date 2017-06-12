@@ -52,6 +52,7 @@ public class Variable extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.
@@ -66,9 +67,11 @@ public class Variable extends JFrame {
 		setJMenuBar(menuBar);
 
 		JMenu mnMenu = new JMenu("MENU");
+		mnMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmGoToMenu = new JMenuItem("Go to Menu");
+		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -80,6 +83,7 @@ public class Variable extends JFrame {
 		mnMenu.add(mntmGoToMenu);
 
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
+		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -92,6 +96,7 @@ public class Variable extends JFrame {
 		mnMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
+		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EncapsulationMenu em = new EncapsulationMenu();
@@ -101,18 +106,16 @@ public class Variable extends JFrame {
 		});
 		mnMenu.add(mntmNewMenuItem_2);
 		
-		JMenu mnNewMenu = new JMenu("Next");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("\u2192");
+		JMenuItem mntmNewMenuItem = new JMenuItem("Inheritance Menu");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VariableCont vc = new VariableCont();
-				vc.setVisible(true);
+				InheritanceMenu im = new InheritanceMenu();
+				im.setVisible(true);
 				setVisible(false);
 			}
 		});
-		mnNewMenu.add(mntmNewMenuItem);
+		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnMenu.add(mntmNewMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));
 		contentPane.setForeground(new Color(144, 238, 144));
@@ -120,81 +123,16 @@ public class Variable extends JFrame {
 		setContentPane(contentPane);
 	
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(245, 255, 250));
+		panel.setBounds(73, 41, 828, 340);
+		panel.setBackground(new Color(255, 255, 240));
 		panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		
-		ImageIcon img = new ImageIcon("vd.jpg");
-		ImageIcon img2 = new ImageIcon("range.jpg");
-		ImageIcon img3 = new ImageIcon("rv.jpg");
-		
-		JLabel lblNewLabel = new JLabel("Variable Declaration");
-		lblNewLabel.setForeground(new Color(106, 90, 205));
-		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_1 = new JLabel(img);
-		
-		
-		JLabel lblNewLabel_2 = new JLabel("Variable 's Range and Memory");
-		lblNewLabel_2.setForeground(new Color(106, 90, 205));
-		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		JLabel lblNewLabel_3 = new JLabel(img2);
-		
-		
-		JLabel lblNewLabel_4 = new JLabel(img3);
-		
-		
-		JLabel lblReferenceTypeVariable = new JLabel("Reference Type Variable");
-		lblReferenceTypeVariable.setForeground(new Color(106, 90, 205));
-		lblReferenceTypeVariable.setFont(new Font("Corbel", Font.PLAIN, 25));
-		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_1))
-					.addGap(123)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_4)
-						.addComponent(lblReferenceTypeVariable))
-					.addContainerGap(379, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel_2)
-					.addContainerGap())
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel_3)
-					.addContainerGap())
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 383, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblReferenceTypeVariable)
-						.addComponent(lblNewLabel))
-					.addGap(1)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(lblNewLabel_4))
-					.addGap(2)
-					.addComponent(lblNewLabel_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblNewLabel_3)
-					.addContainerGap(306, Short.MAX_VALUE))
-		);
-		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(245, 255, 250));
+		textArea.setBackground(new Color(250, 240, 230));
 		textArea.setEditable(false);
 		textArea.setForeground(Color.BLACK);
-		textArea.setFont(new Font("Segoe Print", Font.PLAIN, 22));
+		textArea.setFont(new Font("Lucida Sans Unicode", Font.PLAIN, 20));
 		panel.add(textArea);
-		contentPane.setLayout(gl_contentPane);
 
 		File VariF = new File("Variable.txt");
 
@@ -219,23 +157,132 @@ public class Variable extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		contentPane.setLayout(null);
 		
 		textArea.setCaretPosition(0);
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 826, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(5)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+				.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
 		);
 		panel.setLayout(gl_panel);
+		contentPane.add(panel);
+		
+		ImageIcon img = new ImageIcon("variable.JPG");
+		ImageIcon img2 = new ImageIcon("variableCont.jpg");
+		ImageIcon img3 = new ImageIcon("computer.jpg");
+		
+		JLabel lblNewLabel = new JLabel(img);
+		lblNewLabel.setBounds(73, 383, 828, 289);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("NEXT");
+		JButton btnNewButton_1 = new JButton("Previous");
+		btnNewButton_1.setVisible(false);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(null);
+				
+				File VariF = new File("VariableCont.txt");
+
+				FileReader Varifr;
+				try {
+					Varifr = new FileReader(VariF);
+					BufferedReader br = new BufferedReader(Varifr);
+
+					String line;
+
+					do {
+						line = br.readLine();
+						textArea.append(line);
+						textArea.append("\n");
+						
+					} while (line != null);
+
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				textArea.setCaretPosition(0);
+				
+				lblNewLabel.setIcon(img2);
+				
+				btnNewButton_1.setVisible(true);
+				btnNewButton.setVisible(false);
+			}
+		});
+		
+		btnNewButton.setBackground(new Color(100, 149, 237));
+		btnNewButton.setForeground(Color.DARK_GRAY);
+		btnNewButton.setFont(new Font("Consolas", Font.BOLD, 30));
+		btnNewButton.setBounds(781, 677, 120, 43);
+		contentPane.add(btnNewButton);
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textArea.setText(null);
+				
+				File VariF = new File("Variable.txt");
+
+				FileReader Varifr;
+				try {
+					Varifr = new FileReader(VariF);
+					BufferedReader br = new BufferedReader(Varifr);
+
+					String line;
+
+					do {
+						line = br.readLine();
+						textArea.append(line);
+						textArea.append("\n");
+						
+					} while (line != null);
+
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				textArea.setCaretPosition(0);
+				
+				lblNewLabel.setIcon(img);
+				btnNewButton.setVisible(true);
+				btnNewButton_1.setVisible(false);
+
+			}
+		});
+		
+		
+		btnNewButton_1.setForeground(Color.DARK_GRAY);
+		btnNewButton_1.setBackground(new Color(100, 149, 237));
+		btnNewButton_1.setFont(new Font("Consolas", Font.BOLD, 30));
+		btnNewButton_1.setBounds(712, 677, 191, 43);
+		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_1 = new JLabel(img3);
+		lblNewLabel_1.setBounds(0, 0, 968, 862);
+		contentPane.add(lblNewLabel_1);
+		
+		
+		
+
+		
 		
 	}
 }

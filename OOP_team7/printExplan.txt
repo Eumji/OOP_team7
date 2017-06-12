@@ -1,0 +1,2 @@
+Since it prevents the strange value from being entered, 
+the value initialized to the variable is stored as it is.
