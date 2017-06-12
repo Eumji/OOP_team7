@@ -31,6 +31,7 @@ public class JAVA {
 	private String Nickname;
 	private JPasswordField textField_1;
 	private SignUp su;
+	private MENU m;
 	
 	
 	/**
@@ -69,7 +70,7 @@ public class JAVA {
 	 */
 	private void initialize() {
 		su = new SignUp();
-		
+		m = new MENU();
 		
 		frame = new JFrame("Java");
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
@@ -108,36 +109,7 @@ public class JAVA {
 
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ArrayList<People> people = new ArrayList<>();
-				people = su.loadFromCSV();
-				
-				boolean loginPW = false;
-				boolean loginID=false;
-				for(People p : people){
-					if(p.getID().equals(textField.getText())==true){
-						loginID = true;
-						
-						if(p.getpassword().equals(textField_1.getText())==true)
-							loginPW=true;
-						Nickname = p.getnickname();
-						break;
-					}
-				}
-				
-				
-				if(loginID==false){
-					JOptionPane.showMessageDialog(null, "ID is not available");
-				}
-				else if(loginPW==false){
-					JOptionPane.showMessageDialog(null, "password wrong;(");	
-				}
-
-				else{
-					JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
-					MENU m = new MENU();
-					m.frame.setVisible(true);
-					frame.setVisible(false);
-					}
+				goMenu();
 			}
 		});
 		
@@ -149,35 +121,7 @@ public class JAVA {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyChar()=='\n'){
-					su.alp = su.loadFromCSV();
-					
-					boolean loginPW = false;
-					boolean loginID=false;
-					for(People p : su.alp){
-						if(p.getID().equals(textField.getText())==true){
-							loginID = true;
-							
-							if(p.getpassword().equals(textField_1.getText())==true)
-								loginPW=true;
-							Nickname = p.getnickname();
-							break;
-						}
-					}
-					
-					
-					if(loginID==false){
-						JOptionPane.showMessageDialog(null, "ID is not available");
-					}
-					else if(loginPW==false){
-						JOptionPane.showMessageDialog(null, "password wrong;(");	
-					}
-
-					else{
-						JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
-						MENU m = new MENU();
-						m.frame.setVisible(true);
-						frame.setVisible(false);
-						}
+					goMenu();
 				}
 			}
 		});
@@ -248,5 +192,37 @@ public class JAVA {
 					.addContainerGap(95, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+	
+	public void goMenu(){
+		su.alp = su.loadFromCSV();
+		
+		boolean loginPW = false;
+		boolean loginID=false;
+		for(People p : su.alp){
+			if(p.getID().equals(textField.getText())==true){
+				loginID = true;
+				
+				if(p.getpassword().equals(textField_1.getText())==true)
+					loginPW=true;
+				Nickname = p.getnickname();
+				break;
+			}
+		}
+		
+		
+		if(loginID==false){
+			JOptionPane.showMessageDialog(null, "ID is not available");
+		}
+		else if(loginPW==false){
+			JOptionPane.showMessageDialog(null, "password wrong;(");	
+		}
+
+		else{
+			JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
+			m.frame.setVisible(true);
+			frame.setVisible(false);
+			}
+
 	}
 }

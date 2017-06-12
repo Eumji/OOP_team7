@@ -12,6 +12,7 @@ import java.awt.Color;
 public class TestGame {
 
 	JFrame frame;
+	
 
 	/**
 	 * Launch the application.
