@@ -1,4 +1,4 @@
-//import java.awt.BorderLayout;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-//import javax.swing.GroupLayout;
-//import javax.swing.ImageIcon;
-//import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-//import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.Icon;
 
-public class MultipleChoice_Game{
+public class MultipleChoice_Game {
 
 	JFrame frame;
 	JTextArea textArea;
@@ -31,7 +31,7 @@ public class MultipleChoice_Game{
 	MultipleChoice_Question mcq = new MultipleChoice_Question();
 	private ArrayList<String> question = new ArrayList<String>(mcq.question());
 	private ArrayList<String> answer = new ArrayList<String>(mcq.answer());
-	//private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
+	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
 	private ArrayList<String> mc1 = new ArrayList<String>(mcq.mc1());
 	private ArrayList<String> mc2 = new ArrayList<String>(mcq.mc2());
 	private ArrayList<String> mc3 = new ArrayList<String>(mcq.mc3());

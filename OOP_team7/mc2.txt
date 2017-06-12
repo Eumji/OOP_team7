@@ -8,4 +8,4 @@ setting and getting method
 For encapsulated variables, you can use the dot operator to change values.
 16bits
 local variable
-It's easy to add new common code.
+greenprint

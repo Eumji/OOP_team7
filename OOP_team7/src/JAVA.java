@@ -10,12 +10,17 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
@@ -25,7 +30,7 @@ public class JAVA {
 	private JTextField textField;
 	private String Nickname;
 	private JPasswordField textField_1;
-	SignUp su = new SignUp();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -89,6 +94,7 @@ public class JAVA {
 		button.setBackground(new Color(255, 255, 255));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				SignUp su = new SignUp();
 				su.setVisible(true);
 			}
 		});
@@ -99,6 +105,7 @@ public class JAVA {
 
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				SignUp su = new SignUp();
 				ArrayList<People> people = new ArrayList<>();
 				people = su.loadFromCSV();
 				

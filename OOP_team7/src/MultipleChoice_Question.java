@@ -1,12 +1,11 @@
 import java.io.*;
 import java.util.ArrayList;
 
-//import javax.swing.Icon;
-//import javax.swing.ImageIcon;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
-public class MultipleChoice_Question implements Contents{
+public class MultipleChoice_Question {
 
-	@Override
 	public ArrayList<String> question() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;
@@ -28,7 +27,6 @@ public class MultipleChoice_Question implements Contents{
 		return mc_quiz;
 	}
 
-	@Override
 	public ArrayList<String> answer() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;
@@ -50,7 +48,6 @@ public class MultipleChoice_Question implements Contents{
 		return mc_quiz;
 	}
 
-	@Override
 	public ArrayList<String> solution() {
 		ArrayList<String> mc_quiz;
 		BufferedReader br = null;

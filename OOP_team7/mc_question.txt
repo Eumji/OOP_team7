@@ -8,4 +8,6 @@
 7.Why we use encapsulation?
 8.What is the size of short data type in java?
 9.Which of the following describes the variable type?; All instances share a common storage space.
-10.Which of the following is not true of benefits of inheritance?
+10.Choose the right answer. ¡°Class¡± is type  ( ________ or model) of an object.
+q11
+q12

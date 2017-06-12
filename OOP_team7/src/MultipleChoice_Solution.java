@@ -14,15 +14,15 @@ import javax.swing.JMenuItem;
 
 public class MultipleChoice_Solution {
 
-	//boolean mc_isCorrect;
+	boolean mc_isCorrect;
 
-	//public boolean isMc_isCorrect() {
-	//	return mc_isCorrect;
-	//}
+	public boolean isMc_isCorrect() {
+		return mc_isCorrect;
+	}
 
-	//public void setMc_isCorrect(boolean mc_isCorrect) {
-	//	this.mc_isCorrect = mc_isCorrect;
-	//}
+	public void setMc_isCorrect(boolean mc_isCorrect) {
+		this.mc_isCorrect = mc_isCorrect;
+	}
 
 	JFrame frame;
 	JTextArea textArea;
@@ -31,7 +31,7 @@ public class MultipleChoice_Solution {
 	
 	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
 	private JButton btnNext;
-	private JMenuBar menuBar;
+
 	/**
 	 * Launch the application.
 	 */
@@ -251,11 +251,11 @@ public class MultipleChoice_Solution {
 		});
 		mnQuestion.add(mntmNo_9);
 		
-		//if(mc_isCorrect == true)
-		//	textArea.setBackground(new Color(60,179,113));
-		//else{
-		// textArea.setBackground(new Color(178,34,34));
+		if(mc_isCorrect == true)
+			textArea.setBackground(new Color(60,179,113));
+		else{
+		 textArea.setBackground(new Color(178,34,34));
 		 
-		//}
+		}
 	}
 }

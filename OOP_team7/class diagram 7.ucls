@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="MultipleChoice_Game" project="OOP_team7" 
     file="/OOP_team7/src/MultipleChoice_Game.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1044" y="810"/>    
+    <position height="-1" width="-1" x="1042" y="812"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -145,7 +145,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="ox_question" project="OOP_team7" file="/OOP_team7/src/ox_question.java" 
+  <class id="17" language="java" name="MultipleChoice_Solution" project="OOP_team7" 
+    file="/OOP_team7/src/MultipleChoice_Solution.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1257" y="855"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="ox_question" project="OOP_team7" file="/OOP_team7/src/ox_question.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1563" y="1119"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -154,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="ox_Game" project="OOP_team7" file="/OOP_team7/src/ox_Game.java" binary="false" 
+  <class id="19" language="java" name="ox_Game" project="OOP_team7" file="/OOP_team7/src/ox_Game.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1464" y="784"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -163,8 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-<<<<<<< HEAD
-  <class id="19" language="java" name="ox_solution" project="OOP_team7" file="/OOP_team7/src/ox_solution.java" 
+  <class id="20" language="java" name="ox_solution" project="OOP_team7" file="/OOP_team7/src/ox_solution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1645" y="828"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -173,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="Blank_Game" project="OOP_team7" file="/OOP_team7/src/Blank_Game.java" 
+  <class id="21" language="java" name="Blank_Game" project="OOP_team7" file="/OOP_team7/src/Blank_Game.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1856" y="757"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -182,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="Blank_solution" project="OOP_team7" file="/OOP_team7/src/Blank_solution.java" 
+  <class id="22" language="java" name="Blank_solution" project="OOP_team7" file="/OOP_team7/src/Blank_solution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2047" y="754"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -191,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="Blank_question" project="OOP_team7" file="/OOP_team7/src/Blank_question.java" 
+  <class id="23" language="java" name="Blank_question" project="OOP_team7" file="/OOP_team7/src/Blank_question.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1966" y="1105"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -200,28 +208,25 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="People" project="OOP_team7" file="/OOP_team7/src/People.java" binary="false" 
+  <class id="24" language="java" name="People" project="OOP_team7" file="/OOP_team7/src/People.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1683" y="155"/>    
+    <position height="-1" width="-1" x="1637" y="147"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="SignUp" project="OOP_team7" file="/OOP_team7/src/SignUp.java" binary="false" 
+  <class id="25" language="java" name="SignUp" project="OOP_team7" file="/OOP_team7/src/SignUp.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1359" y="142"/>    
+    <position height="-1" width="-1" x="1298" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="Study" project="OOP_team7" file="/OOP_team7/src/Study.java" binary="false" 
-=======
-  <class id="20" language="java" name="Study" project="OOP_team7" file="/OOP_team7/src/Study.java" binary="false" 
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
+  <class id="26" language="java" name="Study" project="OOP_team7" file="/OOP_team7/src/Study.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="532" y="490"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -230,257 +235,108 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-<<<<<<< HEAD
-  <class id="26" language="java" name="MultipleChoice_Solution" project="OOP_team7" 
-    file="/OOP_team7/src/MultipleChoice_Solution.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1263" y="856"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
   <association id="27">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="28" name="oxq">        
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="28" name="h">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="29" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
-=======
-  <interface id="21" language="java" name="Contents" project="OOP_team7" file="/OOP_team7/src/Contents.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1741" y="1349"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="22" language="java" name="SignUp" project="OOP_team7" file="/OOP_team7/src/SignUp.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1177" y="101"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="People" project="OOP_team7" file="/OOP_team7/src/People.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1622" y="140"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="24" language="java" name="ox_solution" project="OOP_team7" file="/OOP_team7/src/ox_solution.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="168" x="1610" y="663"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="25" language="java" name="Blank_Game" project="OOP_team7" file="/OOP_team7/src/Blank_Game.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1930" y="779"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="26" language="java" name="Blank_solution" project="OOP_team7" file="/OOP_team7/src/Blank_solution.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2159" y="775"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="27" language="java" name="Blank_question" project="OOP_team7" file="/OOP_team7/src/Blank_question.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2014" y="1123"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <association id="28">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="29" name="su"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
     </end>    
-<<<<<<< HEAD
-    <end type="TARGET" refId="17" navigable="true"/>    
-=======
-    <end type="TARGET" refId="22" navigable="true"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-<<<<<<< HEAD
   <association id="30">    
-    <end type="SOURCE" refId="18" navigable="false">      
+    <end type="SOURCE" refId="15" navigable="false">      
       <attribute id="31" name="h">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="32" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
-=======
-  <association id="31">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="32" name="bq"/>      
-      <multiplicity id="33" minimum="0" maximum="1"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
     </end>    
-<<<<<<< HEAD
     <end type="TARGET" refId="5" navigable="true"/>    
-=======
-    <end type="TARGET" refId="27" navigable="true"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
     <display labels="true" multiplicity="true"/>  
   </association>  
-<<<<<<< HEAD
   <association id="33">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="34" name="mcq">        
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="34" name="oxq">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="35" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
-=======
-  <realization id="34">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="21"/>  
-  </realization>  
-  <association id="35">    
-    <bendpoint x="1843" y="794"/>    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="36" name="bq"/>      
-      <multiplicity id="37" minimum="0" maximum="1"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
     </end>    
-<<<<<<< HEAD
-    <end type="TARGET" refId="16" navigable="true"/>    
-=======
-    <end type="TARGET" refId="27" navigable="true"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
+    <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-<<<<<<< HEAD
   <association id="36">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="37" name="mcq"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="37" name="bq">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="38" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
+    <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-=======
-  <generalization id="38">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
   <association id="39">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="40" name="h">        
+      <attribute id="40" name="mcq">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="41" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
-<<<<<<< HEAD
-=======
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="42">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="43" name="alp"/>      
-      <multiplicity id="44" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="45">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="46" name="mcq">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="47" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="48">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="49" name="h">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-<<<<<<< HEAD
   <generalization id="42">    
-    <end type="SOURCE" refId="25"/>    
+    <end type="SOURCE" refId="26"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
   <association id="43">    
     <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="44" name="h">        
+      <attribute id="44" name="oxq">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="45" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="46">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="47" name="oxq">        
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="47" name="h">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="48" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="49">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="50" name="bq">        
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="50" name="mcq">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="51" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="52">    
-    <end type="SOURCE" refId="20" navigable="false">      
+    <end type="SOURCE" refId="21" navigable="false">      
       <attribute id="53" name="bq">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -488,59 +344,7 @@
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-=======
-  <association id="51">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="52" name="oxq">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="54">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="21"/>  
-  </realization>  
-  <association id="55">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="56" name="oxq"/>      
-      <multiplicity id="57" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="58">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <realization id="59">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="21"/>  
-  </realization>  
-  <association id="60">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="61" name="h"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="63">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="64" name="mcq">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="65" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
->>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
+    <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

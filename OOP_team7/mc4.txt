@@ -8,4 +8,4 @@ void method
 If the operation method inside the object changed, the usage method change.
 64bits
 main variable
-You can make another class that can use methods in subclass.
+whiteprint
