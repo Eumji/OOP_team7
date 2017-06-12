@@ -177,6 +177,7 @@ public class MultipleChoice_Game extends TestGame{
 						study.frame.setVisible(true);
 					} else {
 						h.setheart(h.getheart() - 1);
+						mcs.textArea.setText(solution.get(getMCnum()));
 						mcs.frame.setVisible(true);
 						frame.setVisible(false);
 					}
