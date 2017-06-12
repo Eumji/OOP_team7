@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.Icon;
 
-public class MultipleChoice_Game extends TestGame{
+public class MultipleChoice_Game extends TestGame {
 
 	JFrame frame;
 	JTextArea textArea;
@@ -69,12 +69,11 @@ public class MultipleChoice_Game extends TestGame{
 		mc4 = new ArrayList<String>(mcq.mc4());
 		ht = new ArrayList<Icon>(h.heart());
 		h = new HEART();
-		
+
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 
 		lblNewLabel_1 = new JLabel("");
 		Icon heart = ht.get(h.getheart());
@@ -89,7 +88,6 @@ public class MultipleChoice_Game extends TestGame{
 		textArea_1.setBounds(14, 12, 954, 458);
 		textArea_1.setEnabled(false);
 		textArea_1.setEditable(false);
-		
 
 		textArea_1.setText(question.get(getMCnum()));
 
@@ -99,27 +97,10 @@ public class MultipleChoice_Game extends TestGame{
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(getMCnum()).equals("1.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.textArea.setText(solution.get(getMCnum()));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.textArea.setText(solution.get(getMCnum()));
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
-
+					isfalse();
 				}
 
 			}
@@ -131,26 +112,10 @@ public class MultipleChoice_Game extends TestGame{
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(getMCnum()).equals("2.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.textArea.setText(solution.get(getMCnum()));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.textArea.setText(solution.get(getMCnum()));
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
+					isfalse();
 				}
 			}
 		});
@@ -161,26 +126,10 @@ public class MultipleChoice_Game extends TestGame{
 		button.setFont(new Font("Arial", Font.PLAIN, 30));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(getMCnum()).equals("3.") == true) {
-					mcs.textArea.setText(solution.get(getOXnum()));
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.textArea.setText(solution.get(getMCnum()));
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
+					isfalse();
 				}
 			}
 		});
@@ -191,26 +140,10 @@ public class MultipleChoice_Game extends TestGame{
 		button_1.setFont(new Font("Arial", Font.PLAIN, 30));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 				if (answer.get(getMCnum()).equals("4.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.textArea.setText(solution.get(getMCnum()));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						mcs.textArea.setText(solution.get(getMCnum()));
-						h.setheart(h.getheart() - 1);
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
+					isfalse();
 				}
 			}
 		});
@@ -380,12 +313,37 @@ public class MultipleChoice_Game extends TestGame{
 		});
 		mnQuestion.add(mntmQ_9);
 	}
-	
-	
-	public void go(int num){
+
+	public void go(int num) {
 		setMCnum(num);
 		MultipleChoice_Game newMC = new MultipleChoice_Game();
 		newMC.frame.setVisible(true);
 		frame.setVisible(false);
 	}
+
+	public void istrue() {
+		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
+		mcs.textArea.setBackground(new Color(60, 179, 113));
+		mcs.textArea.setText(solution.get(getMCnum()));
+		mcs.frame.setVisible(true);
+		frame.setVisible(false);
+	}
+
+	public void isfalse() {
+		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
+		mcs.textArea.setBackground(new Color(178, 34, 34));
+		if (h.getheart() == 0) {
+			h.setheart(3);
+			JOptionPane.showMessageDialog(null, "study hard");
+			frame.setVisible(false);
+			Study study = new Study();
+			study.frame.setVisible(true);
+		} else {
+			h.setheart(h.getheart() - 1);
+			mcs.textArea.setText(solution.get(getMCnum()));
+			mcs.frame.setVisible(true);
+			frame.setVisible(false);
+		}
+	}
+
 }
