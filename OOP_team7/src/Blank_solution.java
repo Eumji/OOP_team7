@@ -62,19 +62,7 @@ public class Blank_solution extends Blank_Game{
      
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) { 
-        	 //System.out.println(bq.getnum());
-        	if(bq.getnum()==9){
-        		bq.setnum(0);
-                sframe.setVisible(false);
-                TestGame tg = new TestGame();
-                tg.frame.setVisible(true);
-        	}
-        	else{
-        		bq.setnum(bq.getnum()+1);
-        		Blank_Game bg = new Blank_Game();
-        		bg.gframe.setVisible(true);
-        		sframe.setVisible(false);
-        	}
+        	gonext();
          }
       });
       btnNewButton.setFont(new Font("Arial", Font.BOLD, 30));
@@ -88,22 +76,8 @@ public class Blank_solution extends Blank_Game{
       	@Override
       	public void keyPressed(KeyEvent e) {
       		if(e.getKeyChar()=='\n'){
-      			if(bq.getnum()==9){
-      	    		bq.setnum(0);
-      	          
-      	            TestGame tg = new TestGame();
-      	            tg.frame.setVisible(true);
-      	            sframe.setVisible(false);
-      	    	}
-      	    	else{
-      	    		bq.setnum(bq.getnum()+1);
-      	    		
-      	    		sframe.setVisible(false);
-      	    		Blank_Game bg = new Blank_Game();
-      	    		bg.gframe.setVisible(true);
-      	    	}
+      			gonext();
       		}
-      		
       	}
       });
       textArea.setEditable(false);
@@ -239,7 +213,20 @@ public class Blank_solution extends Blank_Game{
 	}*/
    
    public void gonext(){
-	   
+	   if(bq.getnum()==9){
+	    		bq.setnum(0);
+	          
+	            TestGame tg = new TestGame();
+	            tg.frame.setVisible(true);
+	            sframe.setVisible(false);
+	    	}
+	    	else{
+	    		bq.setnum(bq.getnum()+1);
+	    		
+	    		sframe.setVisible(false);
+	    		Blank_Game bg = new Blank_Game();
+	    		bg.gframe.setVisible(true);
+	    	}
    }
 
 
