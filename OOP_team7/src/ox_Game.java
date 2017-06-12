@@ -5,9 +5,13 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextArea;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -25,6 +29,7 @@ public class ox_Game {
 	JButton button, button_1;
 	JTextArea textArea;
 	private ox_question oxq = new ox_question();
+	int heart = 0;
 	private ArrayList<String> question = new ArrayList<String>(oxq.question());
 	private ArrayList<String> answer = new ArrayList<String>(oxq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(oxq.solution());
@@ -191,7 +196,10 @@ public class ox_Game {
 		JMenuItem mntmNo = new JMenuItem("No.1");
 		mntmNo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				go(1);
+				oxq.plus_counter(-1);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -200,7 +208,10 @@ public class ox_Game {
 		JMenuItem mntmNo_1 = new JMenuItem("No.2");
 		mntmNo_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(2);
+				oxq.plus_counter(0);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_1.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -209,7 +220,10 @@ public class ox_Game {
 		JMenuItem mntmNo_2 = new JMenuItem("No.3");
 		mntmNo_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(3);
+				oxq.plus_counter(1);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_2.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -218,7 +232,10 @@ public class ox_Game {
 		JMenuItem mntmNo_3 = new JMenuItem("No.4");
 		mntmNo_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(4);
+				oxq.plus_counter(2);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_3.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -227,7 +244,10 @@ public class ox_Game {
 		JMenuItem mntmNo_4 = new JMenuItem("No.5");
 		mntmNo_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(5);
+				oxq.plus_counter(3);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_4.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -236,7 +256,10 @@ public class ox_Game {
 		JMenuItem mntmNo_5 = new JMenuItem("No.6");
 		mntmNo_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(6);
+				oxq.plus_counter(4);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_5.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -245,7 +268,10 @@ public class ox_Game {
 		JMenuItem mntmNo_6 = new JMenuItem("No.7");
 		mntmNo_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(7);
+				oxq.plus_counter(5);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -254,7 +280,10 @@ public class ox_Game {
 		JMenuItem mntmNo_7 = new JMenuItem("No.8");
 		mntmNo_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(8);
+				oxq.plus_counter(6);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -263,7 +292,10 @@ public class ox_Game {
 		JMenuItem mntmNo_8 = new JMenuItem("No.9");
 		mntmNo_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(9);
+				oxq.plus_counter(7);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -272,18 +304,14 @@ public class ox_Game {
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
 		mntmNo_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				go(10);
+				oxq.plus_counter(8);
+				ox_Game newOX = new ox_Game();
+				newOX.oxgame.setVisible(true);
+				oxgame.setVisible(false);
 			}
 		});
 		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_9);
 
-	}
-	
-	void go(int n){
-		oxq.plus_counter(n-2);
-		ox_Game newOX = new ox_Game();
-		newOX.oxgame.setVisible(true);
-		oxgame.setVisible(false);
 	}
 }
