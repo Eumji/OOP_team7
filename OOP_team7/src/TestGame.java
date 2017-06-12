@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 
-public class TestGame extends MENU {
+public class TestGame {
 
 	JFrame frame;
 
