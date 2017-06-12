@@ -7,6 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -21,6 +22,7 @@ import java.awt.Color;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Font;
+import javax.swing.JLabel;
 
 public class IsHas extends JFrame {
 
@@ -50,6 +52,7 @@ public class IsHas extends JFrame {
 		setBounds(100, 100, 1000, 1000);
 		
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(100, 149, 237));
 		setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("MENU");
@@ -102,7 +105,7 @@ public class IsHas extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(240, 248, 255));
-		panel.setBounds(89, 391, 795, 246);
+		panel.setBounds(89, 430, 805, 225);
 		contentPane.add(panel);
 		
 		JTextArea textArea = new JTextArea();
@@ -149,5 +152,16 @@ public class IsHas extends JFrame {
 				.addComponent(scroll, GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
 		);
 		panel.setLayout(gl_panel);
+		
+		ImageIcon img = new ImageIcon("ishas.jpg");
+		ImageIcon img2 = new ImageIcon("computer.jpg");
+		
+		JLabel lblNewLabel = new JLabel(img);
+		lblNewLabel.setBounds(89, 44, 795, 374);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel(img2);
+		lblNewLabel_1.setBounds(0, 0, 968, 862);
+		contentPane.add(lblNewLabel_1);
 	}
 }
