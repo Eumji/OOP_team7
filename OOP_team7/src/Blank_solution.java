@@ -17,9 +17,7 @@ import java.awt.event.KeyEvent;
 
 public class Blank_solution{
 
-   
 
-   boolean Blank_isCorrect;
    private Blank_question bq = new Blank_question();
    JTextArea textArea;
    
