@@ -1,10 +1,6 @@
-import java.awt.Image;
-import java.awt.List;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -84,36 +80,7 @@ public class Blank_question implements Contents{
 		return blank_solution;
 	}
 
-	public int getnum() {
-		int number = -1;
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader("blank_number.txt"));
-			String line = br.readLine();
-			number = Integer.parseInt(line);
-			br.close();
-		} catch (FileNotFoundException fnfe) {
-			System.out.println("File is not found.");
-		} catch (IOException ioe) {
-			System.out.println("File input//output error.");
-		}
-		return number;
-	}
-
 	
-	public void setnum(int n) {
-		BufferedWriter bw = null;
-		String line = null;
-		line = Integer.toString(n);
-		try {
-			bw = new BufferedWriter(new FileWriter("blank_number.txt"));
-			bw.write(line);
-			bw.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	public ArrayList<String> question() {
 		// TODO Auto-generated method stub

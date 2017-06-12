@@ -6,6 +6,12 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -63,8 +69,9 @@ public class TestGame {
 
 				HEART h = new HEART();
 				h.setheart(3);
-				ox_question oxq = new ox_question();
-				oxq.ox_restart();
+				/*ox_question oxq = new ox_question();
+				oxq.ox_restart();*/
+				setOXnum(0);
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
@@ -95,8 +102,7 @@ public class TestGame {
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Blank_question bq = new Blank_question();
-				bq.setnum(0);
+				setBlanknum(0);
 				HEART h = new HEART();
 				h.setheart(3);
 				Blank_Game bg = new Blank_Game();
@@ -122,4 +128,66 @@ public class TestGame {
 		btnHome.setBounds(17, 15, 139, 54);
 		frame.getContentPane().add(btnHome);
 	}
+	
+	
+	public int getBlanknum() {
+		int number = -1;
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("blank_number.txt"));
+			String line = br.readLine();
+			number = Integer.parseInt(line);
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return number;
+	}
+
+	
+	public void setBlanknum(int n) {
+		BufferedWriter bw = null;
+		String line = null;
+		line = Integer.toString(n);
+		try {
+			bw = new BufferedWriter(new FileWriter("blank_number.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public int getOXnum() {
+		int number = -1;
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("ox_counter.txt"));
+			String line = br.readLine();
+			number = Integer.parseInt(line);
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return number;
+	}
+
+	
+	public void setOXnum(int n) {
+		BufferedWriter bw = null;
+		String line = null;
+		line = Integer.toString(n);
+		try {
+			bw = new BufferedWriter(new FileWriter("ox_counter.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
