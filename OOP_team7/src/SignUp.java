@@ -28,6 +28,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Font;
+import java.awt.Color;
 
 public class SignUp extends JFrame implements Serializable{
 
@@ -40,11 +41,9 @@ public class SignUp extends JFrame implements Serializable{
 	private JTextField textNN;
 	private JSpinner spinnerD, spinnerM;
 	private boolean IDchk=false;
-	private boolean PWC=false;
 	private JPasswordField textPW;
 	private JPasswordField textPW1;
 	private JLabel lblPWC;
-	private String PW, PW1;
 	/**
 	 * Launch the application.
 	 */
@@ -68,6 +67,7 @@ public class SignUp extends JFrame implements Serializable{
 		setTitle("Sign Up");
 		setBounds(100, 100, 500, 800);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
@@ -82,7 +82,7 @@ public class SignUp extends JFrame implements Serializable{
 		lblId = new JLabel("ID : ");
 		lblId.setFont(new Font("Arial", Font.PLAIN, 25));
 		
-		lblPassword = new JLabel("password : ");
+		lblPassword = new JLabel("Password : ");
 		lblPassword.setFont(new Font("Arial", Font.PLAIN, 25));
 		
 		lblNewLabel_1 = new JLabel("Nickname : ");
@@ -110,6 +110,7 @@ public class SignUp extends JFrame implements Serializable{
 		lblDay.setFont(new Font("Arial", Font.PLAIN, 25));
 		
 		JButton btnSignUp = new JButton("Sign up!");
+		btnSignUp.setBackground(new Color(135, 206, 250));
 		btnSignUp.setFont(new Font("Arial", Font.PLAIN, 25));
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -136,6 +137,7 @@ public class SignUp extends JFrame implements Serializable{
 		});
 		
 		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setBackground(new Color(135, 206, 250));
 		btnCancel.setFont(new Font("Arial", Font.PLAIN, 25));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -151,7 +153,8 @@ public class SignUp extends JFrame implements Serializable{
 		lblName.setFont(new Font("Arial", Font.PLAIN, 25));
 		
 		JButton btnId = new JButton("ID Overlap check");
-		btnId.setFont(new Font("Arial", Font.PLAIN, 25));
+		btnId.setBackground(new Color(135, 206, 250));
+		btnId.setFont(new Font("Arial", Font.PLAIN, 20));
 		btnId.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SignUp s = new SignUp();
@@ -195,14 +198,19 @@ public class SignUp extends JFrame implements Serializable{
 				if(s1.equals(s2)==false){
 					lblPWC.setText("wrong password");
 				}
-				else lblPWC.setText("password correct!");
+				else {
+					lblPWC.setText("password correct!");
+					lblPWC.setForeground(new Color(50,205,50));
+				}
 			}
 		});
 		
 		lblPWC = new JLabel("");
+		lblPWC.setForeground(new Color(255, 0, 0));
+		lblPWC.setFont(new Font("Arial", Font.PLAIN, 20));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
@@ -251,10 +259,10 @@ public class SignUp extends JFrame implements Serializable{
 						.addComponent(textID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textName, GroupLayout.PREFERRED_SIZE, 226, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addGap(97)
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap(228, Short.MAX_VALUE)
 					.addComponent(btnId)
-					.addContainerGap(148, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -268,8 +276,8 @@ public class SignUp extends JFrame implements Serializable{
 						.addComponent(textID, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
 					.addGap(27)
-					.addComponent(btnId, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-					.addGap(36)
+					.addComponent(btnId, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+					.addGap(48)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblPassword, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textPW, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
