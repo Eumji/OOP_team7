@@ -1,8 +1,9 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class ox_question {
+public class ox_question implements Contents{
 	
+	@Override
 	public ArrayList<String> question(){
 		ArrayList<String> ox_quiz;
 		BufferedReader br = null;
@@ -25,6 +26,7 @@ public class ox_question {
 		return ox_quiz;
 	}
 	
+	@Override
 	public ArrayList<String> answer(){
 		ArrayList<String> ox_quiz;
 		BufferedReader br = null;
@@ -47,6 +49,7 @@ public class ox_question {
 	}
 	
 	
+	@Override
 	public ArrayList<String> solution(){
 		ArrayList<String> ox_quiz;
 		BufferedReader br = null;

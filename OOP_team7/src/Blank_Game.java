@@ -32,7 +32,7 @@ public class Blank_Game {
 	HEART h = new HEART();
 	private ArrayList<String> answer = new ArrayList<String>(bq.answer());
 	private ArrayList<String> solution = new ArrayList<String>(bq.solution());
-	private ArrayList<Icon> img = new ArrayList<Icon>(bq.question());
+	private ArrayList<Icon> img = new ArrayList<Icon>(bq.questionIcon());
 	private ArrayList<Icon> ht = new ArrayList<Icon>(h.heart());
 
 	/**
