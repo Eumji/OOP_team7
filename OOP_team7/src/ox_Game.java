@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class ox_Game extends TestGame {
+public class ox_Game {
 
 	JFrame oxgame;
 	JButton button, button_1;
@@ -105,7 +105,7 @@ public class ox_Game extends TestGame {
 				if (answer.get(oxq.read_counter()).equals("O")){
 					oxs.textArea.setBackground(new Color(60, 179, 113));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 				}
 				else {
@@ -120,7 +120,7 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 						
 					}
@@ -141,7 +141,7 @@ public class ox_Game extends TestGame {
 				if (answer.get(oxq.read_counter()).equals("X")){
 					oxs.textArea.setBackground(new Color(60, 179, 113));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 				}
 				else {
@@ -156,7 +156,7 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 						
 					}
