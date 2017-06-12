@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -51,30 +53,29 @@ public class MultipleChoice_Solution extends MultipleChoice_Game{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		textArea = new JTextArea();
+		
 		btnNext = new JButton("Next");
 		btnNext.setBackground(new Color(0, 0, 0));
 		btnNext.setForeground(new Color(255, 255, 255));
 		btnNext.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(getMCnum()==9){
-					TestGame t = new TestGame();
-					t.frame.setVisible(true);
-					frame.setVisible(false);
-				}
-				else{
-					setMCnum(getMCnum()+1);
-					MultipleChoice_Game mcg = new MultipleChoice_Game();
-					mcg.frame.setVisible(true);
-				    frame.setVisible(false);
-				}
+				gonext();
 			}
 		});
 		
 		btnNext.setBounds(786, 788, 167, 97);
-		frame.getContentPane().add(btnNext);
 		
+		frame.getContentPane().add(btnNext);
+		textArea = new JTextArea();
+		btnNext.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyChar() == '\n') {
+					gonext();
+				}
+			}
+		});
 		textArea.setLineWrap(true);
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
@@ -85,7 +86,6 @@ public class MultipleChoice_Solution extends MultipleChoice_Game{
 	
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
-		
 		JMenu mnMenu = new JMenu("Menu");
 		mnMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
@@ -212,6 +212,20 @@ public class MultipleChoice_Solution extends MultipleChoice_Game{
 		newMC.frame.setVisible(true);
 		frame.setVisible(false);
 	
+	}
+	
+	public void gonext(){
+		if(getMCnum()==9){
+			TestGame t = new TestGame();
+			t.frame.setVisible(true);
+			frame.setVisible(false);
+		}
+		else{
+			setMCnum(getMCnum()+1);
+			MultipleChoice_Game mcg = new MultipleChoice_Game();
+			mcg.frame.setVisible(true);
+		    frame.setVisible(false);
+		}
 	}
 	
 }
