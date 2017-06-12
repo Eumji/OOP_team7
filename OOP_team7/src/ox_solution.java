@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 public class ox_solution extends ox_Game{
 
 	boolean ox_isCorrect;
-	private ox_question oxq = new ox_question();
+	private ox_content oxq = new ox_content();
 	
 
 	JFrame frame_this;

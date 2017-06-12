@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class Blank_question implements Contents{
+public class Blank_content implements Contents{
 	
 	public ArrayList<Icon> questionIcon() {
 		ArrayList<Icon> img = new ArrayList<>();

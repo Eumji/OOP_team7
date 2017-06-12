@@ -28,7 +28,7 @@ public class Blank_Game extends TestGame {
 
 	JFrame gframe;
 	private JTextField textField;
-	Blank_question bq;
+	Blank_content bq;
 	Blank_solution bs;
 	private HEART h;
 	private ArrayList<String> answer;
@@ -64,7 +64,7 @@ public class Blank_Game extends TestGame {
 	 */
 	private void initialize() {
 		h = new HEART();
-		bq = new Blank_question();
+		bq = new Blank_content();
 		answer = new ArrayList<String>(bq.answer());
 		solution = new ArrayList<String>(bq.solution());
 		img = new ArrayList<Icon>(bq.questionIcon());

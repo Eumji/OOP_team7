@@ -127,7 +127,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="ox_question" project="OOP_team7" file="/OOP_team7/src/ox_question.java" 
+  <class id="15" language="java" name="ox_content" project="OOP_team7" file="/OOP_team7/src/ox_content.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1695" y="1289"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,7 +226,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="Blank_question" project="OOP_team7" file="/OOP_team7/src/Blank_question.java" 
+  <class id="26" language="java" name="Blank_content" project="OOP_team7" file="/OOP_team7/src/Blank_content.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2380" y="1141"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

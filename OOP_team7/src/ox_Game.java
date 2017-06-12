@@ -24,7 +24,7 @@ public class ox_Game extends TestGame{
 	JFrame oxgame;
 	JButton button, button_1;
 	JTextArea textArea;
-	private ox_question oxq;
+	private ox_content oxq;
 	private ArrayList<String> question;
 	private ArrayList<String> answer;
 	private ArrayList<String> solution;
@@ -63,7 +63,7 @@ public class ox_Game extends TestGame{
 		
 		h = new HEART();
 		ht = new ArrayList<Icon>(h.heart());
-		oxq = new ox_question();
+		oxq = new ox_content();
 		question = new ArrayList<String>(oxq.question());
 		answer = new ArrayList<String>(oxq.answer());
 		solution = new ArrayList<String>(oxq.solution());
