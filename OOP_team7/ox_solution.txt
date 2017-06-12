@@ -1,10 +1,10 @@
  여기 아래줄부터 풀이입니다요
 - char : It stored one character per variable.         Variables store Unicode characters.
 - Local variable is declared within a method and  can only be used within a method. When the      method ends, it is destroyed and cannot be        used.
-3.
-4.
-5.
-6.
+- Default access modifier means we do not          explicitly declare an access modifier for a class, field, method, etc. A variable or method is          available to any other class in the same              package.
+- "Object" is an instance of the class. Many           objects of the class can exist.
+- Variables, methods, and constructors, which      are declared protected in a superclass can be  accessed only by the subclasses in other packa-ge or any class within the package of the protec-ted members' class.
+- The fields of a class can be made read-only or  write-only.
 7.
 8.
 9.

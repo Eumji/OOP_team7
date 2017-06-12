@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class ox_Game extends TestGame {
+public class ox_Game {
 
 	JFrame oxgame;
 	JButton button, button_1;
@@ -105,7 +105,7 @@ public class ox_Game extends TestGame {
 				if (answer.get(oxq.read_counter()).equals("O")){
 					oxs.textArea.setBackground(new Color(60, 179, 113));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 				}
 				else {
@@ -120,7 +120,7 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 						
 					}
@@ -141,7 +141,7 @@ public class ox_Game extends TestGame {
 				if (answer.get(oxq.read_counter()).equals("X")){
 					oxs.textArea.setBackground(new Color(60, 179, 113));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 				}
 				else {
@@ -156,7 +156,7 @@ public class ox_Game extends TestGame {
 					oxs.textArea.setForeground(new Color(255, 250, 250));
 					oxs.textArea.setBackground(new Color(178, 34, 34));
 					oxs.textArea.setText(solution.get(oxq.read_counter()));
-					oxs.frame.setVisible(true);
+					oxs.frame_this.setVisible(true);
 					oxgame.setVisible(false);
 						
 					}
@@ -174,11 +174,11 @@ public class ox_Game extends TestGame {
 		oxgame.setJMenuBar(menuBar);
 
 		JMenu mnMenu = new JMenu("Menu");
-		mnMenu.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmGoToMenu = new JMenuItem("Go to Menu");
-		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// menu로 돌아가기
@@ -190,7 +190,7 @@ public class ox_Game extends TestGame {
 		mnMenu.add(mntmGoToMenu);
 
 		JMenu mnQuestion = new JMenu("Question");
-		mnQuestion.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnQuestion.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnQuestion);
 
 		JMenuItem mntmNo = new JMenuItem("No.1");
@@ -202,7 +202,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo);
 
 		JMenuItem mntmNo_1 = new JMenuItem("No.2");
@@ -214,7 +214,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_1.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_1);
 
 		JMenuItem mntmNo_2 = new JMenuItem("No.3");
@@ -226,7 +226,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_2.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_2);
 
 		JMenuItem mntmNo_3 = new JMenuItem("No.4");
@@ -238,7 +238,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_3.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_3);
 
 		JMenuItem mntmNo_4 = new JMenuItem("No.5");
@@ -250,7 +250,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_4.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_4);
 
 		JMenuItem mntmNo_5 = new JMenuItem("No.6");
@@ -262,7 +262,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_5.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_5);
 
 		JMenuItem mntmNo_6 = new JMenuItem("No.7");
@@ -274,7 +274,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_6);
 
 		JMenuItem mntmNo_7 = new JMenuItem("No.8");
@@ -286,7 +286,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_7);
 
 		JMenuItem mntmNo_8 = new JMenuItem("No.9");
@@ -298,7 +298,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_8);
 
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
@@ -310,7 +310,7 @@ public class ox_Game extends TestGame {
 				oxgame.setVisible(false);
 			}
 		});
-		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_9);
 
 	}

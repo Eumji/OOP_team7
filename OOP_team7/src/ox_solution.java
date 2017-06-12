@@ -13,13 +13,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
 
-public class ox_solution{
+public class ox_solution extends TestGame{
 
 	boolean ox_isCorrect;
 	private ox_question oxq = new ox_question();
 	
 
-	JFrame frame;
+	JFrame frame_this;
 	JTextArea textArea;
 	private JMenuBar menuBar;
 	
@@ -32,7 +32,7 @@ public class ox_solution{
 			public void run() {
 				try {
 					ox_solution window = new ox_solution();
-					window.frame.setVisible(true);
+					window.frame_this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,22 +52,21 @@ public class ox_solution{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1000, 1000);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frame_this = new JFrame();
+		frame_this.setBounds(100, 100, 1000, 1000);
+		frame_this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame_this.getContentPane().setLayout(null);
 		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(oxq.read_counter()==10){
-					TestGame t = new TestGame();
-					t.frame.setVisible(true);
-					frame.setVisible(false);
+					frame_this.setVisible(false);
+					frame.setVisible(true);
 				}
 				else {
 					ox_Game oxg = new ox_Game();
 					oxg.oxgame.setVisible(true);
-					frame.setVisible(false);
+					frame_this.setVisible(false);
 				}
 			}
 		});
@@ -75,7 +74,7 @@ public class ox_solution{
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
-		frame.getContentPane().add(btnNewButton);
+		frame_this.getContentPane().add(btnNewButton);
 		
 		textArea = new JTextArea();
 		textArea.setForeground(Color.BLACK);
@@ -85,29 +84,29 @@ public class ox_solution{
 		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
 		textArea.setBounds(0, 0, 978, 913);
 		
-		frame.getContentPane().add(textArea);
+		frame_this.getContentPane().add(textArea);
 		
 		menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
+		frame_this.setJMenuBar(menuBar);
 		
 		JMenu mnMenu = new JMenu("Menu");
-		mnMenu.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnMenu.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnMenu);
 		
 		JMenuItem mntmGoToMenu = new JMenuItem("Go to Menu");
-		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//menu로 돌아가기
 				MENU home = new MENU();
 				home.frame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
 		mnMenu.add(mntmGoToMenu);
 		
 		JMenu mnQuestion = new JMenu("Question");
-		mnQuestion.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnQuestion.setFont(new Font("Arial", Font.PLAIN, 30));
 		menuBar.add(mnQuestion);
 		
 
@@ -117,10 +116,10 @@ public class ox_solution{
 				oxq.plus_counter(-1);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo);
 		
 		JMenuItem mntmNo_1 = new JMenuItem("No.2");
@@ -129,10 +128,10 @@ public class ox_solution{
 				oxq.plus_counter(0);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_1.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_1);
 		
 		JMenuItem mntmNo_2 = new JMenuItem("No.3");
@@ -141,10 +140,10 @@ public class ox_solution{
 				oxq.plus_counter(1);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_2.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_2);
 		
 		JMenuItem mntmNo_3 = new JMenuItem("No.4");
@@ -153,10 +152,10 @@ public class ox_solution{
 				oxq.plus_counter(2);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_3.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_3);
 		
 		JMenuItem mntmNo_4 = new JMenuItem("No.5");
@@ -165,10 +164,10 @@ public class ox_solution{
 				oxq.plus_counter(3);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_4.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_4);
 		
 		JMenuItem mntmNo_5 = new JMenuItem("No.6");
@@ -177,10 +176,10 @@ public class ox_solution{
 				oxq.plus_counter(4);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_5.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_5);
 		
 		JMenuItem mntmNo_6 = new JMenuItem("No.7");
@@ -189,10 +188,10 @@ public class ox_solution{
 				oxq.plus_counter(5);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_6);
 		
 		JMenuItem mntmNo_7 = new JMenuItem("No.8");
@@ -201,10 +200,10 @@ public class ox_solution{
 				oxq.plus_counter(6);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_7);
 		
 		JMenuItem mntmNo_8 = new JMenuItem("No.9");
@@ -213,10 +212,10 @@ public class ox_solution{
 				oxq.plus_counter(7);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_8);
 		
 		JMenuItem mntmNo_9 = new JMenuItem("No.10");
@@ -225,10 +224,10 @@ public class ox_solution{
 				oxq.plus_counter(8);
 				ox_Game newOX = new ox_Game();
 				newOX.oxgame.setVisible(true);
-				frame.setVisible(false);
+				frame_this.setVisible(false);
 			}
 		});
-		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 20));
+		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_9);
 		
 		
