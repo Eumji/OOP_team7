@@ -100,6 +100,7 @@ public class Blank_question implements Contents{
 		return number;
 	}
 
+	
 	public void setnum(int n) {
 		BufferedWriter bw = null;
 		String line = null;
