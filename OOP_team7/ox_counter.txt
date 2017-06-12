@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+10
+=======
+<<<<<<< HEAD
 1
 =======
 10
+>>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
 >>>>>>> branch 'master' of https://github.com/Eumji/OOP_team7.git
