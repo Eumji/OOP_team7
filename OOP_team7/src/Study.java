@@ -17,7 +17,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Study extends JFrame{
+public class Study extends MENU{
 
 	JFrame frame;
 
