@@ -1,0 +1,30 @@
+[Inheritance] 
+: Inheritance is the reuse of existing classes to create new classes.
+
+- The class which inherits the properties of other is known as 
+  "subclass" (derived class, child class) and the class whose properties 
+   are inherited is known as "superclass" (base class, parent class).
+- Subclass inherits instance variables and methods of the superclass 
+  and adds some new stuff.
+- The number of members in the descendant class is always equal to 
+  or greater than the ancestor class.
+- You can not inherit from one or more classes.
+- A subclass can not access the "private, default" 
+  instance variables or methods of a superclass.
+- extends is the keyword used to inherit the properties of a class.
+
+<Benefits of inheritance>
+1. You can write common code in the superclass to reduce duplicate code.
+2. It's easy to add new common code.
+ - Just add it to the subclass and it will be inherited 
+   by all the subclasses.
+3. The superclass allows you to define a common form for a group of classes.
+ - All subclasses have the same variables and methods as the superclass.
+
+<How to Make>
+1. Put the common code in the superclass.
+2. Create a subclasses that inherits the common code 
+   of the superclass.
+3. The name of the subclass is followed by the name 
+   of the superclass with "extends".
+4. Methods inherited from subclasses can now be rewritten to override!

@@ -6,6 +6,6 @@ If there is no return value, method cannot return anything.
 private modifier is deleted.
 main method
 Encapsulation is used to prevent wrong people from approaching and changing values strangely.
-8
-9
-10
+32bits
+instance variable
+blueprint

@@ -6,6 +6,6 @@ The method declaration consists of a method name, a parameter declaration, and a
 new variable that are not declared private is written.
 setter and getter method
 You can use functions freely.
-8
-9
-10
+8bits
+class variable
+redprint

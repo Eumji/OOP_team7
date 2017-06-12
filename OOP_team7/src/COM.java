@@ -93,12 +93,24 @@ public class COM extends JFrame {
 		});
 		
 		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Inheritance Menu");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InheritanceMenu im = new InheritanceMenu();
+				im.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 250, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
 		textArea.setBackground(new Color(255, 255, 240));
 		textArea.setForeground(new Color(0, 0, 0));
 		textArea.setFont(new Font("Times New Roman", Font.PLAIN, 20));

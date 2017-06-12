@@ -93,6 +93,17 @@ public class GetSet extends JFrame {
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Inheritance Menu");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InheritanceMenu im = new InheritanceMenu();
+				im.setVisible(true);
+				setVisible(false);
+			}
+		});
+		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
+		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(224, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -105,6 +116,7 @@ public class GetSet extends JFrame {
 		contentPane.add(panel);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
 		textArea.setFont(new Font("Lucida Sans", Font.PLAIN, 20));
 		textArea.setBackground(new Color(245, 255, 250));
 		JScrollPane jsp = new JScrollPane(textArea);
