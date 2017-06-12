@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+//import javax.swing.Icon;
+//import javax.swing.ImageIcon;
 
 public class MultipleChoice_Question {
 
