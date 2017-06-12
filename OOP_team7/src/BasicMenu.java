@@ -23,6 +23,7 @@ public class BasicMenu extends JFrame {
 	public COM C = new COM();
 	
 	
+	
 	/**
 	 * Launch the application.
 	 */
