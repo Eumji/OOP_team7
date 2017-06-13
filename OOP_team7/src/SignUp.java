@@ -184,8 +184,14 @@ public class SignUp extends JFrame implements Serializable{
             String s1, s2; s1=textPW.getText(); s2=textPW1.getText();
             char c=k.getKeyChar();
             s1+=c;
-            if(s1.equals(s2)==false)lblPWC.setText("wrong password");
-            else lblPWC.setText("password correct!");
+            if(s1.equals(s2)==false){
+            	lblPWC.setText("wrong password");
+                lblPWC.setForeground(new Color(255, 0, 0));
+            }
+            else {
+            	lblPWC.setText("password correct!");
+                lblPWC.setForeground(new Color(50,205,50));
+            }
          }
       });
       
