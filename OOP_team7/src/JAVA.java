@@ -132,6 +132,7 @@ public class JAVA {
 					 textField_1.setEchoChar((char)0); 
 				}else{ 
 					textField_1.setEchoChar(echoChar); 
+					
 				} 
 
 
