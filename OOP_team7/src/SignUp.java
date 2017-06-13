@@ -119,15 +119,17 @@ public class SignUp extends JFrame implements Serializable{
          @SuppressWarnings("deprecation")
 		public void actionPerformed(ActionEvent arg0) {
             SignUp su = new SignUp();
+            String s1, s2; s1=textPW.getText(); s2=textPW1.getText();
             if(IDchk==false){
                   JOptionPane.showMessageDialog(null, "Error: Please do ID overlap check");
             }
-            else if(textName.getText().equals("")||textID.getText().equals("")||textPW.getText().equals("")){
+            else if(textName.getText().equals("")||textID.getText().equals("")||textPW.getText().equals("")||textNN.getText().equals("")){
                JOptionPane.showMessageDialog(null, "Error: Please input");
             }
-            else if(textPW.getPassword().equals(textPW1.getPassword())){
+            else if(s1.equals(s2)==false){
                JOptionPane.showMessageDialog(null, "Error: password is wrong");
             }
+            
                
             else{
                alp = su.loadFromCSV();
@@ -201,6 +203,7 @@ public class SignUp extends JFrame implements Serializable{
             s2+=c;
             if(s1.equals(s2)==false){
                lblPWC.setText("wrong password");
+               lblPWC.setForeground(new Color(255, 0, 0));
             }
             else {
                lblPWC.setText("password correct!");

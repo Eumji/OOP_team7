@@ -6,4 +6,4 @@ a;a;a;a;1;1
 ±Ë¿±«œ;k;1234;kkk;1;13
 a;aa;a;a;1;1
 ji;ji;j;j;1;1
-jikoong;jk;1234;jikoong;5;13
+jikoong;jk;1234;jikoong;5;1
