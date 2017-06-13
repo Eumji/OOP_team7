@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 public class MultipleChoice_Solution extends MultipleChoice_Game{
 
@@ -216,6 +217,7 @@ public class MultipleChoice_Solution extends MultipleChoice_Game{
 	
 	public void gonext(){
 		if(getMCnum()==9){
+			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Multiple Choice Game:)");	
 			TestGame t = new TestGame();
 			t.frame.setVisible(true);
 			frame.setVisible(false);

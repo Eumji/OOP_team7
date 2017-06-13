@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 public class ox_solution extends ox_Game{
 
 	boolean ox_isCorrect;
@@ -211,6 +212,7 @@ public class ox_solution extends ox_Game{
 
 	public void gonext(){
 		if(getOXnum()==9){
+			JOptionPane.showMessageDialog(null, "Congradtulation! You finish OX Game:)");	
 			frame_this.setVisible(false);
 			frame.setVisible(true);
 		}

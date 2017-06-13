@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import java.awt.Color;
 
@@ -211,6 +212,8 @@ public class Blank_solution extends Blank_Game{
 
 	public void gonext() {
 		if (getBlanknum() == 9) {
+			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Blank Game:)");	
+			
 			setBlanknum(0);
 
 			TestGame tg = new TestGame();
