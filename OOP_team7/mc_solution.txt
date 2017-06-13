@@ -1,4 +1,3 @@
-
 Rules for variable naming:                                    1) It is case-sensitive and has no limit on length. 2) Do not use reserved words.                            3) The name must not start with a number.         4) Only special characters "-" and "$" are                allowed.
 The method declaration consists of a method name, a parameter declaration, and a return type.
 Float and double stored real number; not integer. Float is used to increase the speed of operation or to save memory.
@@ -8,4 +7,4 @@ To achieve encapsulation in Java. Declare the variables of a class as private. A
 1) You have to use setter and getter method to   access encapsulated variable.                           2) For non-encapsulated variables, you can use   the dot operator to change values.                     4) Even if the operation method inside the object changes, the usage method does not change.
 There are five variable types of integers. Short type has 2byte/16bits memory usage size.
 class variable: All instances share a common storage space. Just add static before the instance variable.
-s10
+A subclasses inherits the common code of the superclass

@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -6,11 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.GroupLayout;
-import javax.swing.ImageIcon;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -21,22 +16,21 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.Icon;
 
-public class MultipleChoice_Game {
+public class MultipleChoice_Game extends TestGame {
 
 	JFrame frame;
 	JTextArea textArea;
 	JLabel lblNewLabel_1;
-	ArrayList<Icon> img = new ArrayList<>();
-	HEART h = new HEART();
-	MultipleChoice_Question mcq = new MultipleChoice_Question();
-	private ArrayList<String> question = new ArrayList<String>(mcq.question());
-	private ArrayList<String> answer = new ArrayList<String>(mcq.answer());
-	private ArrayList<String> solution = new ArrayList<String>(mcq.solution());
-	private ArrayList<String> mc1 = new ArrayList<String>(mcq.mc1());
-	private ArrayList<String> mc2 = new ArrayList<String>(mcq.mc2());
-	private ArrayList<String> mc3 = new ArrayList<String>(mcq.mc3());
-	private ArrayList<String> mc4 = new ArrayList<String>(mcq.mc4());
-	private ArrayList<Icon> ht = new ArrayList<Icon>(h.heart());
+	private HEART h = new HEART();
+	private MultipleChoice_content mcq;
+	private ArrayList<String> question;
+	private ArrayList<String> answer;
+	private ArrayList<String> solution;
+	private ArrayList<String> mc1;
+	private ArrayList<String> mc2;
+	private ArrayList<String> mc3;
+	private ArrayList<String> mc4;
+	private ArrayList<Icon> ht;
 
 	/**
 	 * Launch the application.
@@ -45,8 +39,6 @@ public class MultipleChoice_Game {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MultipleChoice_Question mcqq = new MultipleChoice_Question();
-					mcqq.mc_restart();
 					MultipleChoice_Game window = new MultipleChoice_Game();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -60,7 +52,6 @@ public class MultipleChoice_Game {
 	 * Create the application.
 	 */
 	public MultipleChoice_Game() {
-		mcq.plus_counter(mcq.read_counter());
 		initialize();
 	}
 
@@ -68,14 +59,21 @@ public class MultipleChoice_Game {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		mcq = new MultipleChoice_content();
+		question = new ArrayList<String>(mcq.question());
+		answer = new ArrayList<String>(mcq.answer());
+		solution = new ArrayList<String>(mcq.solution());
+		mc1 = new ArrayList<String>(mcq.mc1());
+		mc2 = new ArrayList<String>(mcq.mc2());
+		mc3 = new ArrayList<String>(mcq.mc3());
+		mc4 = new ArrayList<String>(mcq.mc4());
+		ht = new ArrayList<Icon>(h.heart());
+		h = new HEART();
 
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		// String q = new String(question.get(mcq.read_counter()));
-		// textArea.setText(q);
 
 		lblNewLabel_1 = new JLabel("");
 		Icon heart = ht.get(h.getheart());
@@ -90,9 +88,8 @@ public class MultipleChoice_Game {
 		textArea_1.setBounds(14, 12, 954, 458);
 		textArea_1.setEnabled(false);
 		textArea_1.setEditable(false);
-		
 
-		textArea_1.setText(question.get(mcq.read_counter()));
+		textArea_1.setText(question.get(getMCnum()));
 
 		JButton btnNewButton = new JButton("1.");
 		btnNewButton.setBackground(new Color(175, 238, 238));
@@ -100,25 +97,10 @@ public class MultipleChoice_Game {
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("1.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+				if (answer.get(getMCnum()).equals("1.") == true) {
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
-
+					isfalse();
 				}
 
 			}
@@ -130,24 +112,10 @@ public class MultipleChoice_Game {
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 30));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("2.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+				if (answer.get(getMCnum()).equals("2.") == true) {
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
+					isfalse();
 				}
 			}
 		});
@@ -158,24 +126,10 @@ public class MultipleChoice_Game {
 		button.setFont(new Font("Arial", Font.PLAIN, 30));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("3.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+				if (answer.get(getMCnum()).equals("3.") == true) {
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
+					isfalse();
 				}
 			}
 		});
@@ -186,24 +140,10 @@ public class MultipleChoice_Game {
 		button_1.setFont(new Font("Arial", Font.PLAIN, 30));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultipleChoice_Solution mcs = new MultipleChoice_Solution();
-				if (answer.get(mcq.read_counter()).equals("4.") == true) {
-					mcs.textArea.setBackground(new Color(60, 179, 113));
-					mcs.frame.setVisible(true);
-					frame.setVisible(false);
+				if (answer.get(getMCnum()).equals("4.") == true) {
+					istrue();
 				} else {
-					mcs.textArea.setBackground(new Color(178, 34, 34));
-					if (h.getheart() == 0) {
-						h.setheart(3);
-						JOptionPane.showMessageDialog(null, "study hard");
-						frame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					} else {
-						h.setheart(h.getheart() - 1);
-						mcs.frame.setVisible(true);
-						frame.setVisible(false);
-					}
+					isfalse();
 				}
 			}
 		});
@@ -223,7 +163,7 @@ public class MultipleChoice_Game {
 		textArea_2.setBounds(89, 499, 879, 72);
 		textArea_2.setEnabled(false);
 		textArea_2.setEditable(false);
-		textArea_2.setText(mc1.get(mcq.read_counter()));
+		textArea_2.setText(mc1.get(getMCnum()));
 		frame.getContentPane().add(textArea_2);
 
 		JTextArea textArea_3 = new JTextArea();
@@ -233,7 +173,7 @@ public class MultipleChoice_Game {
 		textArea_3.setBounds(89, 602, 879, 76);
 		textArea_3.setEnabled(false);
 		textArea_3.setEditable(false);
-		textArea_3.setText(mc2.get(mcq.read_counter()));
+		textArea_3.setText(mc2.get(getMCnum()));
 		frame.getContentPane().add(textArea_3);
 
 		JTextArea textArea_4 = new JTextArea();
@@ -243,7 +183,7 @@ public class MultipleChoice_Game {
 		textArea_4.setBounds(89, 703, 879, 74);
 		textArea_4.setEnabled(false);
 		textArea_4.setEditable(false);
-		textArea_4.setText(mc3.get(mcq.read_counter()));
+		textArea_4.setText(mc3.get(getMCnum()));
 		frame.getContentPane().add(textArea_4);
 
 		JTextArea textArea_5 = new JTextArea();
@@ -253,7 +193,7 @@ public class MultipleChoice_Game {
 		textArea_5.setBounds(89, 813, 879, 76);
 		textArea_5.setEnabled(false);
 		textArea_5.setEditable(false);
-		textArea_5.setText(mc4.get(mcq.read_counter()));
+		textArea_5.setText(mc4.get(getMCnum()));
 		frame.getContentPane().add(textArea_5);
 
 		JMenuBar menuBar = new JMenuBar();
@@ -287,11 +227,7 @@ public class MultipleChoice_Game {
 		mntmQ.setBackground(SystemColor.menu);
 		mntmQ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(-1);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(0);
 			}
 		});
 		mnQuestion.add(mntmQ);
@@ -300,11 +236,7 @@ public class MultipleChoice_Game {
 		mntmQ_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(0);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(1);
 			}
 		});
 		mnQuestion.add(mntmQ_1);
@@ -313,11 +245,7 @@ public class MultipleChoice_Game {
 		mntmQ_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(1);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(2);
 			}
 		});
 		mnQuestion.add(mntmQ_2);
@@ -326,10 +254,7 @@ public class MultipleChoice_Game {
 		mntmQ_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(2);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
+				go(3);
 			}
 		});
 		mnQuestion.add(mntmQ_3);
@@ -338,11 +263,7 @@ public class MultipleChoice_Game {
 		mntmQ_4.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(3);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(4);
 			}
 		});
 		mnQuestion.add(mntmQ_4);
@@ -351,11 +272,7 @@ public class MultipleChoice_Game {
 		mntmQ_5.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(4);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(5);
 			}
 		});
 		mnQuestion.add(mntmQ_5);
@@ -364,11 +281,7 @@ public class MultipleChoice_Game {
 		mntmQ_6.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(5);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(6);
 			}
 		});
 		mnQuestion.add(mntmQ_6);
@@ -377,11 +290,7 @@ public class MultipleChoice_Game {
 		mntmQ_7.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(6);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(7);
 			}
 		});
 		mnQuestion.add(mntmQ_7);
@@ -390,11 +299,7 @@ public class MultipleChoice_Game {
 		mntmQ_8.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(7);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(8);
 			}
 		});
 		mnQuestion.add(mntmQ_8);
@@ -403,13 +308,42 @@ public class MultipleChoice_Game {
 		mntmQ_9.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmQ_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mcq.plus_counter(8);
-				MultipleChoice_Game newMC = new MultipleChoice_Game();
-				newMC.frame.setVisible(true);
-				frame.setVisible(false);
-
+				go(9);
 			}
 		});
 		mnQuestion.add(mntmQ_9);
 	}
+
+	public void go(int num) {
+		setMCnum(num);
+		MultipleChoice_Game newMC = new MultipleChoice_Game();
+		newMC.frame.setVisible(true);
+		frame.setVisible(false);
+	}
+
+	public void istrue() {
+		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
+		mcs.textArea.setBackground(new Color(60, 179, 113));
+		mcs.textArea.setText(solution.get(getMCnum()));
+		mcs.frame.setVisible(true);
+		frame.setVisible(false);
+	}
+
+	public void isfalse() {
+		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
+		mcs.textArea.setBackground(new Color(178, 34, 34));
+		if (h.getheart() == 0) {
+			h.setheart(3);
+			JOptionPane.showMessageDialog(null, "study hard");
+			frame.setVisible(false);
+			Study study = new Study();
+			study.frame.setVisible(true);
+		} else {
+			h.setheart(h.getheart() - 1);
+			mcs.textArea.setText(solution.get(getMCnum()));
+			mcs.frame.setVisible(true);
+			frame.setVisible(false);
+		}
+	}
+
 }

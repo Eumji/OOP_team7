@@ -3,13 +3,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
-import java.awt.Window;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -17,6 +14,8 @@ import java.awt.Color;
 public class MENU extends JFrame {
 
 	JFrame frame;
+	private TestGame tg;
+	private Study s;
 
 	/**
 	 * Launch the application.
@@ -45,6 +44,8 @@ public class MENU extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		tg = new TestGame();
+		s = new Study();
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 1000, 1000);
@@ -58,7 +59,6 @@ public class MENU extends JFrame {
 		btnStudy.setBackground(new Color(255, 255, 255));
 		btnStudy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Study s = new Study();
 				s.frame.setVisible(true);
 				frame.setVisible(false);
 			}
@@ -70,7 +70,6 @@ public class MENU extends JFrame {
 		btnTestGame.setBackground(new Color(255, 255, 255));
 		btnTestGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TestGame tg = new TestGame();
 				tg.frame.setVisible(true);
 				frame.setVisible(false);
 			}

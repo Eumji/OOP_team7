@@ -10,17 +10,11 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
@@ -30,6 +24,10 @@ public class JAVA {
 	private JTextField textField;
 	private String Nickname;
 	private JPasswordField textField_1;
+	private SignUp su;
+	
+	private MENU m;
+	
 	
 	/**
 	 * Launch the application.
@@ -66,6 +64,8 @@ public class JAVA {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		su = new SignUp();
+		m = new MENU();
 		
 		frame = new JFrame("Java");
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
@@ -94,7 +94,6 @@ public class JAVA {
 		button.setBackground(new Color(255, 255, 255));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SignUp su = new SignUp();
 				su.setVisible(true);
 			}
 		});
@@ -105,37 +104,7 @@ public class JAVA {
 
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SignUp su = new SignUp();
-				ArrayList<People> people = new ArrayList<>();
-				people = su.loadFromCSV();
-				
-				boolean loginPW = false;
-				boolean loginID=false;
-				for(People p : people){
-					if(p.getID().equals(textField.getText())==true){
-						loginID = true;
-						
-						if(p.getpassword().equals(textField_1.getText())==true)
-							loginPW=true;
-						Nickname = p.getnickname();
-						break;
-					}
-				}
-				
-				
-				if(loginID==false){
-					JOptionPane.showMessageDialog(null, "ID is not available");
-				}
-				else if(loginPW==false){
-					JOptionPane.showMessageDialog(null, "password wrong;(");	
-				}
-
-				else{
-					JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
-					MENU m = new MENU();
-					m.frame.setVisible(true);
-					frame.setVisible(false);
-					}
+				goMenu();
 			}
 		});
 		
@@ -147,37 +116,7 @@ public class JAVA {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyChar()=='\n'){
-					SignUp su = new SignUp();
-					ArrayList<People> people = new ArrayList<>();
-					people = su.loadFromCSV();
-					
-					boolean loginPW = false;
-					boolean loginID=false;
-					for(People p : people){
-						if(p.getID().equals(textField.getText())==true){
-							loginID = true;
-							
-							if(p.getpassword().equals(textField_1.getText())==true)
-								loginPW=true;
-							Nickname = p.getnickname();
-							break;
-						}
-					}
-					
-					
-					if(loginID==false){
-						JOptionPane.showMessageDialog(null, "ID is not available");
-					}
-					else if(loginPW==false){
-						JOptionPane.showMessageDialog(null, "password wrong;(");	
-					}
-
-					else{
-						JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
-						MENU m = new MENU();
-						m.frame.setVisible(true);
-						frame.setVisible(false);
-						}
+					goMenu();
 				}
 			}
 		});
@@ -248,5 +187,37 @@ public class JAVA {
 					.addContainerGap(95, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+	
+	public void goMenu(){
+		su.alp = su.loadFromCSV();
+		
+		boolean loginPW = false;
+		boolean loginID=false;
+		for(People p : su.alp){
+			if(p.getID().equals(textField.getText())==true){
+				loginID = true;
+				
+				if(p.getpassword().equals(textField_1.getText())==true)
+					loginPW=true;
+				Nickname = p.getnickname();
+				break;
+			}
+		}
+		
+		
+		if(loginID==false){
+			JOptionPane.showMessageDialog(null, "ID is not available");
+		}
+		else if(loginPW==false){
+			JOptionPane.showMessageDialog(null, "password wrong;(");	
+		}
+
+		else{
+			JOptionPane.showMessageDialog(null, "Welcome "+ Nickname);	
+			m.frame.setVisible(true);
+			frame.setVisible(false);
+			}
+
 	}
 }

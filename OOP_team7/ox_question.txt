@@ -1,4 +1,3 @@
-이 아래줄부터 문제입니다요
 1. Variable type <char> stored several characters per variable.
 2. Local variable which is declared      within a method is not destroyed        after the method ends.
 3. A variable or method declared         without any access control modifier   is available to any other class in the   same package.
