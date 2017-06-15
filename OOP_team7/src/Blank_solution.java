@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import java.awt.Color;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class Blank_solution implements Solution{
 
 	private Blank_content bq;
-	private ArrayList<String> solution;
+	ArrayList<String> solution;
 	JTextArea textArea;
 	
 	JFrame sframe;
@@ -73,9 +74,10 @@ public class Blank_solution implements Solution{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		sframe.getContentPane().add(btnNewButton);
-		TestGame tg = new TestGame();
+		//TestGame tg = new TestGame();
 		textArea = new JTextArea();
-		String s = solution.get(tg.getBlanknum());
+		Blank_Game bg = new Blank_Game();
+		String s = solution.get(bg.getnum());
 		textArea.setText(s);
 		
 		textArea.addKeyListener(new KeyAdapter() {
@@ -86,6 +88,8 @@ public class Blank_solution implements Solution{
 				}
 			}
 		});
+		textArea.setEditable(false);
+		textArea.setLineWrap(true);
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.PLAIN, 45));
 		textArea.setBounds(0, 0, 1000, 1000);
@@ -104,7 +108,7 @@ public class Blank_solution implements Solution{
 			public void actionPerformed(ActionEvent arg0) {
 				// menu로 돌아가기
 				TestGame tg = new TestGame();
-				tg.setBlanknum(0);
+				tg.setnum(0);
 				MENU home = new MENU();
 				home.frame.setVisible(true);
 				sframe.setVisible(false);
@@ -184,26 +188,28 @@ public class Blank_solution implements Solution{
 
 	@Override
 	public void go(int num){ 
-		TestGame tg = new TestGame();
-		tg.setBlanknum(num); 
-		Blank_Game bg = new
-		Blank_Game(); 
+		//TestGame bg = new Blank_Game();
+		Blank_Game bg = new Blank_Game();
+		bg.setnum(num); 
 		bg.gframe.setVisible(true); 
 		sframe.setVisible(false); 
 	}
 	
 	@Override
 	public void gonext() {
-		TestGame tg = new TestGame();
-		if (tg.getBlanknum() == 9) {
+		//TestGame bg = new Blank_Game();
+		Blank_Game bg = new Blank_Game();
+		if (bg.getnum() == 6) {
 			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Blank Game:)");	
-			tg.setBlanknum(0);
-			tg.frame.setVisible(true);
+			bg.setnum(0);
+			bg.frame.setVisible(true);
 			sframe.setVisible(false);
 		} else {
-			tg.setBlanknum(tg.getBlanknum() + 1);
+			bg.setnum(bg.getnum() + 1);
+			Icon image = bg.img.get(bg.getnum());
+			bg.lblNewLabel.setIcon(image);
+			bg.gframe.setVisible(true);
 			sframe.setVisible(false);
-			Blank_Game bg = new Blank_Game();
 			bg.gframe.setVisible(true);
 		}
 	}

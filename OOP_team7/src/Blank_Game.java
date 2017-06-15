@@ -23,6 +23,12 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Blank_Game extends TestGame {
 
@@ -32,8 +38,9 @@ public class Blank_Game extends TestGame {
 
 	private HEART h;
 	private ArrayList<String> answer;
-	private ArrayList<Icon> img;
+	ArrayList<Icon> img;
 	private ArrayList<Icon> ht;
+	JLabel lblNewLabel;
 
 	/**
 	 * Launch the application.
@@ -72,10 +79,10 @@ public class Blank_Game extends TestGame {
 		gframe.setBounds(100, 100, 1000, 1000);
 		gframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JLabel lblNewLabel = new JLabel("");
-		Icon image = img.get(getBlanknum());
+		lblNewLabel = new JLabel("");
+		/*Icon image = img.get(getnum());
 		lblNewLabel.setIcon(image);
-
+		*/
 		JLabel lblNewLabel_1 = new JLabel("");
 
 		Icon heart = ht.get(h.getheart());
@@ -102,7 +109,8 @@ public class Blank_Game extends TestGame {
 			@Override
 			public void keyPressed(KeyEvent ke) {
 				if (ke.getKeyChar() == '\n') {
-					if (textField.getText().equals(answer.get(getBlanknum()))) {
+					
+					if (textField.getText().equals(answer.get(getnum()))) {
 						istrue();
 					}
 					else{
@@ -118,7 +126,7 @@ public class Blank_Game extends TestGame {
 		btnSubmit.setBackground(new Color(255, 255, 255));
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (textField.getText().equals(answer.get(getBlanknum()))) {
+				if (textField.getText().equals(answer.get(getnum()))) {
 					istrue();
 				}
 				else{
@@ -163,7 +171,7 @@ public class Blank_Game extends TestGame {
 		mntmGoToMenu.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				setBlanknum(0);
+				setnum(0);
 				h.setheart(3);
 				MENU m = new MENU();
 				gframe.setVisible(false);
@@ -242,8 +250,10 @@ public class Blank_Game extends TestGame {
 
 	@Override
 	public void go(int num) {
-		setBlanknum(num);
+		setnum(num);
 		Blank_Game bg = new Blank_Game();
+		Icon image = img.get(getnum());
+		bg.lblNewLabel.setIcon(image);
 		bg.gframe.setVisible(true);
 		this.gframe.setVisible(false);
 	}
@@ -271,6 +281,37 @@ public class Blank_Game extends TestGame {
 			bs.textArea.setForeground(Color.WHITE);
 			gframe.setVisible(false);
 			bs.sframe.setVisible(true);
+		}
+	}
+	
+	@Override
+	public int getnum() {
+		int number = -1;
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("blank_number.txt"));
+			String line = br.readLine();
+			number = Integer.parseInt(line);
+			br.close();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("File is not found.");
+		} catch (IOException ioe) {
+			System.out.println("File input//output error.");
+		}
+		return number;
+	}
+
+	@Override
+	public void setnum(int n) {
+		BufferedWriter bw = null;
+		String line = null;
+		line = Integer.toString(n);
+		try {
+			bw = new BufferedWriter(new FileWriter("blank_number.txt"));
+			bw.write(line);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

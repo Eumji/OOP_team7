@@ -1,5 +1,5 @@
 setAge
-int
+String
 Puppy
 Puppy_Age:7
 coding everybody

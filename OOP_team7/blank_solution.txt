@@ -1,7 +1,7 @@
-setAge
-int
-Puppy
-Puppy_Age:7
-coding everybody
-numbering
-extends
+Int variable use private modifier so to get ¡°age¡± we have to use getter and setter method.
+You have to use ¡°String¡± to write word or sentence.
+You have to write class name first to use reference variable.
+Int age is first initialized to 0 and next line age get 7. The final age is 7.
+Sting a and b are printed together. So output is ¡°coding everybody¡±.
+In main method, ¡°numbering¡± method is used so ¡°numbering¡± method have to be declared first.
+To use ¡°setName¡± method Dog class have to use inheritence. Inheritence is used with ¡°extends¡±.0

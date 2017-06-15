@@ -70,9 +70,9 @@ public class ox_solution implements Solution{
 		frame_this.getContentPane().add(btnNewButton);
 		
 		textArea = new JTextArea();
-		TestGame tg = new TestGame();
+		ox_Game og = new ox_Game();
 		textArea = new JTextArea();
-		String s = solution.get(tg.getOXnum());
+		String s = solution.get(og.getnum());
 		textArea.setText(s);
 		
 		textArea.addKeyListener(new KeyAdapter() {

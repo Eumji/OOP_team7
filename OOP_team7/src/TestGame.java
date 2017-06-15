@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -12,12 +13,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 public class TestGame {
 
 	JFrame frame;
+	//private Blank_content bq = new Blank_content();
+	//private ArrayList<Icon> img = new ArrayList<Icon>(bq.questionIcon());
 	
 	/**
 	 * Launch the application.
@@ -67,8 +71,8 @@ public class TestGame {
 				// ox ´©¸£¸é
 				HEART h = new HEART();
 				h.setheart(3);
-				setOXnum(0);
 				ox_Game ox = new ox_Game();
+				ox.setnum(0);
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
 			}
@@ -97,9 +101,13 @@ public class TestGame {
 			public void actionPerformed(ActionEvent arg0) {
 				HEART h = new HEART();
 				h.setheart(3);
-				setBlanknum(0);
-				Blank_Game bg = new Blank_Game();
-				bg.gframe.setVisible(true);
+				TestGame bg = new Blank_Game();//polymorphism
+				bg.setnum(0);//polymorphism
+				Blank_Game bg1 = new Blank_Game();
+				Icon image = bg1.img.get(bg.getnum());
+				bg1.lblNewLabel.setIcon(image);
+				bg1.gframe.setVisible(true);
+				
 				frame.setVisible(false);
 			}
 		});
@@ -123,35 +131,6 @@ public class TestGame {
 	}
 	
 	
-	public int getBlanknum() {
-		int number = -1;
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader("blank_number.txt"));
-			String line = br.readLine();
-			number = Integer.parseInt(line);
-			br.close();
-		} catch (FileNotFoundException fnfe) {
-			System.out.println("File is not found.");
-		} catch (IOException ioe) {
-			System.out.println("File input//output error.");
-		}
-		return number;
-	}
-
-	
-	public void setBlanknum(int n) {
-		BufferedWriter bw = null;
-		String line = null;
-		line = Integer.toString(n);
-		try {
-			bw = new BufferedWriter(new FileWriter("blank_number.txt"));
-			bw.write(line);
-			bw.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public int getOXnum() {
 		int number = -1;
@@ -213,14 +192,25 @@ public class TestGame {
 		}
 	}
 	
+	
+	
+	public int getnum(){
+		//
+		return 0;
+	}
+	
+	public void setnum(int n){
+		//
+	}
+	
 	public void istrue(){
-		
+		//
 	}
 	public void isfalse() {
-		
+		//
 	}
 	public void go(int num){
-		
+		//
 	}
 	
 	
