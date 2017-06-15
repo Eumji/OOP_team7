@@ -1,29 +1,22 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.border.TitledBorder;
-import java.awt.event.ActionListener;
+import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class BasicMenu extends JFrame {
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
-	private JPanel contentPane;
+public class Basic extends Study {
 
-	public Variable v = new Variable();
-	public Modifier mf = new Modifier();
-	public COM C = new COM();
-	
-	
-	
+	 JFrame frame;
+
 	/**
 	 * Launch the application.
 	 */
@@ -31,33 +24,44 @@ public class BasicMenu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BasicMenu frame = new BasicMenu();
-					frame.setVisible(true);
+					Basic window = new Basic();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
-					
 				}
 			}
 		});
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
-	public BasicMenu() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 1000);
-		contentPane = new JPanel();
+	public Basic() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 1000, 1000);
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(135, 206, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		frame.setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("MENU");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MENU m = new MENU();
 				m.frame.setVisible(true);
-				setVisible(false);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBackground(new Color(240, 248, 255));
@@ -100,8 +104,9 @@ public class BasicMenu extends JFrame {
 		JButton btnNewButton_3 = new JButton("Class & Object & Method");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				C.setVisible(true);
-				setVisible(false);
+				COM C = new COM();
+				C.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_3.setFont(new Font("Arial", Font.PLAIN, 34));
@@ -111,8 +116,9 @@ public class BasicMenu extends JFrame {
 		JButton btnNewButton_2 = new JButton("Modifier");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mf.setVisible(true);
-				setVisible(false);
+				Modifier mf = new Modifier();
+				mf.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_2.setFont(new Font("Arial", Font.PLAIN, 50));
@@ -122,9 +128,9 @@ public class BasicMenu extends JFrame {
 		JButton btnNewButton_1 = new JButton("Variable");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				v.setVisible(true);
-				setVisible(false);
+				Variable v = new Variable();
+				v.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_1.setBackground(new Color(240, 248, 255));

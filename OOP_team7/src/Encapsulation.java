@@ -1,26 +1,22 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.border.TitledBorder;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class EncapsulationMenu extends JFrame {
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
-	private JPanel contentPane;
-	public HowMake hm = new HowMake();
-	public GetSet gs = new GetSet();
+public class Encapsulation extends Study {
+
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -29,8 +25,8 @@ public class EncapsulationMenu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EncapsulationMenu frame = new EncapsulationMenu();
-					frame.setVisible(true);
+					Encapsulation window = new Encapsulation();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,15 +35,24 @@ public class EncapsulationMenu extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
-	public EncapsulationMenu() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 1000);
-		contentPane = new JPanel();
+	public Encapsulation() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 1000, 1000);
+		
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		frame.setContentPane(contentPane);
 
 		JButton btnMenu = new JButton("MENU");
 		btnMenu.addActionListener(new ActionListener() {
@@ -55,7 +60,7 @@ public class EncapsulationMenu extends JFrame {
 
 				MENU m = new MENU();
 				m.frame.setVisible(true);
-				setVisible(false);
+				frame.setVisible(false);
 			}
 		});
 		btnMenu.setFont(new Font("Arial", Font.PLAIN, 40));
@@ -86,9 +91,9 @@ public class EncapsulationMenu extends JFrame {
 		JButton btnNewButton = new JButton("Getter & Setter");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// GetSet gs = new GetSet();
-				gs.setVisible(true);
-				setVisible(false);
+			    GetSet gs = new GetSet();
+				gs.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBackground(new Color(240, 248, 255));
@@ -99,9 +104,9 @@ public class EncapsulationMenu extends JFrame {
 		JButton btnNewButton_1 = new JButton("How to Make?");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// HowMake hm = new HowMake();
-				hm.setVisible(true);
-				setVisible(false);
+			    HowMake hm = new HowMake();
+				hm.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_1.setForeground(new Color(30, 144, 255));
