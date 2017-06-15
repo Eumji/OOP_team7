@@ -15,9 +15,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 public class ox_solution extends ox_Game{
 
-	boolean ox_isCorrect;
-	
-
 	JFrame frame_this;
 	JTextArea textArea;
 	private JMenuBar menuBar;
