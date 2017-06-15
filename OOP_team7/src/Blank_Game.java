@@ -42,21 +42,7 @@ public class Blank_Game extends TestGame {
 	private ArrayList<Icon> ht;
 	JLabel lblNewLabel;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Blank_Game window = new Blank_Game();
-					window.gframe.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.

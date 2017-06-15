@@ -27,21 +27,6 @@ public class Blank_solution implements Solution{
 	JFrame sframe;
 	private JMenuBar menuBar;
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Blank_solution window = new Blank_solution();
-					window.sframe.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.

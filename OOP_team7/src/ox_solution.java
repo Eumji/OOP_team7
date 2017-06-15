@@ -23,22 +23,7 @@ public class ox_solution implements Solution{
 	ox_content oq;
 	private ArrayList<String> solution;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ox_solution window = new ox_solution();
-					window.frame_this.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	
+
 
 	/**
 	 * Create the application.

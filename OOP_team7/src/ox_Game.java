@@ -31,22 +31,7 @@ public class ox_Game extends TestGame {
 	private HEART h;
 	private ArrayList<Icon> ht;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ox_Game window = new ox_Game();
-					window.oxgame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
 
-	}
 
 	/**
 	 * Create the application.

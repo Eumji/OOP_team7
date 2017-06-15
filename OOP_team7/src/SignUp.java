@@ -44,21 +44,7 @@ public class SignUp extends JFrame implements Serializable{
    private JPasswordField textPW1;
    private JLabel lblPWC;
    ArrayList<People> alp;
-   /**
-    * Launch the application.
-    */
-   public static void main(String[] args) {
-      EventQueue.invokeLater(new Runnable() {
-         public void run() {
-            try {
-               SignUp frame = new SignUp();
-               frame.setVisible(true);
-            } catch (Exception e) {
-               e.printStackTrace();
-            }
-         }
-      });
-   }
+ 
 
    /**
     * Create the frame.

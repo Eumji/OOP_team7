@@ -23,21 +23,6 @@ public class TestGame {
 	//private Blank_content bq = new Blank_content();
 	//private ArrayList<Icon> img = new ArrayList<Icon>(bq.questionIcon());
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TestGame window = new TestGame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.

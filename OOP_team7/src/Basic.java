@@ -166,5 +166,4 @@ public class Basic extends Study {
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
 	}
-
 }

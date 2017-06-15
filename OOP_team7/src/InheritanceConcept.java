@@ -26,22 +26,6 @@ public class InheritanceConcept extends Inheritance{
 	 File f = new File("");
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InheritanceConcept window = new InheritanceConcept();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the application.
 	 */
 	public InheritanceConcept() {
@@ -121,6 +105,7 @@ public class InheritanceConcept extends Inheritance{
 		
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setForeground(new Color(0, 0, 0));
 		textArea.setFont(new Font("Lucida Sans Unicode", Font.PLAIN, 16));
 		textArea.setEditable(false);
 		textArea.setBackground(new Color(240, 248, 255));

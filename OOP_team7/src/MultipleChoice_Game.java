@@ -31,21 +31,6 @@ public class MultipleChoice_Game extends TestGame {
 	private ArrayList<String> mc4;
 	private ArrayList<Icon> ht;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MultipleChoice_Game window = new MultipleChoice_Game();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
