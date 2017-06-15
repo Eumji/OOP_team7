@@ -25,7 +25,6 @@ public class MultipleChoice_Game extends TestGame {
 	private MultipleChoice_content mcq;
 	private ArrayList<String> question;
 	private ArrayList<String> answer;
-	private ArrayList<String> solution;
 	private ArrayList<String> mc1;
 	private ArrayList<String> mc2;
 	private ArrayList<String> mc3;
@@ -62,7 +61,6 @@ public class MultipleChoice_Game extends TestGame {
 		mcq = new MultipleChoice_content();
 		question = new ArrayList<String>(mcq.question());
 		answer = new ArrayList<String>(mcq.answer());
-		solution = new ArrayList<String>(mcq.solution());
 		mc1 = new ArrayList<String>(mcq.mc1());
 		mc2 = new ArrayList<String>(mcq.mc2());
 		mc3 = new ArrayList<String>(mcq.mc3());
@@ -313,7 +311,8 @@ public class MultipleChoice_Game extends TestGame {
 		});
 		mnQuestion.add(mntmQ_9);
 	}
-
+	
+	@Override
 	public void go(int num) {
 		setMCnum(num);
 		MultipleChoice_Game newMC = new MultipleChoice_Game();
@@ -321,14 +320,16 @@ public class MultipleChoice_Game extends TestGame {
 		frame.setVisible(false);
 	}
 
+	@Override
 	public void istrue() {
 		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 		mcs.textArea.setBackground(new Color(60, 179, 113));
-		mcs.textArea.setText(solution.get(getMCnum()));
+		mcs.textArea.setForeground(Color.RED);
 		mcs.frame.setVisible(true);
 		frame.setVisible(false);
 	}
-
+	
+	@Override
 	public void isfalse() {
 		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 		mcs.textArea.setBackground(new Color(178, 34, 34));
@@ -340,7 +341,7 @@ public class MultipleChoice_Game extends TestGame {
 			study.frame.setVisible(true);
 		} else {
 			h.setheart(h.getheart() - 1);
-			mcs.textArea.setText(solution.get(getMCnum()));
+			mcs.textArea.setForeground(Color.WHITE);
 			mcs.frame.setVisible(true);
 			frame.setVisible(false);
 		}

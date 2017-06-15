@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -16,13 +17,11 @@ import javax.swing.JOptionPane;
 
 public class ox_solution implements Solution{
 
-	boolean ox_isCorrect;
-	
-
 	JFrame frame_this;
 	JTextArea textArea;
 	private JMenuBar menuBar;
-	
+	ox_content oq;
+	private ArrayList<String> solution;
 
 	/**
 	 * Launch the application.
@@ -52,6 +51,8 @@ public class ox_solution implements Solution{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		oq = new ox_content();
+		solution = new ArrayList<String>(oq.solution());
 		frame_this = new JFrame();
 		frame_this.setBounds(100, 100, 1000, 1000);
 		frame_this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,6 +70,11 @@ public class ox_solution implements Solution{
 		frame_this.getContentPane().add(btnNewButton);
 		
 		textArea = new JTextArea();
+		TestGame tg = new TestGame();
+		textArea = new JTextArea();
+		String s = solution.get(tg.getOXnum());
+		textArea.setText(s);
+		
 		textArea.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {

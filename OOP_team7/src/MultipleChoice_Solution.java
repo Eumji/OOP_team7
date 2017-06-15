@@ -9,6 +9,7 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -21,6 +22,9 @@ public class MultipleChoice_Solution implements Solution{
 	JFrame frame;
 	JTextArea textArea;
 	private JButton btnNext;
+	private MultipleChoice_content mq;
+	private ArrayList<String> solution;
+	
 
 	/**
 	 * Launch the application.
@@ -49,11 +53,12 @@ public class MultipleChoice_Solution implements Solution{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		mq= new MultipleChoice_content();
+		solution = new ArrayList<String>(mq.solution());
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
 		
 		btnNext = new JButton("Next");
 		btnNext.setBackground(new Color(0, 0, 0));
@@ -69,6 +74,9 @@ public class MultipleChoice_Solution implements Solution{
 		
 		frame.getContentPane().add(btnNext);
 		textArea = new JTextArea();
+		TestGame tg = new TestGame();
+		String s = solution.get(tg.getMCnum());
+		textArea.setText(s);
 		btnNext.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -197,12 +205,6 @@ public class MultipleChoice_Solution implements Solution{
 			}
 		});
 		mnQuestion.add(mntmQ_9);
-		
-		if(mc_isCorrect == true)
-			textArea.setBackground(new Color(60,179,113));
-		else{
-		 textArea.setBackground(new Color(178,34,34));
-		}
 	}
 	
 	@Override
@@ -215,6 +217,7 @@ public class MultipleChoice_Solution implements Solution{
 	
 	}
 	
+	@Override
 	public void gonext(){
 		TestGame tg = new TestGame();
 		if(tg.getMCnum()==9){

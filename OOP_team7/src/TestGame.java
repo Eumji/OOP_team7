@@ -65,14 +65,12 @@ public class TestGame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// ox ´©¸£¸é
-
 				HEART h = new HEART();
 				h.setheart(3);
 				setOXnum(0);
 				ox_Game ox = new ox_Game();
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
-
 			}
 		});
 		btnNewButton.setBounds(11, 160, 467, 375);
@@ -97,9 +95,9 @@ public class TestGame {
 		JButton btnBlank = new JButton("Blank");
 		btnBlank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				setBlanknum(0);
 				HEART h = new HEART();
 				h.setheart(3);
+				setBlanknum(0);
 				Blank_Game bg = new Blank_Game();
 				bg.gframe.setVisible(true);
 				frame.setVisible(false);
@@ -214,5 +212,17 @@ public class TestGame {
 			e.printStackTrace();
 		}
 	}
+	
+	public void istrue(){
+		
+	}
+	public void isfalse() {
+		
+	}
+	public void go(int num){
+		
+	}
+	
+	
 	
 }

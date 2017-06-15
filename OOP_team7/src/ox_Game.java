@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class ox_Game extends TestGame{
+public class ox_Game extends TestGame {
 
 	JFrame oxgame;
 	JButton button, button_1;
@@ -59,14 +59,14 @@ public class ox_Game extends TestGame{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+
 		h = new HEART();
 		ht = new ArrayList<Icon>(h.heart());
 		oxq = new ox_content();
 		question = new ArrayList<String>(oxq.question());
 		answer = new ArrayList<String>(oxq.answer());
 		solution = new ArrayList<String>(oxq.solution());
-		
+
 		oxgame = new JFrame();
 		oxgame.setBounds(100, 100, 1000, 1000);
 		oxgame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,30 +99,10 @@ public class ox_Game extends TestGame{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// "O" ´­·¶À» ¶§
-				ox_solution oxs = new ox_solution();
-				if (answer.get(getOXnum()).equals("O")){
-					oxs.textArea.setBackground(new Color(60, 179, 113));
-					oxs.textArea.setText(solution.get(getOXnum()));
-					oxs.frame_this.setVisible(true);
-					oxgame.setVisible(false);
-				}
-				else {
-					if(h.getheart()==0){
-						JOptionPane.showMessageDialog(null, "Study Hard!!");
-						oxgame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					}
-					else{
-					h.setheart(h.getheart()-1);
-					oxs.textArea.setForeground(new Color(255, 250, 250));
-					oxs.textArea.setBackground(new Color(178, 34, 34));
-					oxs.textArea.setText(solution.get(getOXnum()));
-					oxs.frame_this.setVisible(true);
-					oxgame.setVisible(false);
-						
-					}
-				}
+				if (answer.get(getOXnum()).equals("O"))
+					istrue();
+				else
+					isfalse();
 			}
 		});
 		button.setForeground(Color.GREEN);
@@ -134,30 +114,11 @@ public class ox_Game extends TestGame{
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// "X" ´­·¶À» ¶§
-				ox_solution oxs = new ox_solution();
-				if (answer.get(getOXnum()).equals("X")){
-					oxs.textArea.setBackground(new Color(60, 179, 113));
-					oxs.textArea.setText(solution.get(getOXnum()));
-					oxs.frame_this.setVisible(true);
-					oxgame.setVisible(false);
-				}
-				else {
-					if(h.getheart()==0){
-						JOptionPane.showMessageDialog(null, "Study Hard!!");
-						oxgame.setVisible(false);
-						Study study = new Study();
-						study.frame.setVisible(true);
-					}
-					else{
-					h.setheart(h.getheart()-1); 
-					oxs.textArea.setForeground(new Color(255, 250, 250));
-					oxs.textArea.setBackground(new Color(178, 34, 34));
-					oxs.textArea.setText(solution.get(getOXnum()));
-					oxs.frame_this.setVisible(true);
-					oxgame.setVisible(false);
-						
-					}
-				}
+				if (answer.get(getOXnum()).equals("X"))
+					istrue();
+				else
+					isfalse();
+
 			}
 		});
 		button_2.setForeground(Color.RED);
@@ -281,11 +242,39 @@ public class ox_Game extends TestGame{
 		mnQuestion.add(mntmNo_9);
 
 	}
-	
-	public void go(int num){
+
+	@Override
+	public void go(int num) {
 		setOXnum(num);
 		ox_Game newOX = new ox_Game();
 		newOX.oxgame.setVisible(true);
 		oxgame.setVisible(false);
+	}
+
+	@Override
+	public void istrue() {
+		ox_solution oxs = new ox_solution();
+		oxs.textArea.setBackground(new Color(60, 179, 113));
+		oxs.textArea.setForeground(Color.BLACK);
+		oxs.frame_this.setVisible(true);
+		oxgame.setVisible(false);
+	}
+
+	@Override
+	public void isfalse() {
+		ox_solution oxs = new ox_solution();
+		if (h.getheart() == 0) {
+			JOptionPane.showMessageDialog(null, "Study Hard!!");
+			oxgame.setVisible(false);
+			Study study = new Study();
+			study.frame.setVisible(true);
+		} else {
+			h.setheart(h.getheart() - 1);
+			oxs.textArea.setForeground(new Color(255, 250, 250));
+			oxs.textArea.setBackground(new Color(178, 34, 34));
+			oxs.frame_this.setVisible(true);
+			oxgame.setVisible(false);
+
+		}
 	}
 }

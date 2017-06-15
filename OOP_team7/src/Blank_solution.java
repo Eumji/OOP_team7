@@ -179,38 +179,11 @@ public class Blank_solution implements Solution{
 		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_6);
 
-		JMenuItem mntmNo_7 = new JMenuItem("No.8");
-		mntmNo_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				go(7);
-			}
-		});
-		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 25));
-		mnQuestion.add(mntmNo_7);
-
-		JMenuItem mntmNo_8 = new JMenuItem("No.9");
-		mntmNo_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				go(8);
-			}
-		});
-		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 25));
-		mnQuestion.add(mntmNo_8);
-
-		JMenuItem mntmNo_9 = new JMenuItem("No.10");
-		mntmNo_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				go(9);
-			}
-		});
-		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 25));
-		mnQuestion.add(mntmNo_9);
 
 	}
 
 	@Override
 	public void go(int num){ 
-
 		TestGame tg = new TestGame();
 		tg.setBlanknum(num); 
 		Blank_Game bg = new
@@ -221,7 +194,6 @@ public class Blank_solution implements Solution{
 	
 	@Override
 	public void gonext() {
-
 		TestGame tg = new TestGame();
 		if (tg.getBlanknum() == 9) {
 			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Blank Game:)");	
@@ -230,7 +202,6 @@ public class Blank_solution implements Solution{
 			sframe.setVisible(false);
 		} else {
 			tg.setBlanknum(tg.getBlanknum() + 1);
-
 			sframe.setVisible(false);
 			Blank_Game bg = new Blank_Game();
 			bg.gframe.setVisible(true);

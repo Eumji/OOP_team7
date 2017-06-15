@@ -15,8 +15,7 @@ public class ox_content implements Contents{
 			while((line = br.readLine())!=null){
 				ox_quiz.add(line);
 			}
-			
-			
+
 		br.close();
 		}catch(FileNotFoundException fnfe){
 			System.out.println("File is not found.");

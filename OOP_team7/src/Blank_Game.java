@@ -32,7 +32,6 @@ public class Blank_Game extends TestGame {
 
 	private HEART h;
 	private ArrayList<String> answer;
-	//private ArrayList<String> solution;
 	private ArrayList<Icon> img;
 	private ArrayList<Icon> ht;
 
@@ -66,7 +65,6 @@ public class Blank_Game extends TestGame {
 		h = new HEART();
 		bq = new Blank_content();
 		answer = new ArrayList<String>(bq.answer());
-		//solution = new ArrayList<String>(bq.solution());
 		img = new ArrayList<Icon>(bq.questionIcon());
 		ht = new ArrayList<Icon>(h.heart());
 
@@ -104,7 +102,12 @@ public class Blank_Game extends TestGame {
 			@Override
 			public void keyPressed(KeyEvent ke) {
 				if (ke.getKeyChar() == '\n') {
-					submit();
+					if (textField.getText().equals(answer.get(getBlanknum()))) {
+						istrue();
+					}
+					else{
+						isfalse();
+					}
 				}
 			}
 		});
@@ -115,7 +118,12 @@ public class Blank_Game extends TestGame {
 		btnSubmit.setBackground(new Color(255, 255, 255));
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				submit();
+				if (textField.getText().equals(answer.get(getBlanknum()))) {
+					istrue();
+				}
+				else{
+					isfalse();
+				}
 			}
 		});
 		btnSubmit.setFont(new Font("Arial", Font.BOLD, 35));
@@ -230,36 +238,9 @@ public class Blank_Game extends TestGame {
 		});
 		mntmNo_6.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnQuestion.add(mntmNo_6);
-
-		JMenuItem mntmNo_7 = new JMenuItem("No.8");
-		mntmNo_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				go(7);
-			}
-		});
-		mntmNo_7.setFont(new Font("Arial", Font.PLAIN, 25));
-		mnQuestion.add(mntmNo_7);
-
-		JMenuItem mntmNo_8 = new JMenuItem("No.9");
-		mntmNo_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				go(8);
-			}
-		});
-		mntmNo_8.setFont(new Font("Arial", Font.PLAIN, 25));
-		mnQuestion.add(mntmNo_8);
-
-		JMenuItem mntmNo_9 = new JMenuItem("No.10");
-		mntmNo_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				go(9);
-			}
-		});
-		mntmNo_9.setFont(new Font("Arial", Font.PLAIN, 25));
-		mnQuestion.add(mntmNo_9);
-
 	}
 
+	@Override
 	public void go(int num) {
 		setBlanknum(num);
 		Blank_Game bg = new Blank_Game();
@@ -267,32 +248,30 @@ public class Blank_Game extends TestGame {
 		this.gframe.setVisible(false);
 	}
 
-	public void submit() {
+	@Override
+	public void istrue(){
 		Blank_solution bs = new Blank_solution();
-		int num = getBlanknum();
-		String s = answer.get(num);
+		bs.textArea.setBackground(new Color(60, 179, 113));
+		gframe.setVisible(false);
+		bs.sframe.setVisible(true);
+	}
 	
-		if (textField.getText().equals(s)) {
-			bs.textArea.setBackground(new Color(60, 179, 113));
+	@Override
+	public void isfalse(){
+		Blank_solution bs = new Blank_solution();
+		if (h.getheart() == 0) {
+			h.setheart(3);
+			JOptionPane.showMessageDialog(null, "Study hard!");
+			gframe.setVisible(false);
+			Study study = new Study();
+			study.frame.setVisible(true);
+		} else {
+			h.setheart(h.getheart() - 1);
+			bs.textArea.setBackground(new Color(178, 34, 34));
+			bs.textArea.setForeground(Color.WHITE);
 			gframe.setVisible(false);
 			bs.sframe.setVisible(true);
-		} else {
-			if (h.getheart() == 0) {
-				h.setheart(3);
-				JOptionPane.showMessageDialog(null, "Study hard!");
-				gframe.setVisible(false);
-				Study study = new Study();
-				study.frame.setVisible(true);
-			} else {
-				h.setheart(h.getheart() - 1);
-				bs.textArea.setBackground(new Color(178, 34, 34));
-				bs.textArea.setForeground(Color.WHITE);
-				
-				gframe.setVisible(false);
-				bs.sframe.setVisible(true);
-			}
 		}
-
 	}
 
 }
