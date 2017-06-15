@@ -20,8 +20,6 @@ import java.awt.Color;
 public class TestGame {
 
 	JFrame frame;
-	//private Blank_content bq = new Blank_content();
-	//private ArrayList<Icon> img = new ArrayList<Icon>(bq.questionIcon());
 	
 	/**
 	 * Launch the application.
@@ -71,8 +69,8 @@ public class TestGame {
 				// ox ´©¸£¸é
 				HEART h = new HEART();
 				h.setheart(3);
+				setOXnum(0);
 				ox_Game ox = new ox_Game();
-				ox.setnum(0);
 				ox.oxgame.setVisible(true);
 				frame.setVisible(false);
 			}
