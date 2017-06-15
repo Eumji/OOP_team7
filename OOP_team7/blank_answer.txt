@@ -5,6 +5,3 @@ Puppy_Age:7
 coding everybody
 numbering
 extends
-8
-9
-10

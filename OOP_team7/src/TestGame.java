@@ -19,7 +19,6 @@ public class TestGame {
 
 	JFrame frame;
 	
-
 	/**
 	 * Launch the application.
 	 */

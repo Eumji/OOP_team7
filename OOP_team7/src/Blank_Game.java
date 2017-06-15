@@ -32,7 +32,7 @@ public class Blank_Game extends TestGame {
 
 	private HEART h;
 	private ArrayList<String> answer;
-	private ArrayList<String> solution;
+	//private ArrayList<String> solution;
 	private ArrayList<Icon> img;
 	private ArrayList<Icon> ht;
 
@@ -66,7 +66,7 @@ public class Blank_Game extends TestGame {
 		h = new HEART();
 		bq = new Blank_content();
 		answer = new ArrayList<String>(bq.answer());
-		solution = new ArrayList<String>(bq.solution());
+		//solution = new ArrayList<String>(bq.solution());
 		img = new ArrayList<Icon>(bq.questionIcon());
 		ht = new ArrayList<Icon>(h.heart());
 
@@ -271,15 +271,9 @@ public class Blank_Game extends TestGame {
 		Blank_solution bs = new Blank_solution();
 		int num = getBlanknum();
 		String s = answer.get(num);
-		bs.lblNewLabel_1 = new JLabel(solution.get(getBlanknum()));
-		bs.lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 45));
-		bs.lblNewLabel_1.setBounds(17, 15, 900, 600);
-		bs.sframe.getContentPane().add(bs.lblNewLabel_1);
-
+	
 		if (textField.getText().equals(s)) {
 			bs.textArea.setBackground(new Color(60, 179, 113));
-			bs.textArea.setText(s);
-
 			gframe.setVisible(false);
 			bs.sframe.setVisible(true);
 		} else {
@@ -293,8 +287,7 @@ public class Blank_Game extends TestGame {
 				h.setheart(h.getheart() - 1);
 				bs.textArea.setBackground(new Color(178, 34, 34));
 				bs.textArea.setForeground(Color.WHITE);
-				bs.textArea.setText(s);
-
+				
 				gframe.setVisible(false);
 				bs.sframe.setVisible(true);
 			}

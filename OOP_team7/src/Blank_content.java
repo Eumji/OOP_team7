@@ -19,9 +19,6 @@ public class Blank_content implements Contents{
 		ImageIcon i5 = new ImageIcon("No.5.png");
 		ImageIcon i6 = new ImageIcon("No.6.png");
 		ImageIcon i7 = new ImageIcon("No.7.png");
-		ImageIcon i8 = new ImageIcon("No.8.png");
-		ImageIcon i9 = new ImageIcon("No.9.png");
-		ImageIcon i10 = new ImageIcon("No.10.png");
 
 		img.add(i1);
 		img.add(i2);
@@ -30,9 +27,6 @@ public class Blank_content implements Contents{
 		img.add(i5);
 		img.add(i6);
 		img.add(i7);
-		img.add(i8);
-		img.add(i9);
-		img.add(i10);
 
 		return img;
 	}

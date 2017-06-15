@@ -13,7 +13,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-public class ox_solution extends ox_Game{
+
+public class ox_solution implements Solution{
 
 	boolean ox_isCorrect;
 	
@@ -203,7 +204,8 @@ public class ox_solution extends ox_Game{
 	
 	@Override
 	public void go(int num){
-		setOXnum(num);
+		TestGame tg = new TestGame();
+		tg.setOXnum(num);
 		ox_Game newOX = new ox_Game();
 		newOX.oxgame.setVisible(true);
 		frame_this.setVisible(false);
@@ -211,13 +213,14 @@ public class ox_solution extends ox_Game{
 	
 
 	public void gonext(){
-		if(getOXnum()==9){
+		TestGame tg = new TestGame();
+		if(tg.getOXnum()==9){
 			JOptionPane.showMessageDialog(null, "Congradtulation! You finish OX Game:)");	
 			frame_this.setVisible(false);
-			frame.setVisible(true);
+			tg.frame.setVisible(true);
 		}
 		else {
-			setOXnum(getOXnum()+1);
+			tg.setOXnum(tg.getOXnum()+1);
 			ox_Game oxg = new ox_Game();
 			oxg.oxgame.setVisible(true);
 			frame_this.setVisible(false);

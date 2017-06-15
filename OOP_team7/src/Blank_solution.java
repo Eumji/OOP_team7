@@ -15,15 +15,17 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
-public class Blank_solution extends Blank_Game{
+public class Blank_solution implements Solution{
 
+	private Blank_content bq;
+	private ArrayList<String> solution;
 	JTextArea textArea;
 	
 	JFrame sframe;
 	private JMenuBar menuBar;
-	JLabel lblNewLabel_1;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -51,6 +53,8 @@ public class Blank_solution extends Blank_Game{
 	 * Initialize the contents of the sFrame.
 	 */
 	private void initialize() {
+		bq = new Blank_content();
+		solution = new ArrayList<String>(bq.solution());
 		
 		sframe = new JFrame();
 		sframe.setBounds(100, 100, 1000, 1000);
@@ -69,8 +73,11 @@ public class Blank_solution extends Blank_Game{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		sframe.getContentPane().add(btnNewButton);
-
+		TestGame tg = new TestGame();
 		textArea = new JTextArea();
+		String s = solution.get(tg.getBlanknum());
+		textArea.setText(s);
+		
 		textArea.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -96,7 +103,8 @@ public class Blank_solution extends Blank_Game{
 		mntmGoToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// menu로 돌아가기
-				setBlanknum(0);
+				TestGame tg = new TestGame();
+				tg.setBlanknum(0);
 				MENU home = new MENU();
 				home.frame.setVisible(true);
 				sframe.setVisible(false);
@@ -202,25 +210,26 @@ public class Blank_solution extends Blank_Game{
 
 	@Override
 	public void go(int num){ 
-		setBlanknum(num); 
+
+		TestGame tg = new TestGame();
+		tg.setBlanknum(num); 
 		Blank_Game bg = new
 		Blank_Game(); 
 		bg.gframe.setVisible(true); 
 		sframe.setVisible(false); 
 	}
 	
-
+	@Override
 	public void gonext() {
-		if (getBlanknum() == 9) {
-			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Blank Game:)");	
-			
-			setBlanknum(0);
 
-			TestGame tg = new TestGame();
+		TestGame tg = new TestGame();
+		if (tg.getBlanknum() == 9) {
+			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Blank Game:)");	
+			tg.setBlanknum(0);
 			tg.frame.setVisible(true);
 			sframe.setVisible(false);
 		} else {
-			setBlanknum(getBlanknum() + 1);
+			tg.setBlanknum(tg.getBlanknum() + 1);
 
 			sframe.setVisible(false);
 			Blank_Game bg = new Blank_Game();

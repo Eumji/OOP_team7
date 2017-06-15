@@ -15,7 +15,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-public class MultipleChoice_Solution extends MultipleChoice_Game{
+public class MultipleChoice_Solution implements Solution{
 
 	boolean mc_isCorrect;
 	JFrame frame;
@@ -207,8 +207,8 @@ public class MultipleChoice_Solution extends MultipleChoice_Game{
 	
 	@Override
 	public void go(int num) {
-		
-		setMCnum(num);
+		TestGame tg = new TestGame();
+		tg.setMCnum(num);
 		MultipleChoice_Game newMC = new MultipleChoice_Game();
 		newMC.frame.setVisible(true);
 		frame.setVisible(false);
@@ -216,14 +216,14 @@ public class MultipleChoice_Solution extends MultipleChoice_Game{
 	}
 	
 	public void gonext(){
-		if(getMCnum()==9){
+		TestGame tg = new TestGame();
+		if(tg.getMCnum()==9){
 			JOptionPane.showMessageDialog(null, "Congradtulation! You finish Multiple Choice Game:)");	
-			TestGame t = new TestGame();
-			t.frame.setVisible(true);
+			tg.frame.setVisible(true);
 			frame.setVisible(false);
 		}
 		else{
-			setMCnum(getMCnum()+1);
+			tg.setMCnum(tg.getMCnum()+1);
 			MultipleChoice_Game mcg = new MultipleChoice_Game();
 			mcg.frame.setVisible(true);
 		    frame.setVisible(false);
