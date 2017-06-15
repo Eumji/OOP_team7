@@ -4,7 +4,7 @@
 - "Object" is an instance of the class. Many           objects of the class can exist.
 - Variables, methods, and constructors, which      are declared protected in a superclass can be  accessed only by the subclasses in other packa-ge or any class within the package of the protec-ted members' class.
 - The fields of a class can be made read-only or  write-only.
-7.
-8.
-9.
-10.
+- The class which inherits the properties of other is known as subclass (derived class, child class) and the class whose properties are inherited is known as superclass (base class, parent class).
+- Multiple inheritance is not possible. In other       words, you cannot inherit two or more classes    at once.
+- If the superclass method is declared public        then the overriding method in the sub class        cannot be either private or protected.
+- If it is not inheritance relationship, allows you to rewrite code from other classes without using     inheritance.
