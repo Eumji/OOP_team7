@@ -1,33 +1,29 @@
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import java.io.File;
+
+
+import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.ImageIcon;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
-import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EmptyBorder;
 
-public class GetSet extends JFrame {
+public class GetSet extends Encapsulation {
 
-	private JPanel contentPane;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -36,8 +32,8 @@ public class GetSet extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GetSet frame = new GetSet();
-					frame.setVisible(true);
+					GetSet window = new GetSet();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,15 +42,23 @@ public class GetSet extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
 	public GetSet() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 1000);
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 1000, 1000);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(135, 206, 235));
-		setJMenuBar(menuBar);
+		frame.setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("MENU");
 		mnNewMenu.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -66,7 +70,7 @@ public class GetSet extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MENU M = new MENU();
 				M.frame.setVisible(true);
-				setVisible(false);
+				frame.setVisible(false);
 			}
 		});
 		
@@ -76,9 +80,9 @@ public class GetSet extends JFrame {
 		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BasicMenu bm = new BasicMenu();
-				bm.setVisible(true);
-				setVisible(false);
+				Basic bm = new Basic();
+				bm.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
@@ -87,9 +91,9 @@ public class GetSet extends JFrame {
 		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EncapsulationMenu em = new EncapsulationMenu();
-				em.setVisible(true);
-				setVisible(false);
+				Encapsulation em = new Encapsulation();
+				em.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_2);
@@ -97,17 +101,17 @@ public class GetSet extends JFrame {
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Inheritance Menu");
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InheritanceMenu im = new InheritanceMenu();
-				im.setVisible(true);
-				setVisible(false);
+				Inheritance im = new Inheritance();
+				im.frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnNewMenu.add(mntmNewMenuItem_3);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(224, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -121,34 +125,8 @@ public class GetSet extends JFrame {
 		textArea.setBackground(new Color(245, 255, 250));
 		JScrollPane jsp = new JScrollPane(textArea);
 		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		
-		File GSF = new File("Encapsulation.txt");
 
-		FileReader GSfr;
-		try {
-			GSfr = new FileReader(GSF);
-			BufferedReader br = new BufferedReader(GSfr);
-
-			String line;
-
-			do {
-				line = br.readLine();
-				textArea.append(line);
-				textArea.append("\n");
-				
-			} while (line != null);
-
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		textArea.setCaretPosition(0);
-		
-		
+		read(textArea);
 		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
@@ -203,6 +181,13 @@ public class GetSet extends JFrame {
 		lblNewLabel_5.setBounds(0, 0, 968, 862);
 		contentPane.add(lblNewLabel_5);
 		
-		
 	}
+	
+	@Override
+	public void read(JTextArea ta){
+		File f = new File("Encapsulation.txt");
+		text(ta,f);
+	}
+	
+
 }

@@ -3,11 +3,12 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.io.File;
 
 import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -17,12 +18,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
 
-public class Modifier extends Basic{
+public class InheritanceConcept extends Inheritance{
 
 	 JFrame frame;
+	 File f = new File("");
 
 	/**
 	 * Launch the application.
@@ -31,7 +32,7 @@ public class Modifier extends Basic{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Modifier window = new Modifier();
+					InheritanceConcept window = new InheritanceConcept();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +44,7 @@ public class Modifier extends Basic{
 	/**
 	 * Create the application.
 	 */
-	public Modifier() {
+	public InheritanceConcept() {
 		initialize();
 	}
 
@@ -56,7 +57,8 @@ public class Modifier extends Basic{
 		frame.setBounds(100, 100, 1000, 1000);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBackground(new Color(250, 240, 230));
+		menuBar.setBackground(new Color(100, 149, 237));
+		menuBar.setFont(new Font("Arial", Font.PLAIN, 30));
 		frame.setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("MENU");
@@ -64,18 +66,17 @@ public class Modifier extends Basic{
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Go to Menu");
-		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MENU E= new MENU();
-				E.frame.setVisible(true);
+				MENU m = new MENU();
+				m.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
+		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Basic Menu");
-		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Basic bm = new Basic();
@@ -83,11 +84,10 @@ public class Modifier extends Basic{
 				frame.setVisible(false);
 			}
 		});
-		
+		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulation Menu");
-		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Encapsulaiton Menu");
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Encapsulation em = new Encapsulation();
@@ -95,7 +95,7 @@ public class Modifier extends Basic{
 				frame.setVisible(false);
 			}
 		});
-		
+		mntmNewMenuItem_2.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnNewMenu.add(mntmNewMenuItem_2);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Inheritance Menu");
@@ -109,83 +109,98 @@ public class Modifier extends Basic{
 		mntmNewMenuItem_3.setFont(new Font("Arial", Font.PLAIN, 25));
 		mnNewMenu.add(mntmNewMenuItem_3);
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		frame.setContentPane(contentPane);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(70, 47, 572, 618);
-		panel.setBackground(new Color(255, 250, 250));
-		
-		JLabel lblNewLabel = new JLabel("Default");
-		lblNewLabel.setBounds(652, 41, 77, 31);
-		lblNewLabel.setForeground(new Color(95, 158, 160));
-		lblNewLabel.setFont(new Font("Corbel", Font.PLAIN, 20));
-
-		JLabel lblNewLabel_2 = new JLabel("Public");
-		lblNewLabel_2.setBounds(652, 213, 63, 31);
-		lblNewLabel_2.setForeground(new Color(95, 158, 160));
-		lblNewLabel_2.setFont(new Font("Corbel", Font.PLAIN, 20));
-		
-		JLabel lblNewLabel_4 = new JLabel("Where it can be used");
-		lblNewLabel_4.setBounds(652, 389, 211, 31);
-		lblNewLabel_4.setForeground(new Color(95, 158, 160));
-		lblNewLabel_4.setFont(new Font("Corbel", Font.PLAIN, 20));
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setEditable(false);
-		textArea.setFont(new Font("Segoe Print", Font.BOLD, 13));
-		textArea.setBackground(new Color(255, 250, 250));
-		
-		read(textArea);
 		contentPane.setLayout(null);
 		
-
-		JScrollPane scrollPane = new JScrollPane(textArea);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(240, 248, 255));
+		panel.setBounds(77, 45, 824, 263);
+		contentPane.add(panel);
+		
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("Lucida Sans Unicode", Font.PLAIN, 16));
+		textArea.setEditable(false);
+		textArea.setBackground(new Color(240, 248, 255));
+		
+		f = new File("inheritance.txt");
+		read(textArea);
+		
+		JScrollPane scroll = new JScrollPane(textArea);
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+				.addComponent(scroll, GroupLayout.DEFAULT_SIZE, 824, Short.MAX_VALUE)
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 615, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addComponent(scroll, GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
 		);
 		panel.setLayout(gl_panel);
-		contentPane.add(panel);
+		
+		ImageIcon img = new ImageIcon("inheritance.jpg");
+		ImageIcon img3 = new ImageIcon("inheritanceCont.jpg");
+		ImageIcon img2 = new ImageIcon("computer.jpg");
+		JLabel lblNewLabel = new JLabel(img);
+		lblNewLabel.setBounds(68, 311, 819, 343);
 		contentPane.add(lblNewLabel);
-		contentPane.add(lblNewLabel_2);
-		contentPane.add(lblNewLabel_4);
+
+		JButton btnNewButton = new JButton("NEXT");
+		btnNewButton.setBackground(new Color(100, 149, 237));
+		btnNewButton.setFont(new Font("Consolas", Font.BOLD, 30));
+		btnNewButton.setBounds(767, 673, 122, 43);
+		contentPane.add(btnNewButton);
 		
-		ImageIcon img = new ImageIcon("default.jpg");
-		ImageIcon img2 = new ImageIcon("public.jpg");
-		ImageIcon img3 = new ImageIcon("canused.jpg");
-		ImageIcon img4 = new ImageIcon("computer.jpg");
+		JButton btnNewButton_1 = new JButton("Previous");
+		btnNewButton_1.setBackground(new Color(100, 149, 237));
+		btnNewButton_1.setVisible(false);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textArea.setText(null);
+				
+				f = new File("inheritanceCont.txt");
+
+				read(textArea);
+				
+				lblNewLabel.setIcon(img3);
+				btnNewButton_1.setVisible(true);
+				btnNewButton.setVisible(false);
+			}
+		});
+
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton.setVisible(true);
+				textArea.setText(null);
+				
+				f = new File("Inheritance.txt");
+				read(textArea);
+				
+				lblNewLabel.setIcon(img);
+				btnNewButton.setVisible(true);
+				btnNewButton_1.setVisible(false);
+
+				
+			}
+		});
+		btnNewButton_1.setVisible(false);
+		btnNewButton_1.setFont(new Font("Consolas", Font.BOLD, 30));
+		btnNewButton_1.setBounds(719, 673, 182, 43);
+		contentPane.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_1 = new JLabel(img);
-		lblNewLabel_1.setBounds(611, 47, 314, 176);
+		JLabel lblNewLabel_1 = new JLabel(img2);
+		lblNewLabel_1.setBounds(0, 0, 968, 862);
 		contentPane.add(lblNewLabel_1);
-		
-		JLabel label = new JLabel(img2);
-		label.setBounds(632, 231, 291, 164);
-		contentPane.add(label);
-		
-		JLabel lblNewLabel_3 = new JLabel(img3);
-		lblNewLabel_3.setBounds(575, 413, 403, 252);
-		contentPane.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_5 = new JLabel(img4);
-		lblNewLabel_5.setBounds(0, 0, 968, 862);
-		contentPane.add(lblNewLabel_5);
 	}
 	
 	@Override
-	public void read(JTextArea ta){
-		File f = new File("Modifier.txt");
-		text(ta, f);
+	public void read(JTextArea textArea){
+		text(textArea,f);
 	}
+	
 }

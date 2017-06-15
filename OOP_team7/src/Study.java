@@ -6,15 +6,20 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.awt.FlowLayout;
+
 import javax.swing.JButton;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class Study{
@@ -107,8 +112,8 @@ public class Study{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				BasicMenu bm = new BasicMenu();
-				bm.setVisible(true);
+				Basic bm = new Basic();
+				bm.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -121,8 +126,8 @@ public class Study{
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 50));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EncapsulationMenu em = new EncapsulationMenu();
-				em.setVisible(true);
+				Encapsulation em = new Encapsulation();
+				em.frame.setVisible(true);
 				frame.setVisible(false);
 
 			}
@@ -132,8 +137,8 @@ public class Study{
 		btnNewButton_2.setBackground(new Color(240, 248, 255));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InheritanceMenu im = new InheritanceMenu();
-				im.setVisible(true);
+				Inheritance im = new Inheritance();
+				im.frame.setVisible(true);
 				frame.setVisible(false);
 			}
 		});
@@ -145,5 +150,38 @@ public class Study{
 		panel.add(btnNewButton_1);
 		panel.add(btnNewButton_2);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+	
+	public void read(JTextArea ta){
+
+		File f = new File("");
+		text(ta, f);
+
+	}
+	
+	public void text(JTextArea ta ,File f){
+		
+		FileReader fr;
+		try {
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			String line;
+
+			do {
+				line = br.readLine();
+				ta.append(line);
+				ta.append("\n");
+				
+			} while (line != null);
+
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		ta.setCaretPosition(0);	
 	}
 }
