@@ -34,7 +34,7 @@ public class JAVA {
 	 * Launch the application.
 	 */
 	
-	public String getNickname(){
+public String getNickname(){
 		return Nickname;
 	}
 	public void setNickname(String Nickname){
