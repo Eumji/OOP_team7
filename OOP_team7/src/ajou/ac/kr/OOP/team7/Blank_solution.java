@@ -177,8 +177,11 @@ public class Blank_solution implements Solution{
 		//TestGame bg = new Blank_Game();
 		Blank_Game bg = new Blank_Game();
 		bg.setnum(num); 
-		bg.gframe.setVisible(true); 
-		sframe.setVisible(false); 
+		Icon image = bg.img.get(bg.getnum());
+		bg.lblNewLabel.setIcon(image);
+		bg.gframe.setVisible(true);
+		sframe.setVisible(false);
+		bg.gframe.setVisible(true);
 	}
 	
 	@Override
