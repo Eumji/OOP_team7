@@ -22,7 +22,7 @@ public class MultipleChoice_Game extends TestGame {
 	JFrame frame;
 	JTextArea textArea;
 	JLabel lblNewLabel_1;
-	private HEART h = new HEART();
+	private HEART h;
 	private MultipleChoice_content mcq;
 	private ArrayList<String> question;
 	private ArrayList<String> answer;
@@ -51,9 +51,10 @@ public class MultipleChoice_Game extends TestGame {
 		mc2 = new ArrayList<String>(mcq.mc2());
 		mc3 = new ArrayList<String>(mcq.mc3());
 		mc4 = new ArrayList<String>(mcq.mc4());
-		ht = new ArrayList<Icon>(h.heart());
 		h = new HEART();
 
+		ht = new ArrayList<Icon>(h.heart());
+		
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		frame.setBounds(100, 100, 1000, 1000);
@@ -320,7 +321,6 @@ public class MultipleChoice_Game extends TestGame {
 		MultipleChoice_Solution mcs = new MultipleChoice_Solution();
 		mcs.textArea.setBackground(new Color(178, 34, 34));
 		if (h.getheart() == 0) {
-			h.setheart(3);
 			JOptionPane.showMessageDialog(null, "study hard");
 			frame.setVisible(false);
 			Study study = new Study();
