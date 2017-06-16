@@ -1,5 +1,4 @@
 package ajou.ac.kr.OOP.team7;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -151,7 +150,6 @@ public class Study{
 		try {
 			fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
-
 			String line;
 
 			do {

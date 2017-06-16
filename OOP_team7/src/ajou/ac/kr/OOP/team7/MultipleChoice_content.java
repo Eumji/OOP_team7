@@ -2,9 +2,6 @@ package ajou.ac.kr.OOP.team7;
 import java.io.*;
 import java.util.ArrayList;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 public class MultipleChoice_content implements Contents{
 
 	@Override
