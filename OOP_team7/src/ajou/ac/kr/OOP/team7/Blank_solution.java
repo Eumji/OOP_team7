@@ -60,7 +60,6 @@ public class Blank_solution implements Solution{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		sframe.getContentPane().add(btnNewButton);
-		//TestGame tg = new TestGame();
 		textArea = new JTextArea();
 		Blank_Game bg = new Blank_Game();
 		String s = solution.get(bg.getnum());

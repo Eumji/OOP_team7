@@ -21,7 +21,7 @@ public class ox_solution implements Solution{
 	JFrame frame_this;
 	JTextArea textArea;
 	private JMenuBar menuBar;
-	ox_content oq;
+	private ox_content oq;
 	private ArrayList<String> solution;
 
 
@@ -54,13 +54,7 @@ public class ox_solution implements Solution{
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(829, 845, 132, 53);
 		frame_this.getContentPane().add(btnNewButton);
-		
 		textArea = new JTextArea();
-		ox_Game og = new ox_Game();
-		textArea = new JTextArea();
-		String s = solution.get(og.getnum());
-		textArea.setText(s);
-		
 		textArea.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -69,6 +63,9 @@ public class ox_solution implements Solution{
 				}
 			}
 		});
+		ox_Game og = new ox_Game();
+		String s = solution.get(og.getOXnum());
+		textArea.setText(s);
 		textArea.setForeground(Color.BLACK);
 		textArea.setBackground(null);
 		textArea.setLineWrap(true);
@@ -203,7 +200,7 @@ public class ox_solution implements Solution{
 		frame_this.setVisible(false);
 	}
 	
-
+	@Override
 	public void gonext(){
 		TestGame tg = new TestGame();
 		if(tg.getOXnum()==9){

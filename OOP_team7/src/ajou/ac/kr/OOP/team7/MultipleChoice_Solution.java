@@ -71,14 +71,6 @@ public class MultipleChoice_Solution implements Solution{
 		TestGame tg = new TestGame();
 		String s = solution.get(tg.getMCnum());
 		textArea.setText(s);
-		/*btnNext.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyChar() == '\n') {
-					gonext();
-				}
-			}
-		});*/
 		textArea.setLineWrap(true);
 		textArea.setEnabled(true);
 		textArea.setEditable(false);

@@ -28,7 +28,6 @@ public class ox_Game extends TestGame {
 	private ox_content oxq;
 	private ArrayList<String> question;
 	private ArrayList<String> answer;
-	private ArrayList<String> solution;
 	private HEART h;
 	private ArrayList<Icon> ht;
 
@@ -51,8 +50,6 @@ public class ox_Game extends TestGame {
 		oxq = new ox_content();
 		question = new ArrayList<String>(oxq.question());
 		answer = new ArrayList<String>(oxq.answer());
-		solution = new ArrayList<String>(oxq.solution());
-
 		oxgame = new JFrame();
 		oxgame.setBounds(100, 100, 1000, 1000);
 		oxgame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -249,7 +246,9 @@ public class ox_Game extends TestGame {
 	@Override
 	public void isfalse() {
 		ox_solution oxs = new ox_solution();
+		oxs.textArea.setBackground(new Color(178, 34, 34));
 		if (h.getheart() == 0) {
+			//h.setheart(3);
 			JOptionPane.showMessageDialog(null, "Study Hard!!");
 			oxgame.setVisible(false);
 			Study study = new Study();
@@ -257,10 +256,8 @@ public class ox_Game extends TestGame {
 		} else {
 			h.setheart(h.getheart() - 1);
 			oxs.textArea.setForeground(new Color(255, 250, 250));
-			oxs.textArea.setBackground(new Color(178, 34, 34));
 			oxs.frame_this.setVisible(true);
 			oxgame.setVisible(false);
-
 		}
 	}
 }
