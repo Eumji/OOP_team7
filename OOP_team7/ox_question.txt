@@ -4,7 +4,7 @@
 4. Only one object of the class can      exist.
 5. Variables, methods, and construct-ors, which are declared protected in a superclass can be accessed only by the subclasses in other package or   any class within the    package of the protected members' class.
 6. If variables are encapsulated, the     fields of a class can be made              read-only. 
-7. The class which inherits the prope-rties of other is known as "subclass" and the class whose properties are    inherited is known as "superclass"     (base class, parent class). 
+7. The class which inherits the prope-rties of other is known as "subclass" and the class whose properties are    inherited is known as "superclass". 
 8. You can inherit from two or more     classes.
 9. The access level can be more restr-ictive than the overridden method's  access level.
 10. If it is not inheritance relationship, allows you to rewrite code from        other classes without using inheritan-ce. 
